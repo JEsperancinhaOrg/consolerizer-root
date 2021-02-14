@@ -1,0 +1,5 @@
+os: osx
+language: java
+jdk: openjdk11
+script:
+  - mvn clean install
