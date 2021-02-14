@@ -18,11 +18,36 @@
 
 This project offers way to seamlessly add coloured log messages in academic, study or research projects. This is not a production ready module and shouldn't be used in a production setting. It is designed also for use in tutorials, classes, teaching and knowledge sharing.
 
-## Tools
+## Maven
+
+Consolerizer for Java 11 and above:
+```xml
+<dependency>
+  <groupId>org.jesperancinha.console</groupId>
+  <artifactId>consolerizer</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+
+Consolerizer for Java 8:
+
+```xml
+<dependency>
+  <groupId>org.jesperancinha.console</groupId>
+  <artifactId>consolerizer8</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+
+## Delivery to Sonatype Repository
+
+### Tools
 
 ```bash
-git push --delete origin 2.0.0  
-git tag --delete 2.0.0
+git push --delete origin 1.0.0  
+git tag --delete 1.0.0
+git tag 1.0.0
+git push --tags
 ```
 
 ```bash
@@ -32,16 +57,56 @@ export GPG_TTY=$(tty)
 mvn clean deploy -Prelease
 mvn nexus-staging:release  -Prelease
 ```
-
-## Maven
+### Repository settings.xml
 
 ```xml
-<dependency>
-  <groupId>org.jesperancinha.console</groupId>
-  <artifactId>consolerizer</artifactId>
-  <version>1.0.0</version>
-</dependency>
+<?xml version="1.0" encoding="UTF-8" ?>
+<settings xsi:schemaLocation='http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd'
+          xmlns='http://maven.apache.org/SETTINGS/1.0.0' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+    <profiles>
+        <profile>
+            <id>ossrh</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <gpg.executable>gpg</gpg.executable>
+                <gpg.passphrase>{{password}}</gpg.passphrase>
+            </properties>
+        </profile>
+    </profiles>
+    <activeProfiles>
+        <activeProfile>ossrh</activeProfile>
+    </activeProfiles>
+    <servers>
+        <server>
+            <id>ossrh</id>
+            <username>{{username}}</username>
+            <password>{{password}}</password>
+        </server>
+    </servers>
+</settings>
 ```
+
+## References
+
+### Online
+
+-   [Definitive Guide To Java 12](https://blog.codefx.org/java/java-12-guide/)
+-   [Publish AAR to jCenter and Maven Central](https://gist.github.com/lopspower/6f62fe1492726d848d6d)
+-   [Publishing Android Library to Bintray with Gradle + Buddy.Works](https://medium.com/camerakit/publishing-android-library-to-bintray-with-gradle-buddy-works-dd50cbd03df5)
+-   [How to distribute your own Android library through jCenter and Maven Central from Android Studio](https://inthecheesefactory.com/blog/how-to-upload-library-to-jcenter-maven-central-as-dependency/en)
+-   [Creating .asc signature files with GPG](http://www.benmccann.com/creating-asc-signature-files-with-gpg/)
+-   [Publish java library to JFrog Bintray and OSS Sonatype with Gradle](https://medium.com/@rosolko/publish-java-library-to-jfrog-bintray-and-sonatype-with-gradle-1a3ebd5b8be8)
+-   [Enjoy Bintray and use it as pain-free gateway to Maven Central](https://blog.bintray.com/2014/02/11/bintray-as-pain-free-gateway-to-maven-central/)
+-   [Android Library Publishing Maven Artifacts via gradle](https://gist.github.com/danielesegato/3ea6f99c968ce0b795c5390844ad4ff7)
+-   [Gradle generate javadoc for Android](https://gist.github.com/kibotu/994c9cc65fe623b76b76fedfac74b34b)
+-   [A Complete Guide to Create and Publish an Android Library to Maven Central](https://medium.com/@zubairehman.work/a-complete-guide-to-create-and-publish-an-android-library-to-maven-central-6eef186a42f5)
+-   [Publish a Java Project to Maven Central with Gradle](http://weibeld.net/java/publish-to-maven-central.html)
+-   [Sign and publish on Maven Central a Project with the new maven-publish Gradle plugin](https://medium.com/@nmauti/sign-and-publish-on-maven-central-a-project-with-the-new-maven-publish-gradle-plugin-22a72a4bfd4b)
+-   [How to Upload an Open-Source Java Library to Maven Central](https://www.freecodecamp.org/news/how-to-upload-an-open-source-java-library-to-maven-central-cac7ce2f57c/)
+-   [Nexus Sonatype](https://oss.sonatype.org/#welcome)
+-   [Working with PGP Signatures](https://central.sonatype.org/pages/working-with-pgp-signatures.html)
 
 ## About me 👨🏽‍💻🚀
 
