@@ -3,6 +3,7 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4d5fcd800ef941309dd767ad384eeb0c)](https://www.codacy.com/gh/JEsperancinhaOrg/consolerizer-root/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=JEsperancinhaOrg/consolerizer-root&amp;utm_campaign=Badge_Grade)
 [![codebeat badge](https://codebeat.co/badges/176e694d-4bc1-4771-9a6c-4cd94bc8f5f8)](https://codebeat.co/projects/github-com-jesperancinhaorg-consolerizer-root-main)
 [![CircleCI](https://circleci.com/gh/JEsperancinhaOrg/consolerizer-root.svg?style=svg)](https://circleci.com/gh/JEsperancinhaOrg/consolerizer-root)
+[![Build Status](https://travis-ci.com/JEsperancinhaOrg/consolerizer-root.svg?branch=main)](https://travis-ci.com/JEsperancinhaOrg/consolerizer-root)
 
 This project offers way to seamlessly add coloured log messages in academic, study or research projects. This is not a production ready module and shouldn't be used in a production setting. It is designed also for use in tutorials, classes, teaching and knowledge sharing.
 
