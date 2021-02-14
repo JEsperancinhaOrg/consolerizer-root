@@ -104,6 +104,7 @@
                 <version>${maven-javadoc-plugin.version}</version>
                 <configuration>
                     <source>8</source>
+                    <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
                 </configuration>
                 <executions>
                     <execution>
