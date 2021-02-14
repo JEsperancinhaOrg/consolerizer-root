@@ -18,6 +18,31 @@
 
 This project offers way to seamlessly add coloured log messages in academic, study or research projects. This is not a production ready module and shouldn't be used in a production setting. It is designed also for use in tutorials, classes, teaching and knowledge sharing.
 
+## Tools
+
+```bash
+git push --delete origin 2.0.0  
+git tag --delete 2.0.0
+```
+
+```bash
+gpg --keyserver hkp://keyserver.ubuntu.com --send-keys <your GPG key>
+gpg --list-keys
+export GPG_TTY=$(tty)
+mvn clean deploy -Prelease
+mvn nexus-staging:release  -Prelease
+```
+
+## Maven
+
+```xml
+<dependency>
+  <groupId>org.jesperancinha.console</groupId>
+  <artifactId>consolerizer</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+
 ## About me 👨🏽‍💻🚀
 
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-20/JEOrgLogo-20.png "João Esperancinha Homepage")](http://joaofilipesabinoesperancinha.nl)
