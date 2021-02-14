@@ -4,6 +4,7 @@
 [![codebeat badge](https://codebeat.co/badges/176e694d-4bc1-4771-9a6c-4cd94bc8f5f8)](https://codebeat.co/projects/github-com-jesperancinhaorg-consolerizer-root-main)
 [![CircleCI](https://circleci.com/gh/JEsperancinhaOrg/consolerizer-root.svg?style=svg)](https://circleci.com/gh/JEsperancinhaOrg/consolerizer-root)
 [![Build Status](https://travis-ci.com/JEsperancinhaOrg/consolerizer-root.svg?branch=main)](https://travis-ci.com/JEsperancinhaOrg/consolerizer-root)
+[![BCH compliance](https://bettercodehub.com/edge/badge/JEsperancinhaOrg/consolerizer-root?branch=main)](https://bettercodehub.com/)
 
 This project offers way to seamlessly add coloured log messages in academic, study or research projects. This is not a production ready module and shouldn't be used in a production setting. It is designed also for use in tutorials, classes, teaching and knowledge sharing.
 
