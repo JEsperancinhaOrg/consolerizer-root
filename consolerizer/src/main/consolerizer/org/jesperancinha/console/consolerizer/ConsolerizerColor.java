@@ -136,4 +136,9 @@ public enum ConsolerizerColor {
     public void printExpectedException(String text, Object e) {
         printGenericLn("This is expected! %s -> %s", text, e);
     }
+
+    @Override
+    public String toString() {
+        return consoleColor;
+    }
 }

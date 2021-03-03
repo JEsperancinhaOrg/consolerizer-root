@@ -358,7 +358,9 @@ public class Consolerizer {
 
     static void printColor(ConsolerizerColor consolerizerColor) {
         currentColor = consolerizerColor;
-        System.out.print(consolerizerColor.getConsoleColor());
+        if(Objects.nonNull(consolerizerColor)) {
+            System.out.print(currentColor.getConsoleColor());
+        }
     }
 
     static String createTitleLineLn(Object text, char limitingChar) {
@@ -367,6 +369,10 @@ public class Consolerizer {
 
     static String createTitleLine(Object text, char limitingChar) {
         return ConsolerizerTexts.createTitleLineLn(text, limitingChar, false);
+    }
+
+    public static void printRawGenericLn(Object text, Object... args) {
+        printPrivateText(text.toString().concat("\n"), args);
     }
 
     public void printGenericLn(Object text, Object... args) {
