@@ -18,6 +18,14 @@
 
 This project offers way to seamlessly add coloured log messages in academic, study or research projects. This is not a production ready module and shouldn't be used in a production setting. It is designed also for use in tutorials, classes, teaching and knowledge sharing.
 
+## Release notes for future version 1.1.0 and before
+
+1. Rainbow Flag on HTML and Console
+2. Twitter link creation
+3. Console output in different colors
+4. Unicorn line
+5. Title line
+
 ## Maven
 
 Consolerizer for Java 11 and above:
