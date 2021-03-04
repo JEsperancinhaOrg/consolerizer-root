@@ -169,6 +169,7 @@
     <modules>
         <module>consolerizer</module>
         <module>consolerizer8</module>
+        <module>consolerizer-spring-boot-tester</module>
     </modules>
 
     <packaging>pom</packaging>
