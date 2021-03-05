@@ -25,9 +25,9 @@ public class ConsolerizerSpringBootTesterApplication {
     public  void writeHTMLTests(HttpServletResponse httpServletResponse) throws IOException {
         final PrintWriter writer = httpServletResponse.getWriter();
         writer.println(ConsolerizerColor.GREEN.getPBText("This is a test page for Consolerizer!"));
-        writer.println(HtmlizerLinks.getYouTubeLink("QPWUyAZZfK0"));
+        writer.println(HtmlizerLinks.getYouTubeFrame("QPWUyAZZfK0"));
         writer.println(ConsolerizerColor.DARK_GREY.getPBEscapedText("This is a wonderfull day!"));
-        writer.println(HtmlizerLinks.getYouTubeLink("rnHVIuBlAUo", 100,100));
+        writer.println(HtmlizerLinks.getYouTubeFrame("rnHVIuBlAUo", 100,100));
         ConsolerizerGraphs.printRainbowFlag("!!WELCOME!!", new HtmlPWriter(writer));
     }
 }
