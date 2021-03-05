@@ -26,6 +26,7 @@ This project offers way to seamlessly add coloured log messages in academic, stu
 4. Unicorn line
 5. Title line
 6. Multicolored text lines for console
+7. Multicolored text lines for HTML
 
 ## Maven
 
