@@ -374,6 +374,9 @@ public class Consolerizer {
     public static void printRawGenericLn(Object text, Object... args) {
         printPrivateText(text.toString().concat("\n"), args);
     }
+    public static void printRawGeneric(Object text, Object... args) {
+        printPrivateText(text.toString(), args);
+    }
 
     public void printGenericLn(Object text, Object... args) {
         printGeneric(text.toString().concat("\n"), args);
