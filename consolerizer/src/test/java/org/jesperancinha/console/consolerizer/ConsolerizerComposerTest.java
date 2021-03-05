@@ -38,7 +38,7 @@ class ConsolerizerComposerTest {
     @Test
     void testConsolerizerComposer_whenSplitterLn_thenNiceLog() {
         ConsolerizerComposer.out(" ").white("The").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
-                .blue("the").green("lazy").bgOrange("dog").toConsoleLn();
+                .blue("the").green("lazy").bgOrange("dog").build().toConsoleLn();
         ConsolerizerComposer.out(" ").brown("The").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
                 .blue("the").green("lazy").magenta("dog").toConsoleLn();
     }
@@ -49,5 +49,13 @@ class ConsolerizerComposerTest {
                 .blue("the").green("lazy").bgOrange("dog").toConsoleLn();
         ConsolerizerComposer.out(" ").cyan("The").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
                 .blue("the").green("lazy").magenta("dog").toConsoleLn();
+    }
+
+    @Test
+    void testConsolerizerComposer3_whenSplitterLn_thenNiceLog() {
+        ConsolerizerComposer.out(" ").brightCyan("The").black("quick").lightGrey("brown").white("fox").brightRed("jumps").yellow("over")
+                .blue("the").green("lazy").darkGrey("dog").toConsoleLn();
+        ConsolerizerComposer.out(" ").brightBlue("The").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
+                .blue("the").green("lazy").brightGreen("dog").toConsoleLn();
     }
 }

@@ -18,6 +18,11 @@ public class HtmlPWriter implements ConsolerizerWriter {
     }
 
     @Override
+    public void printRawPrivateText(String text) {
+        writer.print(text);
+    }
+
+    @Override
     public void printNewLine() {
     }
 

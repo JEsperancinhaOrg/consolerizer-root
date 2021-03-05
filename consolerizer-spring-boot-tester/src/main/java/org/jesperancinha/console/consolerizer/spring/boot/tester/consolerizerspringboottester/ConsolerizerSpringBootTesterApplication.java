@@ -2,6 +2,7 @@ package org.jesperancinha.console.consolerizer.spring.boot.tester.consolerizersp
 
 import org.jesperancinha.console.consolerizer.ConsolerizerColor;
 import org.jesperancinha.console.consolerizer.ConsolerizerGraphs;
+import org.jesperancinha.console.consolerizer.HtmlComposer;
 import org.jesperancinha.console.consolerizer.HtmlPWriter;
 import org.jesperancinha.console.consolerizer.HtmlizerLinks;
 import org.springframework.boot.SpringApplication;
@@ -28,6 +29,8 @@ public class ConsolerizerSpringBootTesterApplication {
         writer.println(HtmlizerLinks.getYouTubeFrame("QPWUyAZZfK0"));
         writer.println(ConsolerizerColor.DARK_GREY.getPBEscapedText("This is a wonderfull day!"));
         writer.println(HtmlizerLinks.getYouTubeFrame("rnHVIuBlAUo", 100,100));
-        ConsolerizerGraphs.printRainbowFlag("!!WELCOME!!", new HtmlPWriter(writer));
+        final HtmlPWriter consolerizerWriter = new HtmlPWriter(writer);
+        HtmlComposer.out(" ").black("This").red("is").green("how").orange("we").yellow("do").cyan("it").magenta(".").writeLineToHtml(consolerizerWriter);
+        ConsolerizerGraphs.printRainbowFlag("!!WELCOME!!", consolerizerWriter);
     }
 }
