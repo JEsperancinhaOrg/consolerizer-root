@@ -54,9 +54,9 @@ Consolerizer for Java 8:
 ### Tools
 
 ```bash
-git push --delete origin 1.0.0  
-git tag --delete 1.0.0
-git tag 1.0.0
+git push --delete origin 1.1.0  
+git tag --delete 1.1.0
+git tag 1.1.0
 git push --tags
 ```
 
@@ -97,6 +97,8 @@ mvn nexus-staging:release  -Prelease
     </servers>
 </settings>
 ```
+
+!!Important!!: Please remove test module before release!
 
 ## References
 
