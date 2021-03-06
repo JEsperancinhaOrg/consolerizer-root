@@ -1,13 +1,14 @@
-package org.jesperancinha.console.consolerizer8;
+package org.jesperancinha.console.consolerizer.console;
+
+import org.jesperancinha.console.consolerizer.common.ConsolerizerColor;
+import org.jesperancinha.console.consolerizer.common.ConsolerizerWriter;
 
 import java.util.List;
-
-import static org.apache.commons.lang3.StringUtils.repeat;
 
 public class ConsolerizerGraphs {
 
     public static String getUnicorns(int i) {
-        final StringBuilder sb = new StringBuilder();
+        final var sb = new StringBuilder();
         for (int j = 0; j < i; j++) {
             sb.append("🦄");
         }
@@ -45,7 +46,7 @@ public class ConsolerizerGraphs {
                 if (k == iMiddle || k == iMiddle + 1) {
                     consolerizerWriter.printPrivateText(Consolerizer.createTitleLine(flagText, '*'));
                 } else {
-                    consolerizerWriter.printPrivateText(repeat("*",Consolerizer.titleSpread));
+                    consolerizerWriter.printPrivateText("*".repeat(Consolerizer.titleSpread));
                 }
                 consolerizerWriter.printNewLine();
             }

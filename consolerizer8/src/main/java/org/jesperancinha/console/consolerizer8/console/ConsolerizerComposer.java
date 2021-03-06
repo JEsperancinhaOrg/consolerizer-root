@@ -1,13 +1,26 @@
-package org.jesperancinha.console.consolerizer8;
+package org.jesperancinha.console.consolerizer8.console;
+
+import org.jesperancinha.console.consolerizer8.common.Composer;
+import org.jesperancinha.console.consolerizer8.common.ConsolerizerColor;
+
+import static org.jesperancinha.console.consolerizer8.common.ConsolerizerColor.RESET;
 
 public class ConsolerizerComposer extends Composer<ConsolerizerComposer> {
 
     ConsolerizerComposer() {
         super();
+        resetConsole();
     }
 
     ConsolerizerComposer(String splitter) {
         super(splitter);
+        resetConsole();
+    }
+
+    private void resetConsole() {
+        System.out.print("");
+        System.out.print(RESET.getConsoleColor());
+        System.out.print("");
     }
 
     public static ConsolerizerComposer out() {
@@ -20,7 +33,7 @@ public class ConsolerizerComposer extends Composer<ConsolerizerComposer> {
 
     @Override
     public ConsolerizerComposer out(ConsolerizerColor consolerizerColor, String text) {
-        sb.append(consolerizerColor).append(text).append(splitter);
+        sb.append(consolerizerColor.getConsoleColor()).append(text).append(splitter);
         return this;
     }
 
@@ -30,10 +43,12 @@ public class ConsolerizerComposer extends Composer<ConsolerizerComposer> {
     }
 
     public void toConsole() {
+        Consolerizer.currentColor = null;
         Consolerizer.printRawGeneric(toString());
     }
 
     public void toConsoleLn() {
+        Consolerizer.currentColor = null;
         Consolerizer.printRawGenericLn(toString());
     }
 }

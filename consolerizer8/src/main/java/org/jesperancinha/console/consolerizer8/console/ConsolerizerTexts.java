@@ -1,19 +1,11 @@
-package org.jesperancinha.console.consolerizer;
-
-import java.util.ArrayList;
-import java.util.Scanner;
-
-import static org.jesperancinha.console.consolerizer.ConsolerizerColor.GREEN;
-import static org.jesperancinha.console.consolerizer.ConsolerizerColor.MAGENTA;
-import static org.jesperancinha.console.consolerizer.ConsolerizerColor.ORANGE;
-import static org.jesperancinha.console.consolerizer.ConsolerizerColor.RED;
+package org.jesperancinha.console.consolerizer8.console;
 
 public class ConsolerizerTexts {
 
     static String createTitleLineLn(Object text, char limitingChar, boolean newLine) {
         final String fullText = text.toString();
-        var remaining = Consolerizer.titleSpread - fullText.length() - 2;
-        var padding = (int) Math.ceil(remaining / 2f);
+        final int remaining = Consolerizer.titleSpread - fullText.length() - 2;
+        final int padding = (int) Math.ceil(remaining / 2f);
         final String substring = new String(new char[padding]).replace('\0', limitingChar)
                 .concat(" ")
                 .concat(fullText)

@@ -1,10 +1,10 @@
-package org.jesperancinha.console.consolerizer8;
+package org.jesperancinha.console.consolerizer8.common;
 
 public abstract class Composer<T> {
 
     protected final String splitter;
 
-    protected final StringBuilder sb = new StringBuilder();
+    protected final StringBuffer sb = new StringBuffer();
 
     protected Composer() {
         this.splitter = "";

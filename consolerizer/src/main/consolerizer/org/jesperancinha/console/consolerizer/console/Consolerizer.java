@@ -1,4 +1,6 @@
-package org.jesperancinha.console.consolerizer8;
+package org.jesperancinha.console.consolerizer.console;
+
+import org.jesperancinha.console.consolerizer.common.ConsolerizerColor;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -11,17 +13,18 @@ import java.util.stream.Stream;
 
 import static java.lang.Thread.sleep;
 import static java.util.stream.Collectors.joining;
-import static org.jesperancinha.console.consolerizer8.ConsolerizerColor.BRIGHT_WHITE;
-import static org.jesperancinha.console.consolerizer8.ConsolerizerColor.WHITE;
+import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.BRIGHT_WHITE;
+import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.RESET;
+import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.WHITE;
 
 public class Consolerizer {
 
     private final static int TYPING_DEFAULT_MS = 0;
-    private final static int MAX_LINE_CHARS = 0;
+    private final static int MAX_LINE_CHARS = 150;
     private final static int RAINBOW_LINE_CHARS = 10;
-    private final static int TITLE_SPREAD = 100;
+    private final static int TITLE_SPREAD = 150;
     private final static ConsolerizerColor CON_COLOR_DEFAULT = BRIGHT_WHITE;
-    private static ConsolerizerColor currentColor;
+    public static ConsolerizerColor currentColor;
 
     private int typingWait;
 
@@ -49,8 +52,9 @@ public class Consolerizer {
 
     public static void setupFastDefault() {
         typingWaitGlobal = 0;
-        maxLineCharsGlobal = 100;
-        titleSpread = 100;
+        maxLineCharsGlobal = 150;
+        titleSpread = maxLineCharsGlobal;
+        rainbowLineChars = 10;
         blackAndWhite = false;
     }
 
@@ -58,6 +62,7 @@ public class Consolerizer {
         typingWaitGlobal = 0;
         maxLineCharsGlobal = 250;
         titleSpread = maxLineCharsGlobal;
+        rainbowLineChars = 10;
         blackAndWhite = false;
     }
 
@@ -65,6 +70,7 @@ public class Consolerizer {
         typingWaitGlobal = 10;
         maxLineCharsGlobal = 0;
         titleSpread = 100;
+        rainbowLineChars = 10;
         blackAndWhite = false;
     }
 
@@ -123,16 +129,16 @@ public class Consolerizer {
                     new Object[]{processMultiArrays2((String[][]) vars)});
         } else {
             for (int i = 0; i < vars.length; i++) {
-                Object variable = vars[i];
+                var variable = vars[i];
                 if (variable instanceof Exception) {
                     final StringWriter out = new StringWriter();
                     ((Exception) variable).printStackTrace(new PrintWriter(out));
                     vars[i] = out.toString();
                 }
                 if (variable instanceof Error) {
-                    final Throwable e = (Throwable) variable;
-                    final StackTraceElement[] stackTrace = e.getStackTrace();
-                    final StringBuilder sb = new StringBuilder(e.getClass()
+                    var e = (Throwable) variable;
+                    var stackTrace = e.getStackTrace();
+                    var sb = new StringBuilder(e.getClass()
                             .getCanonicalName());
                     if (Objects.nonNull(e.getMessage())) {
                         sb.append("\n\t");
@@ -186,7 +192,7 @@ public class Consolerizer {
     }
 
     private static void printPrivateText(String text, int typingWait, int maxLineChars) {
-        final String printText = text;
+        var printText = text;
         if (maxLineChars > 0 && printText.length() > maxLineChars) {
             printPerLine(printText, typingWait, maxLineChars);
         } else {
@@ -209,7 +215,7 @@ public class Consolerizer {
             if (!text.contains("\n")) {
                 System.out.print(" ");
             }
-            System.out.print(WHITE.getConsoleColor());
+            System.out.print(RESET.getConsoleColor());
         }
     }
 
@@ -245,8 +251,8 @@ public class Consolerizer {
     }
 
     private static void printPrivateText(String text, int typingWait, int maxLineChars, final Object... vars) {
-        final String newText = String.format(text, vars);
-        final String printText = newText;
+        var newText = String.format(text, vars);
+        var printText = newText;
         if (maxLineChars > 0) {
             printPerLine(printText, typingWait, maxLineChars);
         } else {
@@ -268,7 +274,7 @@ public class Consolerizer {
             if (!text.contains("\n")) {
                 System.out.print(" ");
             }
-            System.out.print(WHITE.getConsoleColor());
+            System.out.print(RESET.getConsoleColor());
         }
     }
 
@@ -289,19 +295,19 @@ public class Consolerizer {
         printRainbowTitle(title.toString()
                 .trim());
         System.out.print("\n");
-        printColor(WHITE);
+        printColor(RESET);
     }
 
     public static void printRainbowTitleLn(final String title, final Object... objects) {
         printRainbowTitle(String.format(title, objects));
         System.out.print("\n");
-        printColor(WHITE);
+        printColor(RESET);
     }
 
     public static void printRainbowTitle(final String title) {
         List<String> consoleRainbow = ConsolerizerColor.getConsoleRainbow();
-        int k = 0;
-        for (int i = 0; i < title.length(); i++) {
+        var k = 0;
+        for (var i = 0; i < title.length(); i++) {
             if (k == consoleRainbow.size()) {
                 k = 0;
             }
@@ -311,7 +317,7 @@ public class Consolerizer {
                 k++;
             }
         }
-        printColor(WHITE);
+        printColor(RESET);
     }
 
     public static void printRainbowLn(final char c, int nchars) {
@@ -358,7 +364,7 @@ public class Consolerizer {
 
     static void printColor(ConsolerizerColor consolerizerColor) {
         currentColor = consolerizerColor;
-        if(Objects.nonNull(consolerizerColor)) {
+        if (Objects.nonNull(consolerizerColor)) {
             System.out.print(currentColor.getConsoleColor());
         }
     }
@@ -372,10 +378,11 @@ public class Consolerizer {
     }
 
     public static void printRawGenericLn(Object text, Object... args) {
-        printPrivateText(text.toString().concat("\n"), args);
+        printPrivateText("" + text.toString().concat("\n"), args);
     }
+
     public static void printRawGeneric(Object text, Object... args) {
-        printPrivateText(text.toString(), args);
+        printPrivateText("" + text.toString(), args);
     }
 
     public void printGenericLn(Object text, Object... args) {

@@ -1,15 +1,15 @@
-package org.jesperancinha.console.consolerizer;
+package org.jesperancinha.console.consolerizer.console;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class ConsolerizerComposerTest {
+import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.BLUE;
+import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.GREEN;
+import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.MAGENTA;
+import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.RED;
+import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.RESET;
 
-    @BeforeEach
-    public void setUp() {
-        Consolerizer.titleSpread = 200;
-        Consolerizer.maxLineCharsGlobal = 200;
-    }
+class ConsolerizerComposerTest {
 
     @Test
     void testConsolerizerComposer_whenNoSplitter_thenNiceLog() {
@@ -54,6 +54,25 @@ class ConsolerizerComposerTest {
     @Test
     void testConsolerizerComposer3_whenSplitterLn_thenNiceLog() {
         ConsolerizerComposer.out(" ").brightCyan("The").black("quick").lightGrey("brown").white("fox").brightRed("jumps").yellow("over")
+                .blue("the").green("lazy").darkGrey("dog").toConsoleLn();
+        ConsolerizerComposer.out(" ").brightBlue("The").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
+                .blue("the").green("lazy").brightGreen("dog").toConsoleLn();
+    }
+
+    @Test
+    void testConsolerizerComposer4_whenTitlePhenomenon_thenNiceLog() {
+        BLUE.printGenericTitleLn("This shouldn't influence the next log");
+        RED.printGenericLn("This shouldn't influence the next log");
+        BLUE.printGenericTitleLn("This shouldn't influence the next log");
+
+        ConsolerizerGraphs.printUnicornsLn(100);
+        System.out.print(RESET);
+        System.out.print("---");
+        System.out.print(MAGENTA);
+        System.out.println("---");
+        System.out.print(RESET);
+
+        ConsolerizerComposer.out(" ").white("The").black("quick").lightGrey("brown").white("fox").brightRed("jumps").yellow("over")
                 .blue("the").green("lazy").darkGrey("dog").toConsoleLn();
         ConsolerizerComposer.out(" ").brightBlue("The").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
                 .blue("the").green("lazy").brightGreen("dog").toConsoleLn();

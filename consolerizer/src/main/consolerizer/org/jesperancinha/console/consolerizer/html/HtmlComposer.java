@@ -1,4 +1,7 @@
-package org.jesperancinha.console.consolerizer8;
+package org.jesperancinha.console.consolerizer.html;
+
+import org.jesperancinha.console.consolerizer.common.Composer;
+import org.jesperancinha.console.consolerizer.common.ConsolerizerColor;
 
 public class HtmlComposer extends Composer<HtmlComposer> {
 

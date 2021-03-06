@@ -1,4 +1,4 @@
-package org.jesperancinha.console.consolerizer8;
+package org.jesperancinha.console.consolerizer8.common;
 
 public interface ConsolerizerWriter {
 

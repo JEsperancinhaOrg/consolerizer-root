@@ -1,4 +1,4 @@
-package org.jesperancinha.console.consolerizer8;
+package org.jesperancinha.console.consolerizer8.html;
 
 import org.apache.commons.text.StringEscapeUtils;
 

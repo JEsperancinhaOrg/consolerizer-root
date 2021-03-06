@@ -1,4 +1,7 @@
-package org.jesperancinha.console.consolerizer8;
+package org.jesperancinha.console.consolerizer.console;
+
+import org.jesperancinha.console.consolerizer.common.ConsolerizerColor;
+import org.jesperancinha.console.consolerizer.common.ConsolerizerWriter;
 
 public class ConsolerizerConsoleWriter implements ConsolerizerWriter {
 

@@ -1,10 +1,10 @@
 package org.jesperancinha.console.consolerizer.spring.boot.tester.consolerizerspringboottester;
 
-import org.jesperancinha.console.consolerizer8.ConsolerizerColor;
-import org.jesperancinha.console.consolerizer8.ConsolerizerGraphs;
-import org.jesperancinha.console.consolerizer8.HtmlComposer;
-import org.jesperancinha.console.consolerizer8.HtmlPWriter;
-import org.jesperancinha.console.consolerizer8.HtmlizerLinks;
+import org.jesperancinha.console.consolerizer.common.ConsolerizerColor;
+import org.jesperancinha.console.consolerizer.console.ConsolerizerGraphs;
+import org.jesperancinha.console.consolerizer.html.HtmlComposer;
+import org.jesperancinha.console.consolerizer.html.HtmlPWriter;
+import org.jesperancinha.console.consolerizer.html.HtmlizerLinks;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

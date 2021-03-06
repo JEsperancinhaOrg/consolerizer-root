@@ -1,9 +1,13 @@
-package org.jesperancinha.console.consolerizer;
+package org.jesperancinha.console.consolerizer.common;
+
+import org.jesperancinha.console.consolerizer.console.Consolerizer;
+import org.jesperancinha.console.consolerizer.html.Htmlizer;
 
 import java.util.Arrays;
 import java.util.List;
 
 public enum ConsolerizerColor {
+    RESET("FFFFFF", "\033[0m"),
     WHITE("FFFFFF", "\033[0m"),
     BLACK("000000", "\033[0;30m"),
     BLUE("0000AA", "\033[0;34m"),

@@ -1,6 +1,9 @@
-package org.jesperancinha.console.consolerizer;
+package org.jesperancinha.console.consolerizer8.console;
 
-public class ConsolerizerConsoleWriter implements ConsolerizerWriter{
+import org.jesperancinha.console.consolerizer8.common.ConsolerizerColor;
+import org.jesperancinha.console.consolerizer8.common.ConsolerizerWriter;
+
+public class ConsolerizerConsoleWriter implements ConsolerizerWriter {
 
     @Override
     public void printPrivateText(String text) {

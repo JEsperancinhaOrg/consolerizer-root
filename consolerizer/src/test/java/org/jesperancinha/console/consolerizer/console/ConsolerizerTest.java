@@ -1,16 +1,19 @@
-package org.jesperancinha.console.consolerizer;
+package org.jesperancinha.console.consolerizer.console;
 
+import org.jesperancinha.console.consolerizer.console.Consolerizer;
+import org.jesperancinha.console.consolerizer.console.ConsolerizerGraphs;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.jesperancinha.console.consolerizer.ConsolerizerColor.GREEN;
-import static org.jesperancinha.console.consolerizer.ConsolerizerColor.RED;
+import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.GREEN;
+import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.RED;
 
 class ConsolerizerTest {
 
     @BeforeEach
     void setUp() {
+        Consolerizer.setupFastDefault();
     }
 
     @Test
@@ -21,6 +24,11 @@ class ConsolerizerTest {
     @Test
     void testPrintDifferentColorPerSentence() {
         Consolerizer.printRawGenericLn("%sThis is green %sand this is red %sand this is green again", GREEN, RED, GREEN);
+    }
+
+    @Test
+    void testPrintRainbowLn_whenDefault_then10Chars() {
+        Consolerizer.printRainbowLn('@');
     }
 
     @AfterEach
