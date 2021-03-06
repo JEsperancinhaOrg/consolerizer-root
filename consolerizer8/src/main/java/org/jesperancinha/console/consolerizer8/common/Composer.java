@@ -16,98 +16,98 @@ public abstract class Composer<T> {
 
     public abstract T out(ConsolerizerColor consolerizerColor, String text);
 
-    public T white(String text) {
-        out(ConsolerizerColor.WHITE, text);
+    public T white(String text, String...args) {
+        out(ConsolerizerColor.WHITE, String.format(text, (Object[]) args));
         return (T) this;
     }
 
-    public T black(String text) {
-        out(ConsolerizerColor.BLACK, text);
+    public T black(String text, String...args) {
+        out(ConsolerizerColor.BLACK, String.format(text, (Object[]) args));
         return (T) this;
     }
 
-    public T blue(String text) {
-        out(ConsolerizerColor.BLUE, text);
+    public T blue(String text, String...args) {
+        out(ConsolerizerColor.BLUE, String.format(text, (Object[]) args));
         return (T) this;
     }
 
-    public T green(String text) {
-        out(ConsolerizerColor.GREEN, text);
+    public T green(String text, String...args) {
+        out(ConsolerizerColor.GREEN, String.format(text, (Object[]) args));
         return (T) this;
     }
 
-    public T cyan(String text) {
-        out(ConsolerizerColor.CYAN, text);
+    public T cyan(String text, String...args) {
+        out(ConsolerizerColor.CYAN, String.format(text, (Object[]) args));
         return (T) this;
     }
 
-    public T red(String text) {
-        out(ConsolerizerColor.RED, text);
+    public T red(String text, String...args) {
+        out(ConsolerizerColor.RED, String.format(text, (Object[]) args));
         return (T) this;
     }
 
-    public T orange(String text) {
-        out(ConsolerizerColor.ORANGE, text);
+    public T orange(String text, String...args) {
+        out(ConsolerizerColor.ORANGE, String.format(text, (Object[]) args));
         return (T) this;
     }
 
-    public T magenta(String text) {
-        out(ConsolerizerColor.MAGENTA, text);
+    public T magenta(String text, String...args) {
+        out(ConsolerizerColor.MAGENTA, String.format(text, (Object[]) args));
         return (T) this;
     }
 
-    public T brown(String text) {
-        out(ConsolerizerColor.BROWN, text);
+    public T brown(String text, String...args) {
+        out(ConsolerizerColor.BROWN, String.format(text, (Object[]) args));
         return (T) this;
     }
 
-    public T yellow(String text) {
-        out(ConsolerizerColor.YELLOW, text);
+    public T yellow(String text, String...args) {
+        out(ConsolerizerColor.YELLOW, String.format(text, (Object[]) args));
         return (T) this;
     }
 
-    public T lightGrey(String text) {
-        out(ConsolerizerColor.LIGHT_GREY, text);
+    public T lightGrey(String text, String...args) {
+        out(ConsolerizerColor.LIGHT_GREY, String.format(text, (Object[]) args));
         return (T) this;
     }
 
-    public T darkGrey(String text) {
-        out(ConsolerizerColor.DARK_GREY, text);
+    public T darkGrey(String text, String...args) {
+        out(ConsolerizerColor.DARK_GREY, String.format(text, (Object[]) args));
         return (T) this;
     }
 
-    public T brightBlue(String text) {
-        out(ConsolerizerColor.BRIGHT_BLUE, text);
+    public T brightBlue(String text, String...args) {
+        out(ConsolerizerColor.BRIGHT_BLUE, String.format(text, (Object[]) args));
         return (T) this;
     }
 
-    public T brightGreen(String text) {
-        out(ConsolerizerColor.BRIGHT_GREEN, text);
+    public T brightGreen(String text, String...args) {
+        out(ConsolerizerColor.BRIGHT_GREEN, String.format(text, (Object[]) args));
         return (T) this;
     }
 
-    public T brightCyan(String text) {
-        out(ConsolerizerColor.BRIGHT_CYAN, text);
+    public T brightCyan(String text, String...args) {
+        out(ConsolerizerColor.BRIGHT_CYAN, String.format(text, (Object[]) args));
         return (T) this;
     }
 
-    public T brightRed(String text) {
-        out(ConsolerizerColor.BRIGHT_RED, text);
+    public T brightRed(String text, String...args) {
+        out(ConsolerizerColor.BRIGHT_RED, String.format(text, (Object[]) args));
         return (T) this;
     }
 
-    public T brightMagenta(String text) {
-        out(ConsolerizerColor.BRIGHT_MAGENTA, text);
+    public T brightMagenta(String text, String...args) {
+        out(ConsolerizerColor.BRIGHT_MAGENTA, String.format(text, (Object[]) args));
         return (T) this;
     }
 
-    public T brightWhite(String text) {
-        out(ConsolerizerColor.BRIGHT_WHITE, text);
+    public T brightWhite(String text, String...args) {
+        out(ConsolerizerColor.BRIGHT_WHITE, String.format(text, (Object[]) args));
         return (T) this;
     }
 
-    public T bgOrange(String text) {
-        out(ConsolerizerColor.BG_ORANGE, text);
+    public T bgOrange(String text, String...args) {
+        out(ConsolerizerColor.BG_ORANGE, String.format(text, (Object[]) args));
         return (T) this;
     }
 

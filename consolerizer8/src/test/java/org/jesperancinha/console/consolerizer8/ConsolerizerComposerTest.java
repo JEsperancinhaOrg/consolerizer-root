@@ -27,6 +27,14 @@ class ConsolerizerComposerTest {
     }
 
     @Test
+    void testConsolerizerComposerWithVarags_whenNoSplitter_thenNiceLog() {
+        ConsolerizerComposer.out().white("The%s", "One").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
+                .blue("the").green("lazy").red("dog").toConsole();
+        ConsolerizerComposer.out().white("The").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
+                .blue("the").green("lazy").red("dog with a %s", "bone").toConsole();
+    }
+
+    @Test
     void testConsolerizerComposer_whenSplitter_thenNiceLog() {
         ConsolerizerComposer.out(" ").white("The").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
                 .blue("the").green("lazy").red("dog").toConsole();
