@@ -35,7 +35,7 @@ Consolerizer for Java 11 and above:
 <dependency>
   <groupId>org.jesperancinha.console</groupId>
   <artifactId>consolerizer</artifactId>
-  <version>1.1.0-SNAPSHOT</version>
+  <version>1.1.0</version>
 </dependency>
 ```
 
@@ -45,7 +45,7 @@ Consolerizer for Java 8:
 <dependency>
   <groupId>org.jesperancinha.console</groupId>
   <artifactId>consolerizer8</artifactId>
-  <version>1.1.0-SNAPSHOT</version>
+  <version>1.1.0</version>
 </dependency>
 ```
 
