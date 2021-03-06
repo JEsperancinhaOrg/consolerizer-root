@@ -21,7 +21,7 @@ This project offers way to seamlessly add coloured log messages in academic, stu
 ## Release notes for version 1.1.0 and before
 
 1. Rainbow Flag on HTML and Console
-2. Twitter link creation
+2. YouTube link creation
 3. Console output in different colors
 4. Unicorn line
 5. Title line
