@@ -2,6 +2,8 @@ package org.jesperancinha.console.consolerizer8;
 
 import java.util.List;
 
+import static org.apache.commons.lang3.StringUtils.repeat;
+
 public class ConsolerizerGraphs {
 
     public static String getUnicorns(int i) {
@@ -43,7 +45,7 @@ public class ConsolerizerGraphs {
                 if (k == iMiddle || k == iMiddle + 1) {
                     consolerizerWriter.printPrivateText(Consolerizer.createTitleLine(flagText, '*'));
                 } else {
-                    consolerizerWriter.printPrivateText("*".repeat(Consolerizer.titleSpread));
+                    consolerizerWriter.printPrivateText(repeat("*",Consolerizer.titleSpread));
                 }
                 consolerizerWriter.printNewLine();
             }

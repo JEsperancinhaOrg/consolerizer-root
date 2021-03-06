@@ -24,7 +24,7 @@ public class ConsolerizerInteractions {
 
     public static void performQuestion(String question, int maxFails, List<String> correctAnswers) {
         RED.printSyncGenericLn("Q: " + question + ":");
-        final List<String> correctResponses = new ArrayList<String>();
+        final List<String> correctResponses = new ArrayList<>();
         int fails = maxFails;
         while (fails-- > 0 && correctResponses.size() != correctAnswers.size()) {
             Scanner sc = new Scanner(System.in);
@@ -58,7 +58,7 @@ public class ConsolerizerInteractions {
     public static void performQuestion(String question, int maxFails, final Map<String, List<String>> correctAnswers) {
         RED.printSyncGenericLn("Q: " + question + ":");
         YELLOW.printGenericLn("NOTE: To provide an answer use a =>. Left side is the key and the right side is the value");
-        final Map<String, List<String>> correctResponses = new HashMap<>();
+        final Map<String, List<String>> correctResponses = new HashMap<String, List<String>>();
         int fails = maxFails;
         while (fails-- > 0 && correctResponses.size() != correctAnswers.size()) {
             Scanner sc = new Scanner(System.in);

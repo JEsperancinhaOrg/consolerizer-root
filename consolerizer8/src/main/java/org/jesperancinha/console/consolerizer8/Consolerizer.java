@@ -123,7 +123,7 @@ public class Consolerizer {
                     new Object[]{processMultiArrays2((String[][]) vars)});
         } else {
             for (int i = 0; i < vars.length; i++) {
-                final Object variable = vars[i];
+                Object variable = vars[i];
                 if (variable instanceof Exception) {
                     final StringWriter out = new StringWriter();
                     ((Exception) variable).printStackTrace(new PrintWriter(out));
@@ -186,7 +186,7 @@ public class Consolerizer {
     }
 
     private static void printPrivateText(String text, int typingWait, int maxLineChars) {
-        String printText = text;
+        final String printText = text;
         if (maxLineChars > 0 && printText.length() > maxLineChars) {
             printPerLine(printText, typingWait, maxLineChars);
         } else {
@@ -358,7 +358,9 @@ public class Consolerizer {
 
     static void printColor(ConsolerizerColor consolerizerColor) {
         currentColor = consolerizerColor;
-        System.out.print(consolerizerColor.getConsoleColor());
+        if(Objects.nonNull(consolerizerColor)) {
+            System.out.print(currentColor.getConsoleColor());
+        }
     }
 
     static String createTitleLineLn(Object text, char limitingChar) {
@@ -367,6 +369,13 @@ public class Consolerizer {
 
     static String createTitleLine(Object text, char limitingChar) {
         return ConsolerizerTexts.createTitleLineLn(text, limitingChar, false);
+    }
+
+    public static void printRawGenericLn(Object text, Object... args) {
+        printPrivateText(text.toString().concat("\n"), args);
+    }
+    public static void printRawGeneric(Object text, Object... args) {
+        printPrivateText(text.toString(), args);
     }
 
     public void printGenericLn(Object text, Object... args) {
