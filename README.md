@@ -88,7 +88,7 @@ gpg --keyserver hkp://keyserver.ubuntu.com --send-keys <your GPG key>
 gpg --list-keys
 export GPG_TTY=$(tty)
 mvn clean deploy -Prelease
-mvn nexus-staging:release  -Prelease
+mvn nexus-staging:release -Prelease
 ```
 ### Repository settings.xml
 
