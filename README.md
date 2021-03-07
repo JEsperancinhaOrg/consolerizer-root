@@ -50,7 +50,7 @@ Consolerizer for Java 11 and above:
 <dependency>
   <groupId>org.jesperancinha.console</groupId>
   <artifactId>consolerizer</artifactId>
-  <version>2.0.1</version>
+  <version>2.0.2</version>
 </dependency>
 ```
 
@@ -60,7 +60,7 @@ Consolerizer for Java 8:
 <dependency>
   <groupId>org.jesperancinha.console</groupId>
   <artifactId>consolerizer8</artifactId>
-  <version>2.0.1</version>
+  <version>2.0.2</version>
 </dependency>
 ```
 
@@ -69,9 +69,9 @@ Consolerizer for Java 8:
 ### Tools
 
 ```bash
-git push --delete origin 2.0.1  
-git tag --delete 2.0.1
-git tag 2.0.1
+git push --delete origin 2.0.2  
+git tag --delete 2.0.2
+git tag 2.0.2
 git push --tags
 ```
 

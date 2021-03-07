@@ -22,7 +22,7 @@ public class HtmlComposer extends Composer<HtmlComposer> {
     }
 
     @Override
-    public HtmlComposer out(ConsolerizerColor consolerizerColor, String text) {
+    public HtmlComposer out(ConsolerizerColor consolerizerColor, Object text) {
         sb.append(String.format("<span style=\"color: %s\">%s</span>", consolerizerColor.getHexColor(), text));
         sb.append(splitter);
         return this;

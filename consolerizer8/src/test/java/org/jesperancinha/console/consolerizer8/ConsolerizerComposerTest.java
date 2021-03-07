@@ -3,6 +3,7 @@ package org.jesperancinha.console.consolerizer8;
 import org.jesperancinha.console.consolerizer8.console.Consolerizer;
 import org.jesperancinha.console.consolerizer8.console.ConsolerizerComposer;
 import org.jesperancinha.console.consolerizer8.console.ConsolerizerGraphs;
+import org.jesperancinha.console.consolerizer8.utils.LeafyGreen;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -91,5 +92,19 @@ class ConsolerizerComposerTest {
                 .blue("the").green("lazy").darkGrey("dog").toConsoleLn();
         ConsolerizerComposer.out(" ").brightBlue("The").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
                 .blue("the").green("lazy").brightGreen("dog").toConsoleLn();
+    }
+
+    @Test
+    void testConsolerizerComposer_whenNewLineAndObject_thenNiceLog() {
+        final LeafyGreen leafyGreen = new LeafyGreen("Cabbage");
+        ConsolerizerComposer
+                .out(" ")
+                .green("Eating leafy greens is awesome.")
+                .brightGreen("For example, we can eat")
+                .newLine()
+                .blue(leafyGreen)
+                .newLine()
+                .yellow("and feel great afterwards!")
+                .toConsoleLn();
     }
 }

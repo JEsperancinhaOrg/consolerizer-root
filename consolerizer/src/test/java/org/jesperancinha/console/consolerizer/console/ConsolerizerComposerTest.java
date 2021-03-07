@@ -1,10 +1,9 @@
 package org.jesperancinha.console.consolerizer.console;
 
-import org.junit.jupiter.api.BeforeEach;
+import org.jesperancinha.console.consolerizer.console.utils.LeafyGreen;
 import org.junit.jupiter.api.Test;
 
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.BLUE;
-import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.GREEN;
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.MAGENTA;
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.RED;
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.RESET;
@@ -84,5 +83,19 @@ class ConsolerizerComposerTest {
                 .blue("the").green("lazy").darkGrey("dog").toConsoleLn();
         ConsolerizerComposer.out(" ").brightBlue("The").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
                 .blue("the").green("lazy").brightGreen("dog").toConsoleLn();
+    }
+
+    @Test
+    void testConsolerizerComposer_whenNewLineAndObject_thenNiceLog() {
+        final var leafyGreen = new LeafyGreen("Cabbage");
+        ConsolerizerComposer
+                .out(" ")
+                .green("Eating leafy greens is awesome.")
+                .brightGreen("For example, we can eat")
+                .newLine()
+                .blue(leafyGreen)
+                .newLine()
+                .yellow("and feel great afterwards!")
+                .toConsoleLn();
     }
 }

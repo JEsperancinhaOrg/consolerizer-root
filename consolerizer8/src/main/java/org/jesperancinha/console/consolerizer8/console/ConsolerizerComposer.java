@@ -32,7 +32,7 @@ public class ConsolerizerComposer extends Composer<ConsolerizerComposer> {
     }
 
     @Override
-    public ConsolerizerComposer out(ConsolerizerColor consolerizerColor, String text) {
+    public ConsolerizerComposer out(ConsolerizerColor consolerizerColor, Object text) {
         sb.append(consolerizerColor.getConsoleColor()).append(text).append(splitter);
         return this;
     }
