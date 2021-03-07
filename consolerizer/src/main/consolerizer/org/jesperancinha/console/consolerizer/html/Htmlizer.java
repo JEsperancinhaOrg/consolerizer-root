@@ -23,4 +23,9 @@ public class Htmlizer {
                                                 hexColor, final String text) {
         return String.format("<p style=\"margin:0; font-family: monospace; color:#%s\"><b>%s</b></p>", hexColor.toLowerCase(), text);
     }
+
+    public static String getAnchorLink(String hexColor, String text, String url) {
+        final String innerText = getPTextEscapedColor(hexColor, text);
+        return String.format("<a href=\"%s\" target=\"_blank\">%s</a>",url,innerText);
+    }
 }

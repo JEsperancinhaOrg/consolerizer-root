@@ -128,6 +128,10 @@ public enum ConsolerizerColor {
         return Htmlizer.getPBTextEscapedColor(this.hexColor, "" + text);
     }
 
+    public String getAnchorLink(Object text, String url) {
+        return Htmlizer.getAnchorLink(this.hexColor, "" + text, url);
+    }
+
     public static List<String> getConsoleRainbow() {
         return Arrays.asList(RED.getConsoleColor(), ORANGE.getConsoleColor(), YELLOW.getConsoleColor(),
                 GREEN.getConsoleColor(), BLUE.getConsoleColor(), MAGENTA.getConsoleColor());

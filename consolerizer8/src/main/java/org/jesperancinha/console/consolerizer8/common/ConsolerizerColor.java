@@ -120,6 +120,10 @@ public enum ConsolerizerColor {
         return Htmlizer.getPBTextColor(this.hexColor, "" + text);
     }
 
+    public String getAnchorLink(Object text, String url) {
+        return Htmlizer.getAnchorLink(this.hexColor, "" + text, url);
+    }
+
     public String getPBEscapedText(Object text, Object... args) {
         return getPBEscapedText(String.format("" + text, args));
     }
