@@ -18,6 +18,10 @@
 
 This project offers way to seamlessly add coloured log messages in academic, study or research projects. This is not a production ready module and shouldn't be used in a production setting. It is designed also for use in tutorials, classes, teaching and knowledge sharing.
 
+## Release notes for version 2.0.2 - 2021/03/07
+
+1. Objects and new line
+
 ## Release notes for version 2.0.1 - 2021/03/06
 
 1. Allows for String format
