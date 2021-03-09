@@ -31,6 +31,10 @@ public class ConsolerizerComposer extends Composer<ConsolerizerComposer> {
         return new ConsolerizerComposer(splitter);
     }
 
+    public static ConsolerizerComposer outSpace() {
+        return new ConsolerizerComposer(" ");
+    }
+
     @Override
     public ConsolerizerComposer out(ConsolerizerColor consolerizerColor, Object text) {
         sb.append(consolerizerColor.getConsoleColor()).append(text).append(splitter);

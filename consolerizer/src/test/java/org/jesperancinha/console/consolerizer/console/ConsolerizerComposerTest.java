@@ -98,4 +98,18 @@ class ConsolerizerComposerTest {
                 .yellow("and feel great afterwards!")
                 .toConsoleLn();
     }
+
+    @Test
+    void testConsolerizerComposerSpace_whenNewLineAndObject_thenNiceLog() {
+        final var leafyGreen = new LeafyGreen("Cabbage");
+        ConsolerizerComposer
+                .outSpace()
+                .green("Eating leafy greens is awesome.")
+                .brightGreen("For example, we can eat")
+                .newLine()
+                .blue(leafyGreen)
+                .newLine()
+                .yellow("and feel great afterwards!")
+                .toConsoleLn();
+    }
 }

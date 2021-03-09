@@ -17,6 +17,7 @@ public class ConsolerizerComposer extends Composer<ConsolerizerComposer> {
         resetConsole();
     }
 
+
     private void resetConsole() {
         System.out.print("");
         System.out.print(RESET.getConsoleColor());
@@ -29,6 +30,10 @@ public class ConsolerizerComposer extends Composer<ConsolerizerComposer> {
 
     public static ConsolerizerComposer out(final String splitter) {
         return new ConsolerizerComposer(splitter);
+    }
+
+    public static ConsolerizerComposer outSpace() {
+        return new ConsolerizerComposer(" ");
     }
 
     @Override
