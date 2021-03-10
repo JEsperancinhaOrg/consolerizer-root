@@ -11,6 +11,7 @@ import static org.jesperancinha.console.consolerizer8.common.ConsolerizerColor.B
 import static org.jesperancinha.console.consolerizer8.common.ConsolerizerColor.MAGENTA;
 import static org.jesperancinha.console.consolerizer8.common.ConsolerizerColor.RED;
 import static org.jesperancinha.console.consolerizer8.common.ConsolerizerColor.RESET;
+import static org.jesperancinha.console.consolerizer8.console.ConsolerizerComposer.title;
 
 class ConsolerizerComposerTest {
 
@@ -114,6 +115,20 @@ class ConsolerizerComposerTest {
         ConsolerizerComposer
                 .outSpace()
                 .green("Eating leafy greens is awesome.")
+                .brightGreen("For example, we can eat")
+                .newLine()
+                .blue(leafyGreen)
+                .newLine()
+                .yellow("and feel great afterwards!")
+                .toConsoleLn();
+    }
+
+    @Test
+    void testConsolerizerComposerSpaceTitle_whenNewLineAndObject_thenNiceLog() {
+        final LeafyGreen leafyGreen = new LeafyGreen("Cabbage");
+        ConsolerizerComposer
+                .outSpace()
+                .green(title("Eating leafy greens is awesome."))
                 .brightGreen("For example, we can eat")
                 .newLine()
                 .blue(leafyGreen)

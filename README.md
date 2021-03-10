@@ -21,6 +21,9 @@ This project offers way to seamlessly add coloured log messages in academic, stu
 ## Release notes for version 2.0.4 - ?
 
 1. Space initializer
+2. Title as a text option
+3. Width clipping includes color (Bug Fix)
+4. Color revision (Bug Fix)
 
 ## Release notes for version 2.0.3-SNAPSHOT - 2021/03/07
 

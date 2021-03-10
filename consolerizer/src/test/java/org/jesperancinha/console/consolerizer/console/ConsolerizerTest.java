@@ -1,7 +1,5 @@
 package org.jesperancinha.console.consolerizer.console;
 
-import org.jesperancinha.console.consolerizer.console.Consolerizer;
-import org.jesperancinha.console.consolerizer.console.ConsolerizerGraphs;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -23,6 +21,7 @@ class ConsolerizerTest {
 
     @Test
     void testPrintDifferentColorPerSentence() {
+        Consolerizer.currentColor=null;
         Consolerizer.printRawGenericLn("%sThis is green %sand this is red %sand this is green again", GREEN, RED, GREEN);
     }
 

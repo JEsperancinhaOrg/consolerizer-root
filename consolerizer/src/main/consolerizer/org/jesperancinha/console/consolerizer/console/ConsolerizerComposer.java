@@ -35,6 +35,10 @@ public class ConsolerizerComposer extends Composer<ConsolerizerComposer> {
         return new ConsolerizerComposer(" ");
     }
 
+    public static String title(Object text, Object... args) {
+        return Consolerizer.createTitleLine(String.format("" + text, args), '=');
+    }
+
     @Override
     public ConsolerizerComposer out(ConsolerizerColor consolerizerColor, Object text) {
         sb.append(consolerizerColor.getConsoleColor()).append(text).append(splitter);

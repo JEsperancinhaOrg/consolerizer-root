@@ -279,7 +279,11 @@ public class Consolerizer {
     }
 
     private static String[] getSplit(int maxLineChars, String printText) {
-        String[] split = ConsolerizerTexts.trim(printText).split("(?<=\\G.{" + maxLineChars + "})");
+        var offset = 0;
+        if (Objects.nonNull(currentColor)) {
+            offset = currentColor.getConsoleColor().length();
+        }
+        String[] split = ConsolerizerTexts.trim(printText).split("(?<=\\G.{" + maxLineChars + offset + "})");
         if (split.length > 1 && split[1].length() > maxLineChars) {
             String[] newSplit = getSplit(maxLineChars, split[1]);
             int newLength = newSplit.length + 1;
@@ -378,10 +382,12 @@ public class Consolerizer {
     }
 
     public static void printRawGenericLn(Object text, Object... args) {
+        currentColor = null;
         printPrivateText("" + text.toString().concat("\n"), args);
     }
 
     public static void printRawGeneric(Object text, Object... args) {
+        currentColor = null;
         printPrivateText("" + text.toString(), args);
     }
 
@@ -424,5 +430,15 @@ public class Consolerizer {
     public void printInstanceLn(Object text) {
         printColor(consolerizerColor);
         printGenericLn("This is an instance of type %s with hash %s", text.getClass().getCanonicalName(), text.hashCode());
+    }
+
+    public static int getCalculatedStringSize(String test) {
+        final var newTest = test.replaceAll("(\033|\u001b)\\[(\\d)*((;|:)*(\\d)*){0,5}m", "");
+        return newTest.length();
+    }
+
+    public static int getCalculatedOffSetSize(String test) {
+        final var newTest = test.replaceAll("(\033|\u001b)\\[(\\d)*((;|:)*(\\d)*){0,5}m", "");
+        return test.length() - newTest.length();
     }
 }
