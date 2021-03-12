@@ -128,4 +128,32 @@ class ConsolerizerComposerTest {
                 .yellow("and feel great afterwards!")
                 .toConsoleLn();
     }
+
+    @Test
+    void testConsolerizerComposerSpaceTitleLn_whenNewLineAndObject_thenNiceLog() {
+        final LeafyGreen leafyGreen = new LeafyGreen("Cabbage");
+        ConsolerizerComposer
+                .outSpace()
+                .ln()
+                .green(title("Eating leafy greens is awesome."))
+                .brightGreen("For example, we can eat")
+                .blue(leafyGreen)
+                .yellow("and feel great afterwards!")
+                .black()
+                .bgYellow("It's good!")
+                .red()
+                .bgYellow("It's good!")
+                .green()
+                .bgYellow("It's good!")
+                .none()
+                .green(title("Eating leafy greens is awesome."))
+                .brightGreen("For example, we can eat")
+                .blue(leafyGreen)
+                .yellow("and feel great afterwards!")
+                .black()
+                .bgYellow("It's good!")
+                .red()
+                .bgYellow("It's good!")
+                .toConsoleLn();
+    }
 }

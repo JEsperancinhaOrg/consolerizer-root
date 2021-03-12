@@ -39,9 +39,23 @@ public class ConsolerizerComposer extends Composer<ConsolerizerComposer> {
         return Consolerizer.createTitleLine(String.format("" + text, args), '=');
     }
 
+    public ConsolerizerComposer ln() {
+        this.appender = "\n";
+        return this;
+    }
+
+    public ConsolerizerComposer none() {
+        this.appender = "";
+        return this;
+    }
+
+
     @Override
     public ConsolerizerComposer out(ConsolerizerColor consolerizerColor, Object text) {
-        sb.append(consolerizerColor.getConsoleColor()).append(text).append(splitter);
+        sb.append(consolerizerColor.getConsoleColor()).append(text);
+        if (!text.toString().endsWith("\n")) {
+            sb.append(splitter);
+        }
         return this;
     }
 

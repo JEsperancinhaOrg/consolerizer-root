@@ -18,14 +18,18 @@
 
 This project offers way to seamlessly add coloured log messages in academic, study or research projects. This is not a production ready module and shouldn't be used in a production setting. It is designed also for use in tutorials, classes, teaching and knowledge sharing.
 
-## Release notes for version 2.0.4 - ?
+## Release notes for version 2.0.4 - 2021/03/12
 
 1. Space initializer
 2. Title as a text option
 3. Width clipping includes color (Bug Fix)
 4. Color revision (Bug Fix)
+5. ln included in color
+6. none to deactivate
 
-## Release notes for version 2.0.3-SNAPSHOT - 2021/03/07
+NOTE: Due to all issues regarding support to Java 8 it has become clear that further development of module consolerizer8 for Java 8 is not a necessity anymore.
+
+## Release notes for version 2.0.3 - 2021/03/07
 
 1. Colored Anchors
 
@@ -65,17 +69,17 @@ Consolerizer for Java 11 and above:
 <dependency>
   <groupId>org.jesperancinha.console</groupId>
   <artifactId>consolerizer</artifactId>
-  <version>2.0.3-SNAPSHOT</version>
+  <version>2.0.4</version>
 </dependency>
 ```
 
-Consolerizer for Java 8:
+Consolerizer for Java 8 (Discontinued):
 
 ```xml
 <dependency>
   <groupId>org.jesperancinha.console</groupId>
   <artifactId>consolerizer8</artifactId>
-  <version>2.0.3-SNAPSHOT</version>
+  <version>2.0.3</version>
 </dependency>
 ```
 
@@ -84,9 +88,9 @@ Consolerizer for Java 8:
 ### Tools
 
 ```bash
-git push --delete origin 2.0.3-SNAPSHOT  
-git tag --delete 2.0.3-SNAPSHOT
-git tag 2.0.3-SNAPSHOT
+git push --delete origin 2.0.4  
+git tag --delete 2.0.4
+git tag 2.0.4
 git push --tags
 ```
 

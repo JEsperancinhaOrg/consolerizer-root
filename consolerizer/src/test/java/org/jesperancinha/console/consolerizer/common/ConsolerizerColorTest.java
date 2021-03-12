@@ -3,6 +3,7 @@ package org.jesperancinha.console.consolerizer.common;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.BLACK;
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.GREEN;
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.RED;
 import static org.jesperancinha.console.consolerizer.console.Consolerizer.getCalculatedOffSetSize;
@@ -33,6 +34,16 @@ class ConsolerizerColorTest {
             final ConsolerizerColor value = ConsolerizerColor.values()[i];
             final int calculatedSize = getCalculatedOffSetSize(value.getConsoleColor().concat("A very long string"));
             assertThat(calculatedSize).isEqualTo(value.getConsoleColor().length());
+        }
+    }
+
+    @Test
+    void testColors_whenIterating_thenShowGoodColors(){
+        for (int i = 0; i < ConsolerizerColor.values().length; i++) {
+            final ConsolerizerColor value = ConsolerizerColor.values()[i];
+            System.out.print(BLACK.getConsoleColor());
+            System.out.print(value.getConsoleColor());
+            System.out.println(value.name());
         }
     }
 }

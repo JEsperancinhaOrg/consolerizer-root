@@ -6,7 +6,7 @@
 
     <artifactId>consolerizer-root</artifactId>
     <groupId>org.jesperancinha.console</groupId>
-    <version>2.0.3-SNAPSHOT</version>
+    <version>2.0.4</version>
 
     <name>Consolerizer parent POM</name>
     <description>Consolerizer parent POM: This project offers way to seamlessly add coloured log messages in academic,
@@ -168,7 +168,7 @@
 
     <modules>
         <module>consolerizer</module>
-        <module>consolerizer8</module>
+<!--        <module>consolerizer8</module>-->
 <!--        <module>consolerizer-spring-boot-tester</module>-->
     </modules>
 
