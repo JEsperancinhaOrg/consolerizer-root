@@ -8,7 +8,9 @@ public abstract class Composer<T> {
 
     protected String appender;
 
-    protected final StringBuffer sb = new StringBuffer();
+    protected boolean autoWrite;
+
+    protected final StringBuilder sb = new StringBuilder();
 
     protected Composer() {
         this.splitter = "";
@@ -24,6 +26,16 @@ public abstract class Composer<T> {
 
     public T out(Object text) {
         sb.append(text);
+        return (T) this;
+    }
+
+    public T autoWrite() {
+        this.autoWrite = true;
+        return (T) this;
+    }
+
+    public T endWrite() {
+        this.autoWrite = false;
         return (T) this;
     }
 
@@ -128,7 +140,7 @@ public abstract class Composer<T> {
     }
 
     private void processText(Object[] args, ConsolerizerColor consolerizerColor) {
-        if(args.length==0){
+        if (args.length == 0) {
             out(consolerizerColor);
         } else {
             Object text = args[0];

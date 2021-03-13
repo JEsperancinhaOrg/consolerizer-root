@@ -4,6 +4,8 @@ import org.jesperancinha.console.consolerizer.common.Composer;
 import org.jesperancinha.console.consolerizer.common.ConsolerizerColor;
 
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.RESET;
+import static org.jesperancinha.console.consolerizer.console.Consolerizer.printRawGeneric;
+import static org.jesperancinha.console.consolerizer.console.Consolerizer.printRawGenericLn;
 
 public class ConsolerizerComposer extends Composer<ConsolerizerComposer> {
 
@@ -56,6 +58,10 @@ public class ConsolerizerComposer extends Composer<ConsolerizerComposer> {
         if (!text.toString().endsWith("\n")) {
             sb.append(splitter);
         }
+        if (autoWrite) {
+            toConsole();
+            sb.setLength(0);
+        }
         return this;
     }
 
@@ -66,11 +72,12 @@ public class ConsolerizerComposer extends Composer<ConsolerizerComposer> {
 
     public void toConsole() {
         Consolerizer.currentColor = null;
-        Consolerizer.printRawGeneric(toString());
+        printRawGeneric(toString(), false);
     }
 
     public void toConsoleLn() {
         Consolerizer.currentColor = null;
-        Consolerizer.printRawGenericLn(toString());
+        final String text = toString();
+        printRawGenericLn(text, false);
     }
 }

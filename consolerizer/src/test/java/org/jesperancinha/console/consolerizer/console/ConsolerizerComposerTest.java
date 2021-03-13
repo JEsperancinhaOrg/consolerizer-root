@@ -156,4 +156,32 @@ class ConsolerizerComposerTest {
                 .bgYellow("It's good!")
                 .toConsoleLn();
     }
+
+    @Test
+    void testConsolerizerComposerTitleArguments_whenNewLineAndString_thenNiceLog() {
+        ConsolerizerComposer
+                .outSpace()
+                .ln()
+                .green(title("Eating leafy greens is awesome. Let's eat a %s!", "org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration$TomcatWebServerFactoryCustomizerConfiguration"))
+                .toConsoleLn();
+    }
+
+    @Test
+    void testConsolerizerComposerAutoWrite_whenNewLineAndString_thenNiceLog() {
+        ConsolerizerComposer
+                .outSpace()
+                .ln()
+                .autoWrite()
+                .green(title("Eating leafy greens is awesome. Let's eat a %s!", "org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration$TomcatWebServerFactoryCustomizerConfiguration"))
+                .none()
+                .blue("Gotcha!")
+                .yellow("No explicit output needed")
+                .ln()
+                .red("Tomato!")
+                .red("Bell Peppers!")
+                .none()
+                .green("This is all")
+                .black()
+                .bgYellow("Tomato Soup!");
+    }
 }

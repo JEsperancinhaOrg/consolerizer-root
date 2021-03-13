@@ -22,7 +22,7 @@ class ConsolerizerTest {
     @Test
     void testPrintDifferentColorPerSentence() {
         Consolerizer.currentColor=null;
-        Consolerizer.printRawGenericLn("%sThis is green %sand this is red %sand this is green again", GREEN, RED, GREEN);
+        Consolerizer.printRawGenericLn("%sThis is green %sand this is red %sand this is green again", true, GREEN, RED, GREEN);
     }
 
     @Test

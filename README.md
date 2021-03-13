@@ -18,6 +18,12 @@
 
 This project offers way to seamlessly add coloured log messages in academic, study or research projects. This is not a production ready module and shouldn't be used in a production setting. It is designed also for use in tutorials, classes, teaching and knowledge sharing.
 
+## Release notes for version 2.0.5 - 2021/03/13
+
+1. Long Title fix
+2. AutoWrite to Console -> No need to call `toConsole` methods
+3. Keep everything cached until `toConsole` -> You need to call `toConsole`
+
 ## Release notes for version 2.0.4 - 2021/03/12
 
 1. Space initializer
@@ -69,7 +75,7 @@ Consolerizer for Java 11 and above:
 <dependency>
   <groupId>org.jesperancinha.console</groupId>
   <artifactId>consolerizer</artifactId>
-  <version>2.0.4</version>
+  <version>2.0.5</version>
 </dependency>
 ```
 
@@ -88,9 +94,9 @@ Consolerizer for Java 8 (Discontinued):
 ### Tools
 
 ```bash
-git push --delete origin 2.0.4  
-git tag --delete 2.0.4
-git tag 2.0.4
+git push --delete origin 2.0.5  
+git tag --delete 2.0.5
+git tag 2.0.5
 git push --tags
 ```
 

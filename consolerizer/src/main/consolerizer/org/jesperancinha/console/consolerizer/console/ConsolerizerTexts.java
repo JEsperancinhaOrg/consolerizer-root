@@ -3,10 +3,13 @@ package org.jesperancinha.console.consolerizer.console;
 public class ConsolerizerTexts {
 
     static String createTitleLineLn(Object text, char limitingChar, boolean newLine) {
-        final String fullText = text.toString();
+        final var fullText = text.toString();
+        if (fullText.length() >= Consolerizer.titleSpread) {
+            return fullText;
+        }
         var remaining = Consolerizer.titleSpread - fullText.length() - 2;
         var padding = (int) Math.ceil(remaining / 2f);
-        final String substring = new String(new char[padding]).replace('\0', limitingChar)
+        final var substring = new String(new char[padding]).replace('\0', limitingChar)
                 .concat(" ")
                 .concat(fullText)
                 .concat(" ")

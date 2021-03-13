@@ -95,7 +95,7 @@ public class Consolerizer {
 
     public static void printRandomColorGeneric(String text, Object... args) {
         printColor(ConsolerizerColor.getRandomColor());
-        printPrivateText(text, args);
+        printPrivateText(text, true, args);
     }
 
     public void printColorText(final ConsolerizerColor consolerizerColor, String text) {
@@ -110,23 +110,23 @@ public class Consolerizer {
 
     public void printText(String text, Object... vars) {
         printColor(consolerizerColor);
-        printPrivateText(text, vars);
+        printPrivateText(text, true, vars);
     }
 
     static void printPrivateText(Object text) {
         if (blackAndWhite) {
             printColor(WHITE);
         }
-        printPrivateText(text.toString(), typingWaitGlobal, maxLineCharsGlobal);
+        printPrivateText(text.toString(), typingWaitGlobal, maxLineCharsGlobal, true);
     }
 
-    private static void printPrivateText(String text, Object... vars) {
+    private static void printPrivateText(String text, boolean newLineLimit, Object... vars) {
         if (blackAndWhite) {
             printColor(WHITE);
         }
         if (vars instanceof String[][]) {
             printPrivateText(text, typingWaitGlobal, maxLineCharsGlobal,
-                    new Object[]{processMultiArrays2((String[][]) vars)});
+                    newLineLimit, new Object[]{processMultiArrays2((String[][]) vars)});
         } else {
             for (int i = 0; i < vars.length; i++) {
                 var variable = vars[i];
@@ -179,7 +179,7 @@ public class Consolerizer {
                             .concat("]"));
                 }
             }
-            printPrivateText(text, typingWaitGlobal, maxLineCharsGlobal, vars);
+            printPrivateText(text, typingWaitGlobal, maxLineCharsGlobal, newLineLimit, vars);
         }
     }
 
@@ -191,10 +191,10 @@ public class Consolerizer {
                 .concat("]");
     }
 
-    private static void printPrivateText(String text, int typingWait, int maxLineChars) {
+    private static void printPrivateText(String text, int typingWait, int maxLineChars, boolean newLineLimit) {
         var printText = text;
         if (maxLineChars > 0 && printText.length() > maxLineChars) {
-            printPerLine(printText, typingWait, maxLineChars);
+            printPerLine(printText, typingWait, maxLineChars, newLineLimit);
         } else {
             printColor(currentColor);
             for (int i = 0; i < printText.length(); i++) {
@@ -219,7 +219,13 @@ public class Consolerizer {
         }
     }
 
-    private static void printPerLine(String printText, int typingWait, int maxLineChars) {
+    /**
+     * @param printText
+     * @param typingWait
+     * @param maxLineChars
+     * @param newLineLimit When true, it means that the last line that goes over the limit gets new line char.
+     */
+    private static void printPerLine(String printText, int typingWait, int maxLineChars, boolean newLineLimit) {
         final List<List<String>> collect = Arrays.stream(printText.split("\n"))
                 .map(paragraph -> Arrays.stream(getSplit(maxLineChars, paragraph))
                         .map(ConsolerizerTexts::trim)
@@ -227,34 +233,41 @@ public class Consolerizer {
                 .collect(Collectors.toList());
         for (List<String> list : collect) {
             for (String line : list) {
-                Arrays.stream(line.split("\n"))
-                        .forEach(subLine -> {
-                            for (int i = 0; i < subLine.length(); i++) {
-                                if (typingWait > 0) {
-                                    try {
-                                        sleep(typingWait);
-                                    } catch (InterruptedException e) {
-                                        e.printStackTrace();
-                                    }
-                                }
-                                printColor(currentColor);
-                                final char c = subLine.charAt(i);
-                                System.out.print(c);
-                                if (c == '\n') {
-                                    printColor(currentColor);
-                                }
+                final var split = line.split("\n");
+                for (int j = 0; j < split.length; j++) {
+                    final int maxIndex = split.length - 1;
+                    final var subLine = split[j];
+                    for (int i = 0; i < subLine.length(); i++) {
+                        if (typingWait > 0) {
+                            try {
+                                sleep(typingWait);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
                             }
-                            printNewLine();
-                        });
+                        }
+                        printColor(currentColor);
+                        final char c = subLine.charAt(i);
+                        System.out.print(c);
+                        if (c == '\n') {
+                            printColor(currentColor);
+                        }
+                    }
+                    if (newLineLimit && j == maxIndex || j < maxIndex) {
+                        printNewLine();
+                    }
+                }
             }
+        }
+        if (printText.charAt(printText.length() - 1) == '\n') {
+            printNewLine();
         }
     }
 
-    private static void printPrivateText(String text, int typingWait, int maxLineChars, final Object... vars) {
+    private static void printPrivateText(String text, int typingWait, int maxLineChars, boolean newLineLimit, final Object... vars) {
         var newText = String.format(text, vars);
         var printText = newText;
         if (maxLineChars > 0) {
-            printPerLine(printText, typingWait, maxLineChars);
+            printPerLine(printText, typingWait, maxLineChars, newLineLimit);
         } else {
             for (int i = 0; i < printText.length(); i++) {
                 if (typingWait > 0) {
@@ -381,18 +394,18 @@ public class Consolerizer {
         return ConsolerizerTexts.createTitleLineLn(text, limitingChar, false);
     }
 
-    public static void printRawGenericLn(Object text, Object... args) {
+    public static void printRawGenericLn(Object text, boolean newLineLimit, Object... args) {
         currentColor = null;
-        printPrivateText("" + text.toString().concat("\n"), args);
+        printPrivateText("" + text.toString().concat("\n"), newLineLimit, args);
     }
 
-    public static void printRawGeneric(Object text, Object... args) {
+    public static void printRawGeneric(Object text, boolean newLineLimit, Object... args) {
         currentColor = null;
-        printPrivateText("" + text.toString(), args);
+        printPrivateText("" + text.toString(), newLineLimit, args);
     }
 
-    public void printGenericLn(Object text, Object... args) {
-        printGeneric(text.toString().concat("\n"), args);
+    public void printGenericLn(Object text, boolean newLineLimit, Object... args) {
+        printGeneric(text.toString().concat("\n"), newLineLimit, args);
     }
 
     public void printGenericLn(Object text) {
@@ -404,9 +417,9 @@ public class Consolerizer {
         printPrivateText(text.toString());
     }
 
-    public void printGeneric(Object text, Object... args) {
+    public void printGeneric(Object text, boolean newLineLimit, Object... args) {
         printColor(consolerizerColor);
-        printPrivateText(text.toString(), args);
+        printPrivateText(text.toString(), newLineLimit, args);
     }
 
     public void printGenericTitleLn(Object text, Object... args) {
@@ -422,14 +435,14 @@ public class Consolerizer {
 
     public void printThrowableAndExit(Throwable e) {
         printColor(consolerizerColor);
-        printGenericLn("Ooops! This should not have happened. Check your system! -> %s", e);
-        printGenericLn("Check if there is a prepare.sh script and if you ran it.", e);
+        printGenericLn("Ooops! This should not have happened. Check your system! -> %s", true, e);
+        printGenericLn("Check if there is a prepare.sh script and if you ran it.", true, e);
         System.exit(1);
     }
 
     public void printInstanceLn(Object text) {
         printColor(consolerizerColor);
-        printGenericLn("This is an instance of type %s with hash %s", text.getClass().getCanonicalName(), text.hashCode());
+        printGenericLn("This is an instance of type %s with hash %s", true, text.getClass().getCanonicalName(), text.hashCode());
     }
 
     public static int getCalculatedStringSize(String test) {

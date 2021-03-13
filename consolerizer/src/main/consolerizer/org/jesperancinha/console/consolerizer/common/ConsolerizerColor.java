@@ -60,12 +60,12 @@ public enum ConsolerizerColor {
     }
 
     public void printGenericLn(Object text, Object... args) {
-        colorManager.printGenericLn(text, args);
+        colorManager.printGenericLn(text, true, args);
     }
 
     synchronized
     public void printSyncGenericLn(Object text, Object... args) {
-        colorManager.printGenericLn(text, args);
+        colorManager.printGenericLn(text, true, args);
     }
 
     public void printGenericLn(Object text) {
@@ -82,7 +82,7 @@ public enum ConsolerizerColor {
     }
 
     public void printGeneric(Object text, Object... args) {
-        colorManager.printGeneric(text, args);
+        colorManager.printGeneric(text, true, args);
     }
 
     public void printGenericTitleLn(Object text, Object... args) {
