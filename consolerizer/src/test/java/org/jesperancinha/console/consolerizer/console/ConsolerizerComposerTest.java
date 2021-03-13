@@ -1,7 +1,10 @@
 package org.jesperancinha.console.consolerizer.console;
 
 import org.jesperancinha.console.consolerizer.console.utils.LeafyGreen;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
+import java.io.File;
 
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.BLUE;
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.MAGENTA;
@@ -10,6 +13,14 @@ import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.RE
 import static org.jesperancinha.console.consolerizer.console.ConsolerizerComposer.title;
 
 class ConsolerizerComposerTest {
+
+    @BeforeAll
+    public static void setUp() {
+        final var file = new File("/tmp/out.txt");
+        if (file.exists()) {
+            file.delete();
+        }
+    }
 
     @Test
     void testConsolerizerComposer_whenNoSplitter_thenNiceLog() {
@@ -172,6 +183,7 @@ class ConsolerizerComposerTest {
                 .outSpace()
                 .ln()
                 .autoWrite()
+                .file("/tmp/out.txt")
                 .green(title("Eating leafy greens is awesome. Let's eat a %s!", "org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration$TomcatWebServerFactoryCustomizerConfiguration"))
                 .none()
                 .blue("Gotcha!")
@@ -183,5 +195,28 @@ class ConsolerizerComposerTest {
                 .green("This is all")
                 .black()
                 .bgYellow("Tomato Soup!");
+    }
+
+    @Test
+    void testConsolerizerComposerAutoWriteTitle_whenNewLineAndString_thenNiceLog() {
+        ConsolerizerComposer.outSpace()
+                .ln()
+                .black()
+                .bgOrange("1. postProcessBeanFactory")
+                .red(title("This is phase BeanFactoryPostProcessor"))
+                .blue("This is bean %s", "beanFactory")
+                .toConsoleLn();
+    }
+
+    @Test
+    void testConsolerizerComposerAutoWriteFile_whenNewLineAndString_thenNiceLog() {
+        ConsolerizerComposer.outSpace()
+                .file("/tmp/out.txt")
+                .ln()
+                .black()
+                .bgOrange("1. postProcessBeanFactory")
+                .red(title("This is phase BeanFactoryPostProcessor"))
+                .blue("This is bean %s", "beanFactory")
+                .toConsoleLn();
     }
 }

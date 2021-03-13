@@ -1,5 +1,6 @@
 package org.jesperancinha.console.consolerizer.common;
 
+import java.io.File;
 import java.util.Arrays;
 
 public abstract class Composer<T> {
@@ -11,6 +12,8 @@ public abstract class Composer<T> {
     protected boolean autoWrite;
 
     protected final StringBuilder sb = new StringBuilder();
+
+    protected File file;
 
     protected Composer() {
         this.splitter = "";
@@ -26,6 +29,16 @@ public abstract class Composer<T> {
 
     public T out(Object text) {
         sb.append(text);
+        return (T) this;
+    }
+
+    public T file(final String fileName) {
+        this.file = new File(fileName);
+        return (T) this;
+    }
+
+    public T file() {
+        this.file = null;
         return (T) this;
     }
 

@@ -24,6 +24,7 @@ public class Consolerizer {
     private final static int RAINBOW_LINE_CHARS = 10;
     private final static int TITLE_SPREAD = 150;
     private final static ConsolerizerColor CON_COLOR_DEFAULT = BRIGHT_WHITE;
+    public static final String COLOR_REGEX = "(\033|\u001b)\\[(\\d)*((;|:)*(\\d)*){0,5}m";
     public static ConsolerizerColor currentColor;
 
     private int typingWait;
@@ -231,7 +232,9 @@ public class Consolerizer {
                         .map(ConsolerizerTexts::trim)
                         .collect(Collectors.toList()))
                 .collect(Collectors.toList());
-        for (List<String> list : collect) {
+        final var maxListI = collect.size() - 1;
+        for (int k = 0; k < collect.size(); k++) {
+            final var list = collect.get(k);
             for (String line : list) {
                 final var split = line.split("\n");
                 for (int j = 0; j < split.length; j++) {
@@ -252,7 +255,7 @@ public class Consolerizer {
                             printColor(currentColor);
                         }
                     }
-                    if (newLineLimit && j == maxIndex || j < maxIndex) {
+                    if (newLineLimit && j == maxIndex && k == maxListI || j < maxIndex || k < maxListI) {
                         printNewLine();
                     }
                 }
@@ -446,12 +449,12 @@ public class Consolerizer {
     }
 
     public static int getCalculatedStringSize(String test) {
-        final var newTest = test.replaceAll("(\033|\u001b)\\[(\\d)*((;|:)*(\\d)*){0,5}m", "");
+        final var newTest = test.replaceAll(COLOR_REGEX, "");
         return newTest.length();
     }
 
     public static int getCalculatedOffSetSize(String test) {
-        final var newTest = test.replaceAll("(\033|\u001b)\\[(\\d)*((;|:)*(\\d)*){0,5}m", "");
+        final var newTest = test.replaceAll(COLOR_REGEX, "");
         return test.length() - newTest.length();
     }
 }
