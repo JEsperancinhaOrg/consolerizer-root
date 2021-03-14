@@ -26,6 +26,6 @@ public class Htmlizer {
 
     public static String getAnchorLink(String hexColor, String text, String url) {
         final String innerText = getPTextEscapedColor(hexColor, text);
-        return String.format("<a href=\"%s\" target=\"_blank\">%s</a>",url,innerText);
+        return String.format("<a href=\"%s\" target=\"_blank\">%s</a>", url, innerText);
     }
 }

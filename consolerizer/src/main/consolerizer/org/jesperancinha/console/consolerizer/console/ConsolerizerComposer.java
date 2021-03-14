@@ -7,7 +7,6 @@ import java.io.BufferedOutputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
@@ -28,10 +27,18 @@ public class ConsolerizerComposer extends Composer<ConsolerizerComposer> {
         resetConsole();
     }
 
+    /**
+     * Defaults:
+     * 1. Reset console color
+     * 2. Work in ln mode
+     * 3. Autowrite to save in cache
+     */
     private void resetConsole() {
         System.out.print("");
         System.out.print(RESET.getConsoleColor());
         System.out.print("");
+        ln();
+        autoWrite();
     }
 
     public static ConsolerizerComposer out() {

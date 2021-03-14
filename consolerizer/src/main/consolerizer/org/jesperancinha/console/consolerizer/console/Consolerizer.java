@@ -127,7 +127,7 @@ public class Consolerizer {
         }
         if (vars instanceof String[][]) {
             printPrivateText(text, typingWaitGlobal, maxLineCharsGlobal,
-                    newLineLimit, new Object[]{processMultiArrays2((String[][]) vars)});
+                    newLineLimit, processMultiArrays2((String[][]) vars));
         } else {
             for (int i = 0; i < vars.length; i++) {
                 var variable = vars[i];
@@ -261,7 +261,7 @@ public class Consolerizer {
                 }
             }
         }
-        if (printText.charAt(printText.length() - 1) == '\n') {
+        if (printText.length() > 0 && printText.charAt(printText.length() - 1) == '\n') {
             printNewLine();
         }
     }

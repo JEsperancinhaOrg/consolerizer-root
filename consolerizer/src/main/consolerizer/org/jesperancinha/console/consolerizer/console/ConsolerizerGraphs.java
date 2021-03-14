@@ -28,6 +28,7 @@ public class ConsolerizerGraphs {
         printRainbowFlag(flagText, new ConsolerizerConsoleWriter());
 
     }
+
     public static void printRainbowFlag(String flagText, ConsolerizerWriter consolerizerWriter) {
         int heightPerColorBar = (int) ((double) (Consolerizer.titleSpread) * 10d / 19d) / 6 / 4;
         heightPerColorBar = heightPerColorBar <= 0 ?

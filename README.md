@@ -18,6 +18,14 @@
 
 This project offers way to seamlessly add coloured log messages in academic, study or research projects. This is not a production ready module and shouldn't be used in a production setting. It is designed also for use in tutorials, classes, teaching and knowledge sharing.
 
+## Release notes for version 2.0.7 - 2021/03/14
+
+1. Reset console color
+2. Work in ln mode
+3. Auto-write to save in cache
+4. More background colors
+5. Colors revisited
+
 ## Release notes for version 2.0.6 - 2021/03/13
 
 1. File output
@@ -80,7 +88,7 @@ Consolerizer for Java 11 and above:
 <dependency>
   <groupId>org.jesperancinha.console</groupId>
   <artifactId>consolerizer</artifactId>
-  <version>2.0.6</version>
+  <version>2.0.7</version>
 </dependency>
 ```
 
@@ -99,9 +107,9 @@ Consolerizer for Java 8 (Discontinued):
 ### Tools
 
 ```bash
-git push --delete origin 2.0.6  
-git tag --delete 2.0.6
-git tag 2.0.6
+git push --delete origin 2.0.7  
+git tag --delete 2.0.7
+git tag 2.0.7
 git push --tags
 ```
 

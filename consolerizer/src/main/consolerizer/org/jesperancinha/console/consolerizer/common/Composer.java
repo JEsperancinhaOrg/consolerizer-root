@@ -152,6 +152,31 @@ public abstract class Composer<T> {
         return (T) this;
     }
 
+    public T bgMagenta(Object... args) {
+        processText(args, ConsolerizerColor.BG_MAGENTA);
+        return (T) this;
+    }
+
+    public T bgGreen(Object... args) {
+        processText(args, ConsolerizerColor.BG_GREEN);
+        return (T) this;
+    }
+
+    public T bgRed(Object... args) {
+        processText(args, ConsolerizerColor.BG_RED);
+        return (T) this;
+    }
+
+    public T bgBlue(Object... args) {
+        processText(args, ConsolerizerColor.BG_BLUE);
+        return (T) this;
+    }
+
+    public T bgCyan(Object... args) {
+        processText(args, ConsolerizerColor.BG_CYAN);
+        return (T) this;
+    }
+
     private void processText(Object[] args, ConsolerizerColor consolerizerColor) {
         if (args.length == 0) {
             out(consolerizerColor);
