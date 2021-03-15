@@ -171,10 +171,10 @@ public class Consolerizer {
                 } else if (variable instanceof String[][]) {
                     vars[i] = processMultiArrays2((String[][]) vars[i]);
                 } else if (variable instanceof String[]) {
-                    vars[i] = "[".concat(String.join(",", (String[]) variable))
+                    vars[i] = "[" .concat(String.join(",", (String[]) variable))
                             .concat("]");
                 } else if (variable instanceof int[]) {
-                    vars[i] = "[".concat(IntStream.of((int[]) variable)
+                    vars[i] = "[" .concat(IntStream.of((int[]) variable)
                             .mapToObj(Integer::toString)
                             .collect(joining(","))
                             .concat("]"));
@@ -185,8 +185,8 @@ public class Consolerizer {
     }
 
     private static String processMultiArrays2(String[][] vars) {
-        return "[".concat(Arrays.stream(vars)
-                .flatMap(x -> Stream.of("[".concat(String.join(",", x))
+        return "[" .concat(Arrays.stream(vars)
+                .flatMap(x -> Stream.of("[" .concat(String.join(",", x))
                         .concat("]")))
                 .collect(joining(",")))
                 .concat("]");

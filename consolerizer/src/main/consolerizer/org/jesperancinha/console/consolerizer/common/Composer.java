@@ -3,6 +3,8 @@ package org.jesperancinha.console.consolerizer.common;
 import java.io.File;
 import java.util.Arrays;
 
+import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.RESET;
+
 public abstract class Composer<T> {
 
     protected final String splitter;
@@ -49,6 +51,11 @@ public abstract class Composer<T> {
 
     public T endWrite() {
         this.autoWrite = false;
+        return (T) this;
+    }
+
+    public T reset() {
+        processText(new String[]{""}, RESET);
         return (T) this;
     }
 
@@ -180,6 +187,8 @@ public abstract class Composer<T> {
     private void processText(Object[] args, ConsolerizerColor consolerizerColor) {
         if (args.length == 0) {
             out(consolerizerColor);
+        } else if (args.length == 1 && "" .equals(args[0])) {
+            out(consolerizerColor, args[0]);
         } else {
             Object text = args[0];
             final Object[] objects = Arrays.copyOfRange(args, 1, args.length);

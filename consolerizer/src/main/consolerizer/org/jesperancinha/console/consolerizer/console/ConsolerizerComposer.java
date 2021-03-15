@@ -57,6 +57,10 @@ public class ConsolerizerComposer extends Composer<ConsolerizerComposer> {
         return Consolerizer.createTitleLine(String.format("" + text, args), '=');
     }
 
+    public static String quote(Object text, Object... args) {
+        return String.format(("\"" + text).concat("\""), args);
+    }
+
     public ConsolerizerComposer ln() {
         this.appender = "\n";
         return this;
@@ -67,11 +71,10 @@ public class ConsolerizerComposer extends Composer<ConsolerizerComposer> {
         return this;
     }
 
-
     @Override
     public ConsolerizerComposer out(ConsolerizerColor consolerizerColor, Object text) {
         sb.append(consolerizerColor.getConsoleColor()).append(text);
-        if (!text.toString().endsWith("\n")) {
+        if (!"".equals(text) && !text.toString().endsWith("\n")) {
             sb.append(splitter);
         }
         if (Objects.nonNull(file)) {

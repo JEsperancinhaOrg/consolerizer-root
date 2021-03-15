@@ -56,9 +56,9 @@ class ConsolerizerComposerTest {
 
     @Test
     void testConsolerizerComposer_whenSplitterLn_thenNiceLog() {
-        ConsolerizerComposer.out(" ").white("The").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
+        ConsolerizerComposer.out(" ").none().white("The").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
                 .blue("the").green("lazy").bgOrange("dog").build().toConsoleLn();
-        ConsolerizerComposer.out(" ").brown("The").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
+        ConsolerizerComposer.out(" ").none().brown("The").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
                 .blue("the").green("lazy").magenta("dog").toConsoleLn();
     }
 
@@ -203,6 +203,7 @@ class ConsolerizerComposerTest {
                 .ln()
                 .black()
                 .bgOrange("1. postProcessBeanFactory")
+                .reset()
                 .red(title("This is phase BeanFactoryPostProcessor"))
                 .blue("This is bean %s", "beanFactory")
                 .toConsoleLn();
@@ -215,6 +216,7 @@ class ConsolerizerComposerTest {
                 .ln()
                 .black()
                 .bgOrange("1. postProcessBeanFactory")
+                .reset()
                 .red(title("This is phase BeanFactoryPostProcessor"))
                 .blue("This is bean %s", "beanFactory")
                 .toConsoleLn();
@@ -232,5 +234,35 @@ class ConsolerizerComposerTest {
                 .bgRed("Stayin' Alive")
                 .bgGreen("Hah")
                 .blue("from: http://youtube.com/watch?v=I_izvAbhExY");
+    }
+
+    @Test
+    void testConsolerizerComposeReset_whenNewLineAndString_thenNiceLog() {
+        ConsolerizerComposer.outSpace()
+                .endWrite()
+                .black()
+                .bgOrange("Hah")
+                .bgBlue("Hah")
+                .bgCyan("Hah")
+                .bgYellow("Hah")
+                .bgMagenta("Stayin' Alive")
+                .bgRed("Stayin' Alive")
+                .bgGreen("Hah")
+                .blue("from: http://youtube.com/watch?v=I_izvAbhExY")
+                .reset()
+                .toConsole();
+        System.out.println("This is back to normal color!");
+        ConsolerizerComposer.outSpace()
+                .black()
+                .bgOrange("Hah")
+                .bgBlue("Hah")
+                .bgCyan("Hah")
+                .bgYellow("Hah")
+                .bgMagenta("Stayin' Alive")
+                .bgRed("Stayin' Alive")
+                .bgGreen("Hah")
+                .blue("from: http://youtube.com/watch?v=I_izvAbhExY")
+                .reset();
+        System.out.println("This is back to normal color!");
     }
 }
