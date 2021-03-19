@@ -18,6 +18,12 @@
 
 This project offers way to seamlessly add coloured log messages in academic, study or research projects. This is not a production ready module and shouldn't be used in a production setting. It is designed also for use in tutorials, classes, teaching and knowledge sharing.
 
+## Release notes for version 2.0.9 - 2021/03/19
+
+1. Unicorns on console
+2. outForLists
+3. Refactoring code
+
 ## Release notes for version 2.0.8 - 2021/03/15
 
 1. Reset color after writing
@@ -93,7 +99,7 @@ Consolerizer for Java 11 and above:
 <dependency>
   <groupId>org.jesperancinha.console</groupId>
   <artifactId>consolerizer</artifactId>
-  <version>2.0.8</version>
+  <version>2.0.9</version>
 </dependency>
 ```
 
@@ -112,9 +118,9 @@ Consolerizer for Java 8 (Discontinued):
 ### Tools
 
 ```bash
-git push --delete origin 2.0.8
-git tag --delete 2.0.8
-git tag 2.0.8
+git push --delete origin 2.0.9
+git tag --delete 2.0.9
+git tag 2.0.9
 git push --tags
 ```
 

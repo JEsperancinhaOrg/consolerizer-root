@@ -2,12 +2,14 @@ package org.jesperancinha.console.consolerizer.console;
 
 import org.jesperancinha.console.consolerizer.common.Composer;
 import org.jesperancinha.console.consolerizer.common.ConsolerizerColor;
+import org.jesperancinha.console.consolerizer.exception.ConsolerizerNotAvailableException;
 
 import java.io.BufferedOutputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 import java.util.Objects;
 
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.RESET;

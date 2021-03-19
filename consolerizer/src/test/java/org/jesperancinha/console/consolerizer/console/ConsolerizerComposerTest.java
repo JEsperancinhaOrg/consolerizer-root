@@ -1,15 +1,21 @@
 package org.jesperancinha.console.consolerizer.console;
 
+import org.jesperancinha.console.consolerizer.common.ConsolerizerVars;
 import org.jesperancinha.console.consolerizer.console.utils.LeafyGreen;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.BLUE;
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.MAGENTA;
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.RED;
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.RESET;
+import static org.jesperancinha.console.consolerizer.common.ConsolerizerVars.create;
+import static org.jesperancinha.console.consolerizer.common.ConsolerizerVars.createListFromObjects;
+import static org.jesperancinha.console.consolerizer.common.ConsolerizerVars.createListFromStrings;
 import static org.jesperancinha.console.consolerizer.console.ConsolerizerComposer.title;
 
 class ConsolerizerComposerTest {
@@ -264,5 +270,46 @@ class ConsolerizerComposerTest {
                 .blue("from: http://youtube.com/watch?v=I_izvAbhExY")
                 .reset();
         System.out.println("This is back to normal color!");
+    }
+
+    @Test
+    void testConsolerizerComposeUnicorns_whenUnicorns_thenNiceLog() {
+        ConsolerizerComposer.outSpace()
+                .bgOrange()
+                .unicorns(10)
+                .reset();
+    }
+
+    @Test
+    void testConsolerizerComposeForEach_whenStream_thenNiceLog() {
+        final var variables = List.of("a", "b", "c", "d", "e");
+        ConsolerizerComposer.outSpace()
+                .orange()
+                .outList("This is variable %s",
+                        variables.stream()
+                                .map(ConsolerizerVars::create)
+                                .collect(Collectors.toList()))
+                .reset();
+        ConsolerizerComposer.outSpace()
+                .red()
+                .outList("This is variable %s",
+                        create(variables))
+                .reset();
+
+        ConsolerizerComposer.outSpace()
+                .magenta()
+                .outList("This is variable %s",
+                        createListFromStrings(variables))
+                .reset();
+    }
+
+    @Test
+    void testConsolerizerComposeForEachComplex_whenStream_thenNiceLog() {
+        final var variables = List.of(new Object[]{"a", "b"}, new Object[]{"c", "d"});
+        ConsolerizerComposer.outSpace()
+                .magenta()
+                .outList("This is variable %s, %s",
+                        createListFromObjects(variables))
+                .reset();
     }
 }

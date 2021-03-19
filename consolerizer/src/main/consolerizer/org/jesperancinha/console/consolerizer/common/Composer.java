@@ -1,11 +1,16 @@
 package org.jesperancinha.console.consolerizer.common;
 
+import org.jesperancinha.console.consolerizer.console.ConsolerizerGraphs;
+
 import java.io.File;
 import java.util.Arrays;
+import java.util.List;
+import java.util.function.Consumer;
 
+import static java.util.Arrays.stream;
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.RESET;
 
-public abstract class Composer<T> {
+public abstract class Composer<T> implements Cloneable {
 
     protected final String splitter;
 
@@ -55,139 +60,139 @@ public abstract class Composer<T> {
     }
 
     public T reset() {
-        processText(new String[]{""}, RESET);
+        processText(RESET, new String[]{""});
         return (T) this;
     }
 
     public T white(Object... args) {
-        processText(args, ConsolerizerColor.WHITE);
+        processText(ConsolerizerColor.WHITE, args);
         return (T) this;
     }
 
     public T black(Object... args) {
-        processText(args, ConsolerizerColor.BLACK);
+        processText(ConsolerizerColor.BLACK, args);
         return (T) this;
     }
 
     public T blue(Object... args) {
-        processText(args, ConsolerizerColor.BLUE);
+        processText(ConsolerizerColor.BLUE, args);
         return (T) this;
     }
 
     public T green(Object... args) {
-        processText(args, ConsolerizerColor.GREEN);
+        processText(ConsolerizerColor.GREEN, args);
         return (T) this;
     }
 
     public T cyan(Object... args) {
-        processText(args, ConsolerizerColor.CYAN);
+        processText(ConsolerizerColor.CYAN, args);
         return (T) this;
     }
 
     public T red(Object... args) {
-        processText(args, ConsolerizerColor.RED);
+        processText(ConsolerizerColor.RED, args);
         return (T) this;
     }
 
     public T orange(Object... args) {
-        processText(args, ConsolerizerColor.ORANGE);
+        processText(ConsolerizerColor.ORANGE, args);
         return (T) this;
     }
 
     public T magenta(Object... args) {
-        processText(args, ConsolerizerColor.MAGENTA);
+        processText(ConsolerizerColor.MAGENTA, args);
         return (T) this;
     }
 
     public T brown(Object... args) {
-        processText(args, ConsolerizerColor.BROWN);
+        processText(ConsolerizerColor.BROWN, args);
         return (T) this;
     }
 
     public T yellow(Object... args) {
-        processText(args, ConsolerizerColor.YELLOW);
+        processText(ConsolerizerColor.YELLOW, args);
         return (T) this;
     }
 
     public T lightGrey(Object... args) {
-        processText(args, ConsolerizerColor.LIGHT_GREY);
+        processText(ConsolerizerColor.LIGHT_GREY, args);
         return (T) this;
     }
 
     public T darkGrey(Object... args) {
-        processText(args, ConsolerizerColor.DARK_GREY);
+        processText(ConsolerizerColor.DARK_GREY, args);
         return (T) this;
     }
 
     public T brightBlue(Object... args) {
-        processText(args, ConsolerizerColor.BRIGHT_BLUE);
+        processText(ConsolerizerColor.BRIGHT_BLUE, args);
         return (T) this;
     }
 
     public T brightGreen(Object... args) {
-        processText(args, ConsolerizerColor.BRIGHT_GREEN);
+        processText(ConsolerizerColor.BRIGHT_GREEN, args);
         return (T) this;
     }
 
     public T brightCyan(Object... args) {
-        processText(args, ConsolerizerColor.BRIGHT_CYAN);
+        processText(ConsolerizerColor.BRIGHT_CYAN, args);
         return (T) this;
     }
 
     public T brightRed(Object... args) {
-        processText(args, ConsolerizerColor.BRIGHT_RED);
+        processText(ConsolerizerColor.BRIGHT_RED, args);
         return (T) this;
     }
 
     public T brightMagenta(Object... args) {
-        processText(args, ConsolerizerColor.BRIGHT_MAGENTA);
+        processText(ConsolerizerColor.BRIGHT_MAGENTA, args);
         return (T) this;
     }
 
     public T brightWhite(Object... args) {
-        processText(args, ConsolerizerColor.BRIGHT_WHITE);
+        processText(ConsolerizerColor.BRIGHT_WHITE, args);
         return (T) this;
     }
 
     public T bgOrange(Object... args) {
-        processText(args, ConsolerizerColor.BG_ORANGE);
+        processText(ConsolerizerColor.BG_ORANGE, args);
         return (T) this;
     }
 
     public T bgYellow(Object... args) {
-        processText(args, ConsolerizerColor.BG_YELLOW);
+        processText(ConsolerizerColor.BG_YELLOW, args);
         return (T) this;
     }
 
     public T bgMagenta(Object... args) {
-        processText(args, ConsolerizerColor.BG_MAGENTA);
+        processText(ConsolerizerColor.BG_MAGENTA, args);
         return (T) this;
     }
 
     public T bgGreen(Object... args) {
-        processText(args, ConsolerizerColor.BG_GREEN);
+        processText(ConsolerizerColor.BG_GREEN, args);
         return (T) this;
     }
 
     public T bgRed(Object... args) {
-        processText(args, ConsolerizerColor.BG_RED);
+        processText(ConsolerizerColor.BG_RED, args);
         return (T) this;
     }
 
     public T bgBlue(Object... args) {
-        processText(args, ConsolerizerColor.BG_BLUE);
+        processText(ConsolerizerColor.BG_BLUE, args);
         return (T) this;
     }
 
     public T bgCyan(Object... args) {
-        processText(args, ConsolerizerColor.BG_CYAN);
+        processText(ConsolerizerColor.BG_CYAN, args);
         return (T) this;
     }
 
-    private void processText(Object[] args, ConsolerizerColor consolerizerColor) {
+    private void processText(ConsolerizerColor consolerizerColor, Object... args) {
         if (args.length == 0) {
             out(consolerizerColor);
-        } else if (args.length == 1 && "" .equals(args[0])) {
+        } else if (args.length == 1 && "".equals(args[0])) {
             out(consolerizerColor, args[0]);
         } else {
             Object text = args[0];
@@ -196,12 +201,44 @@ public abstract class Composer<T> {
         }
     }
 
+    private void processText(Object... args) {
+         if (args.length == 1 && "".equals(args[0])) {
+            out( args[0]);
+        } else {
+            Object text = args[0];
+            final Object[] objects = Arrays.copyOfRange(args, 1, args.length);
+            out(String.format(("" + text).concat(appender), objects));
+        }
+    }
+
     public T newLine() {
         out("\n");
+        return (T) this;
+    }
+
+    public T unicorns(int n) {
+        processText(ConsolerizerGraphs.getUnicorns(n));
         return (T) this;
     }
 
     public T build() {
         return (T) this;
     }
+
+    public T outList(String sentence, ConsolerizerVars ...consolerizerVars) {
+        stream(consolerizerVars).forEach
+                (getConsolerizerVarsConsumer(sentence));
+        return (T) this;
+    }
+
+    public T outList(String sentence, List<ConsolerizerVars> consolerizerVars) {
+       consolerizerVars.forEach
+                (getConsolerizerVarsConsumer(sentence));
+        return (T) this;
+    }
+
+    private Consumer<ConsolerizerVars> getConsolerizerVarsConsumer(String sentence) {
+        return consolerizerVar -> processText(String.format(sentence, consolerizerVar.getValues()));
+    }
+
 }
