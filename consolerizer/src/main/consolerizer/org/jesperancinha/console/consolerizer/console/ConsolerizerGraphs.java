@@ -1,19 +1,15 @@
 package org.jesperancinha.console.consolerizer.console;
 
 import org.jesperancinha.console.consolerizer.common.ConsolerizerColor;
+import org.jesperancinha.console.consolerizer.common.ConsolerizerEmoji;
 import org.jesperancinha.console.consolerizer.common.ConsolerizerWriter;
 
 import java.util.List;
 
-public class ConsolerizerGraphs {
+import static org.jesperancinha.console.consolerizer.common.ConsolerizerEmoji.UNICORN;
+import static org.jesperancinha.console.consolerizer.console.Consolerizer.titleSpread;
 
-    public static String getUnicorns(int i) {
-        final var sb = new StringBuilder();
-        for (int j = 0; j < i; j++) {
-            sb.append("🦄");
-        }
-        return sb.toString();
-    }
+public class ConsolerizerGraphs {
 
     public static void printRainbowFlag(String flagText, Object... args) {
         printRainbowFlag(String.format(flagText, args));
@@ -30,7 +26,7 @@ public class ConsolerizerGraphs {
     }
 
     public static void printRainbowFlag(String flagText, ConsolerizerWriter consolerizerWriter) {
-        int heightPerColorBar = (int) ((double) (Consolerizer.titleSpread) * 10d / 19d) / 6 / 4;
+        int heightPerColorBar = (int) ((double) (titleSpread) * 10d / 19d) / 6 / 4;
         heightPerColorBar = heightPerColorBar <= 0 ?
                 1 :
                 heightPerColorBar;
@@ -47,7 +43,7 @@ public class ConsolerizerGraphs {
                 if (k == iMiddle || k == iMiddle + 1) {
                     consolerizerWriter.printPrivateText(Consolerizer.createTitleLine(flagText, '*'));
                 } else {
-                    consolerizerWriter.printPrivateText("*".repeat(Consolerizer.titleSpread));
+                    consolerizerWriter.printPrivateText("*".repeat(titleSpread));
                 }
                 consolerizerWriter.printNewLine();
             }
@@ -57,9 +53,21 @@ public class ConsolerizerGraphs {
     public static void printUnicornsLn(final int nUnicorns) {
         Consolerizer.printRainbowLn('-', nUnicorns / 4);
         for (int i = 0; i < nUnicorns; i++) {
-            System.out.print("🦄");
+            System.out.print(UNICORN);
         }
         Consolerizer.printNewLine();
         Consolerizer.printRainbowLn('-', nUnicorns / 4);
+    }
+
+    public static String getUnicorns(int i) {
+        return getEmojiString(UNICORN, i);
+    }
+
+    public static String getEmoji(final ConsolerizerEmoji emoji, final int n) {
+        return getEmojiString(emoji, n);
+    }
+
+    private static String getEmojiString(final ConsolerizerEmoji emoji, final int i) {
+        return emoji.toString().repeat(Math.max(0, i));
     }
 }

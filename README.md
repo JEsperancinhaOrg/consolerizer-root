@@ -18,6 +18,12 @@
 
 This project offers way to seamlessly add coloured log messages in academic, study or research projects. This is not a production ready module and shouldn't be used in a production setting. It is designed also for use in tutorials, classes, teaching and knowledge sharing.
 
+## Release notes for version 2.0.10 - coming soon ...
+
+1. Emoji handling
+2. Emoji functions
+3. Random color
+
 ## Release notes for version 2.0.9 - 2021/03/19
 
 1. Unicorns on console
@@ -99,7 +105,7 @@ Consolerizer for Java 11 and above:
 <dependency>
   <groupId>org.jesperancinha.console</groupId>
   <artifactId>consolerizer</artifactId>
-  <version>2.0.9</version>
+  <version>2.0.9-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -118,9 +124,9 @@ Consolerizer for Java 8 (Discontinued):
 ### Tools
 
 ```bash
-git push --delete origin 2.0.9
-git tag --delete 2.0.9
-git tag 2.0.9
+git push --delete origin 2.0.9-SNAPSHOT
+git tag --delete 2.0.9-SNAPSHOT
+git tag 2.0.9-SNAPSHOT
 git push --tags
 ```
 

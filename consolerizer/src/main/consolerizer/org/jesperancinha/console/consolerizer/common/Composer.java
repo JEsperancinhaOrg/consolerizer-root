@@ -9,6 +9,9 @@ import java.util.function.Consumer;
 
 import static java.util.Arrays.stream;
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.RESET;
+import static org.jesperancinha.console.consolerizer.common.ConsolerizerEmoji.RAINBOW;
+import static org.jesperancinha.console.consolerizer.common.ConsolerizerEmoji.UNICORN;
+import static org.jesperancinha.console.consolerizer.console.ConsolerizerGraphs.getEmoji;
 
 public abstract class Composer<T> implements Cloneable {
 
@@ -189,6 +192,11 @@ public abstract class Composer<T> implements Cloneable {
         return (T) this;
     }
 
+    public T random(Object... args) {
+        processText(ConsolerizerColor.getRandomColor(), args);
+        return (T) this;
+    }
+
     private void processText(ConsolerizerColor consolerizerColor, Object... args) {
         if (args.length == 0) {
             out(consolerizerColor);
@@ -202,8 +210,8 @@ public abstract class Composer<T> implements Cloneable {
     }
 
     private void processText(Object... args) {
-         if (args.length == 1 && "".equals(args[0])) {
-            out( args[0]);
+        if (args.length == 1 && "".equals(args[0])) {
+            out(args[0]);
         } else {
             Object text = args[0];
             final Object[] objects = Arrays.copyOfRange(args, 1, args.length);
@@ -221,18 +229,43 @@ public abstract class Composer<T> implements Cloneable {
         return (T) this;
     }
 
+    public T unicorn() {
+        processText(UNICORN);
+        return (T) this;
+    }
+
+    public T rainbow(int n) {
+        processText(getEmoji(RAINBOW, n));
+        return (T) this;
+    }
+
+    public T rainbow() {
+        processText(RAINBOW);
+        return (T) this;
+    }
+
+    public T emoji(ConsolerizerEmoji emoji) {
+        processText(emoji);
+        return (T) this;
+    }
+
+    public T emoji(ConsolerizerEmoji emoji, int n) {
+        processText(getEmoji(emoji, n));
+        return (T) this;
+    }
+
     public T build() {
         return (T) this;
     }
 
-    public T outList(String sentence, ConsolerizerVars ...consolerizerVars) {
+    public T outList(String sentence, ConsolerizerVars... consolerizerVars) {
         stream(consolerizerVars).forEach
                 (getConsolerizerVarsConsumer(sentence));
         return (T) this;
     }
 
     public T outList(String sentence, List<ConsolerizerVars> consolerizerVars) {
-       consolerizerVars.forEach
+        consolerizerVars.forEach
                 (getConsolerizerVarsConsumer(sentence));
         return (T) this;
     }

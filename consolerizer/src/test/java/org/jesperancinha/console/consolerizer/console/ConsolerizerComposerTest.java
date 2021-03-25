@@ -13,9 +13,12 @@ import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.BL
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.MAGENTA;
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.RED;
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.RESET;
+import static org.jesperancinha.console.consolerizer.common.ConsolerizerEmoji.POTATO;
+import static org.jesperancinha.console.consolerizer.common.ConsolerizerEmoji.TOMATO;
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerVars.create;
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerVars.createListFromObjects;
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerVars.createListFromStrings;
+import static org.jesperancinha.console.consolerizer.console.ConsolerizerComposer.quote;
 import static org.jesperancinha.console.consolerizer.console.ConsolerizerComposer.title;
 
 class ConsolerizerComposerTest {
@@ -243,7 +246,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testConsolerizerComposeReset_whenNewLineAndString_thenNiceLog() {
+    void testConsolerizerComposerReset_whenNewLineAndString_thenNiceLog() {
         ConsolerizerComposer.outSpace()
                 .endWrite()
                 .black()
@@ -273,15 +276,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testConsolerizerComposeUnicorns_whenUnicorns_thenNiceLog() {
-        ConsolerizerComposer.outSpace()
-                .bgOrange()
-                .unicorns(10)
-                .reset();
-    }
-
-    @Test
-    void testConsolerizerComposeForEach_whenStream_thenNiceLog() {
+    void testConsolerizerComposerForEach_whenStream_thenNiceLog() {
         final var variables = List.of("a", "b", "c", "d", "e");
         ConsolerizerComposer.outSpace()
                 .orange()
@@ -304,7 +299,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testConsolerizerComposeForEachComplex_whenStream_thenNiceLog() {
+    void testConsolerizerComposerForEachComplex_whenStream_thenNiceLog() {
         final var variables = List.of(new Object[]{"a", "b"}, new Object[]{"c", "d"});
         ConsolerizerComposer.outSpace()
                 .magenta()
@@ -312,4 +307,55 @@ class ConsolerizerComposerTest {
                         createListFromObjects(variables))
                 .reset();
     }
+
+    @Test
+    void testConsolerizerComposerQuote_whenText_thenNiceLog() {
+        ConsolerizerComposer.outSpace()
+                .magenta()
+                .magenta(quote("The Color out of space"))
+                .reset();
+    }
+
+    @Test
+    void testConsolerizerCom_whenText_thenNiceLog() {
+        ConsolerizerComposer.outSpace()
+                .random("This is a random color out of space")
+                .random("This is a random color out of space")
+                .random("This is a random color out of space")
+                .random("This is a random color out of space")
+                .random("This is a random color out of space")
+                .random("This is a random color out of space")
+                .random("This is a random color out of space")
+                .random("This is a random color out of space")
+                .random("This is a random color out of space")
+                .random("This is a random color out of space")
+                .random("This is a random color out of space")
+                .random("This is a random color out of space")
+                .random("This is a random color out of space")
+                .random("This is a random color out of space")
+                .random("This is a random color out of space")
+                .random("This is a random color out of space")
+                .random("This is a random color out of space")
+                .reset();
+    }
+
+
+    @Test
+    void testConsolerizerComposerUnicorns_whenUnicorns_thenNiceLog() {
+        ConsolerizerComposer.outSpace()
+                .bgOrange()
+                .unicorns(10)
+                .unicorn()
+                .bgGreen()
+                .emoji(POTATO)
+                .emoji(POTATO, 100)
+                .bgYellow()
+                .emoji(TOMATO)
+                .emoji(TOMATO, 100)
+                .reset()
+                .rainbow()
+                .rainbow(100)
+                .reset();
+    }
+
 }
