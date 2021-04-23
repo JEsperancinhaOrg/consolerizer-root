@@ -1,7 +1,6 @@
 package org.jesperancinha.console.consolerizer.console;
 
 import org.jesperancinha.console.consolerizer.common.ConsolerizerVars;
-import org.jesperancinha.console.consolerizer.console.utils.LeafyGreen;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -358,4 +357,23 @@ class ConsolerizerComposerTest {
                 .reset();
     }
 
+    @Test
+    void testJsonPrettyPrint_whenObject_thenPrintNiceJSON() {
+        final var leafyGreen = new LeafyGreen("Cabbage");
+        ConsolerizerComposer.outSpace()
+                .random()
+                .jsonPrettyPrint(leafyGreen)
+                .random()
+                .jsonPrettyPrint(leafyGreen)
+                .reset();
+    }
+    @Test
+    void testJsonPrettyPrint_whenString_thenPrintNiceJSON() {
+        ConsolerizerComposer.outSpace()
+                .random()
+                .jsonPrettyPrint("{\"name\":\"artichoke\"}")
+                .random()
+                .jsonPrettyPrint("{\"name\":\"artichoke\"}")
+                .reset();
+    }
 }

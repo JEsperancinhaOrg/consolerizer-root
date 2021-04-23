@@ -2,14 +2,12 @@ package org.jesperancinha.console.consolerizer.console;
 
 import org.jesperancinha.console.consolerizer.common.Composer;
 import org.jesperancinha.console.consolerizer.common.ConsolerizerColor;
-import org.jesperancinha.console.consolerizer.exception.ConsolerizerNotAvailableException;
 
 import java.io.BufferedOutputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.List;
 import java.util.Objects;
 
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.RESET;
@@ -63,11 +61,21 @@ public class ConsolerizerComposer extends Composer<ConsolerizerComposer> {
         return String.format(("\"" + text).concat("\""), args);
     }
 
+    /**
+     * Sets the new line appender to a '\n' character
+     *
+     * @return The composer {@link ConsolerizerComposer}
+     */
     public ConsolerizerComposer ln() {
         this.appender = "\n";
         return this;
     }
 
+    /**
+     * Sets the new line appender to an empty string
+     *
+     * @return The composer {@link ConsolerizerComposer}
+     */
     public ConsolerizerComposer none() {
         this.appender = "";
         return this;

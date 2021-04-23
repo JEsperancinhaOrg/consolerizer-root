@@ -1,10 +1,18 @@
-package org.jesperancinha.console.consolerizer.console.utils;
+package org.jesperancinha.console.consolerizer.console;
 
 public class LeafyGreen {
-    private String name;
+    private final String name;
+
+    public LeafyGreen() {
+        this.name = null;
+    }
 
     public LeafyGreen(String name) {
         this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override

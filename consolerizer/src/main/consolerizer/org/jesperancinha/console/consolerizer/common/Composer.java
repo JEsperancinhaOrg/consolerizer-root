@@ -1,5 +1,10 @@
 package org.jesperancinha.console.consolerizer.common;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import org.jesperancinha.console.consolerizer.console.ConsolerizerGraphs;
 
 import java.io.File;
@@ -8,12 +13,15 @@ import java.util.List;
 import java.util.function.Consumer;
 
 import static java.util.Arrays.stream;
+import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.RED;
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.RESET;
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerEmoji.RAINBOW;
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerEmoji.UNICORN;
 import static org.jesperancinha.console.consolerizer.console.ConsolerizerGraphs.getEmoji;
 
 public abstract class Composer<T> implements Cloneable {
+
+    private static ObjectMapper objectMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
 
     protected final String splitter;
 
@@ -272,6 +280,36 @@ public abstract class Composer<T> implements Cloneable {
 
     private Consumer<ConsolerizerVars> getConsolerizerVarsConsumer(String sentence) {
         return consolerizerVar -> processText(String.format(sentence, consolerizerVar.getValues()));
+    }
+
+    /**
+     * Create JSON Text with pretty print format
+     *
+     * @param jsonText A raw json text
+     * @return The pretty print formatted text
+     */
+    public T jsonPrettyPrint(Object jsonText) {
+        try {
+            processText(objectMapper.writeValueAsString(jsonText));
+        } catch (JsonProcessingException e) {
+            RED.printGenericLn("%s cannot be converted to JSON -> %s", jsonText, e);
+        }
+        return (T) this;
+    }
+    /**
+     * Create JSON Text with pretty print format
+     *
+     * @param jsonText A raw json text
+     * @return The pretty print formatted text
+     */
+    public T jsonPrettyPrint(String jsonText) {
+        try {
+            final var jsonNode = objectMapper.readValue(jsonText, JsonNode.class);
+            processText(objectMapper.writeValueAsString(jsonNode));
+        } catch (JsonProcessingException e) {
+            RED.printGenericLn("%s cannot be converted to JSON -> %s", jsonText, e);
+        }
+        return (T) this;
     }
 
 }
