@@ -1,19 +1,20 @@
 package org.jesperancinha.console.consolerizer.common;
 
 import java.util.Objects;
-import java.util.Properties;
+
+import static java.lang.Boolean.parseBoolean;
 
 public class Configuration {
     public static boolean showConsolerizer() {
-        Properties p = System.getProperties();
         final var test = System.getenv().get("consolerizer.show");
         if (Objects.isNull(test)) {
-            final var sysBoolean = (Boolean) p.get("consolerizer.show");
+            final var p = System.getProperties();
+            final var sysBoolean = p.get("consolerizer.show");
             if (Objects.isNull(sysBoolean)) {
                 return true;
             }
-            return sysBoolean;
+            return parseBoolean(sysBoolean.toString());
         }
-        return Boolean.parseBoolean(test);
+        return parseBoolean(test);
     }
 }
