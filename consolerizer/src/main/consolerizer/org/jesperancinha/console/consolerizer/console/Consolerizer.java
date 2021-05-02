@@ -1,5 +1,6 @@
 package org.jesperancinha.console.consolerizer.console;
 
+import org.jesperancinha.console.consolerizer.common.Configuration;
 import org.jesperancinha.console.consolerizer.common.ConsolerizerColor;
 
 import java.io.PrintWriter;
@@ -122,101 +123,105 @@ public class Consolerizer {
     }
 
     private static void printPrivateText(String text, boolean newLineLimit, Object... vars) {
-        if (blackAndWhite) {
-            printColor(WHITE);
-        }
-        if (vars instanceof String[][]) {
-            printPrivateText(text, typingWaitGlobal, maxLineCharsGlobal,
-                    newLineLimit, processMultiArrays2((String[][]) vars));
-        } else {
-            for (int i = 0; i < vars.length; i++) {
-                var variable = vars[i];
-                if (variable instanceof Exception) {
-                    final StringWriter out = new StringWriter();
-                    ((Exception) variable).printStackTrace(new PrintWriter(out));
-                    vars[i] = out.toString();
-                }
-                if (variable instanceof Error) {
-                    var e = (Throwable) variable;
-                    var stackTrace = e.getStackTrace();
-                    var sb = new StringBuilder(e.getClass()
-                            .getCanonicalName());
-                    if (Objects.nonNull(e.getMessage())) {
-                        sb.append("\n\t");
-                        sb.append(e.getMessage());
-                    }
-                    Arrays.stream(stackTrace)
-                            .forEach(stackTraceElement -> {
-                                sb.append("\n\t");
-                                sb.append(stackTraceElement.toString());
-                            });
-                    if (variable instanceof Error) {
-                        Throwable cause = e.getCause();
-                        if (Objects.nonNull(cause)) {
-                            sb.append("\n");
-                            sb.append(cause.getClass()
-                                    .getCanonicalName());
-                            if (Objects.nonNull(cause.getMessage())) {
-                                sb.append("\n\t");
-                                sb.append(cause.getMessage());
-                            }
-                            Arrays.stream(cause.getStackTrace())
-                                    .forEach(stackTraceElement -> {
-                                        sb.append("\n\t");
-                                        sb.append(stackTraceElement.toString());
-                                    });
-                        }
-                    }
-                    vars[i] = sb.toString();
-                } else if (variable instanceof String[][]) {
-                    vars[i] = processMultiArrays2((String[][]) vars[i]);
-                } else if (variable instanceof String[]) {
-                    vars[i] = "[" .concat(String.join(",", (String[]) variable))
-                            .concat("]");
-                } else if (variable instanceof int[]) {
-                    vars[i] = "[" .concat(IntStream.of((int[]) variable)
-                            .mapToObj(Integer::toString)
-                            .collect(joining(","))
-                            .concat("]"));
-                }
+        if(Configuration.showConsolerizer()) {
+            if (blackAndWhite) {
+                printColor(WHITE);
             }
-            printPrivateText(text, typingWaitGlobal, maxLineCharsGlobal, newLineLimit, vars);
+            if (vars instanceof String[][]) {
+                printPrivateText(text, typingWaitGlobal, maxLineCharsGlobal,
+                        newLineLimit, processMultiArrays2((String[][]) vars));
+            } else {
+                for (int i = 0; i < vars.length; i++) {
+                    var variable = vars[i];
+                    if (variable instanceof Exception) {
+                        final StringWriter out = new StringWriter();
+                        ((Exception) variable).printStackTrace(new PrintWriter(out));
+                        vars[i] = out.toString();
+                    }
+                    if (variable instanceof Error) {
+                        var e = (Throwable) variable;
+                        var stackTrace = e.getStackTrace();
+                        var sb = new StringBuilder(e.getClass()
+                                .getCanonicalName());
+                        if (Objects.nonNull(e.getMessage())) {
+                            sb.append("\n\t");
+                            sb.append(e.getMessage());
+                        }
+                        Arrays.stream(stackTrace)
+                                .forEach(stackTraceElement -> {
+                                    sb.append("\n\t");
+                                    sb.append(stackTraceElement.toString());
+                                });
+                        if (variable instanceof Error) {
+                            Throwable cause = e.getCause();
+                            if (Objects.nonNull(cause)) {
+                                sb.append("\n");
+                                sb.append(cause.getClass()
+                                        .getCanonicalName());
+                                if (Objects.nonNull(cause.getMessage())) {
+                                    sb.append("\n\t");
+                                    sb.append(cause.getMessage());
+                                }
+                                Arrays.stream(cause.getStackTrace())
+                                        .forEach(stackTraceElement -> {
+                                            sb.append("\n\t");
+                                            sb.append(stackTraceElement.toString());
+                                        });
+                            }
+                        }
+                        vars[i] = sb.toString();
+                    } else if (variable instanceof String[][]) {
+                        vars[i] = processMultiArrays2((String[][]) vars[i]);
+                    } else if (variable instanceof String[]) {
+                        vars[i] = "[".concat(String.join(",", (String[]) variable))
+                                .concat("]");
+                    } else if (variable instanceof int[]) {
+                        vars[i] = "[".concat(IntStream.of((int[]) variable)
+                                .mapToObj(Integer::toString)
+                                .collect(joining(","))
+                                .concat("]"));
+                    }
+                }
+                printPrivateText(text, typingWaitGlobal, maxLineCharsGlobal, newLineLimit, vars);
+            }
         }
     }
 
     private static String processMultiArrays2(String[][] vars) {
-        return "[" .concat(Arrays.stream(vars)
-                .flatMap(x -> Stream.of("[" .concat(String.join(",", x))
+        return "[".concat(Arrays.stream(vars)
+                .flatMap(x -> Stream.of("[".concat(String.join(",", x))
                         .concat("]")))
                 .collect(joining(",")))
                 .concat("]");
     }
 
     private static void printPrivateText(String text, int typingWait, int maxLineChars, boolean newLineLimit) {
-        var printText = text;
-        if (maxLineChars > 0 && printText.length() > maxLineChars) {
-            printPerLine(printText, typingWait, maxLineChars, newLineLimit);
-        } else {
-            printColor(currentColor);
-            for (int i = 0; i < printText.length(); i++) {
-                if (typingWait > 0) {
-                    try {
-                        sleep(typingWait);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+        if (Configuration.showConsolerizer()) {
+            var printText = text;
+            if (maxLineChars > 0 && printText.length() > maxLineChars) {
+                printPerLine(printText, typingWait, maxLineChars, newLineLimit);
+            } else {
+                printColor(currentColor);
+                for (int i = 0; i < printText.length(); i++) {
+                    if (typingWait > 0) {
+                        try {
+                            sleep(typingWait);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    printColor(currentColor);
+                    final char c = printText.charAt(i);
+                    System.out.print(c);
+                    if (c == '\n') {
+                        printColor(currentColor);
                     }
                 }
-                printColor(currentColor);
-                final char c = printText.charAt(i);
-                System.out.print(c);
-                if (c == '\n') {
-                    printColor(currentColor);
+                if (!text.contains("\n")) {
+                    System.out.print(" ");
                 }
+                System.out.print(RESET.getConsoleColor());
             }
-            if (!text.contains("\n")) {
-                System.out.print(" ");
-            }
-            System.out.print(RESET.getConsoleColor());
         }
     }
 
@@ -267,30 +272,32 @@ public class Consolerizer {
     }
 
     private static void printPrivateText(String text, int typingWait, int maxLineChars, boolean newLineLimit, final Object... vars) {
-        var newText = String.format(text, vars);
-        var printText = newText;
-        if (maxLineChars > 0) {
-            printPerLine(printText, typingWait, maxLineChars, newLineLimit);
-        } else {
-            for (int i = 0; i < printText.length(); i++) {
-                if (typingWait > 0) {
-                    try {
-                        sleep(typingWait);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+        if(Configuration.showConsolerizer()) {
+            var newText = String.format(text, vars);
+            var printText = newText;
+            if (maxLineChars > 0) {
+                printPerLine(printText, typingWait, maxLineChars, newLineLimit);
+            } else {
+                for (int i = 0; i < printText.length(); i++) {
+                    if (typingWait > 0) {
+                        try {
+                            sleep(typingWait);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    final char c = printText.charAt(i);
+                    System.out.print(c);
+                    if (c == '\n') {
+                        printColor(currentColor);
                     }
                 }
-
-                final char c = printText.charAt(i);
-                System.out.print(c);
-                if (c == '\n') {
-                    printColor(currentColor);
+                if (!text.contains("\n")) {
+                    System.out.print(" ");
                 }
+                System.out.print(RESET.getConsoleColor());
             }
-            if (!text.contains("\n")) {
-                System.out.print(" ");
-            }
-            System.out.print(RESET.getConsoleColor());
         }
     }
 
@@ -353,39 +360,51 @@ public class Consolerizer {
     }
 
     public static void printRainbowLn(final String theme) {
-        printRainbow(theme);
-        System.out.print("\n");
+        if (Configuration.showConsolerizer()) {
+            printRainbow(theme);
+            System.out.print("\n");
+        }
     }
 
     public static void printRainbow(final String theme) {
-        ConsolerizerColor.getConsoleRainbow()
-                .forEach(color -> {
-                    System.out.print(color);
-                    System.out.print(theme);
-                });
+        if (Configuration.showConsolerizer()) {
+            ConsolerizerColor.getConsoleRainbow()
+                    .forEach(color -> {
+                        System.out.print(color);
+                        System.out.print(theme);
+                    });
+        }
     }
 
     public static void printRainbowStack(final String theme) {
-        ConsolerizerColor.getConsoleRainbow()
-                .forEach(color -> {
-                    System.out.print(color);
-                    System.out.println(theme);
-                });
+        if (Configuration.showConsolerizer()) {
+            ConsolerizerColor.getConsoleRainbow()
+                    .forEach(color -> {
+                        System.out.print(color);
+                        System.out.println(theme);
+                    });
+        }
     }
 
     public static void printSameLine(final String text, final Object... objects) {
-        System.out.print("\r");
-        System.out.printf(text, objects);
+        if (Configuration.showConsolerizer()) {
+            System.out.print("\r");
+            System.out.printf(text, objects);
+        }
     }
 
     public static void printNewLine() {
-        System.out.print("\n");
+        if (Configuration.showConsolerizer()) {
+            System.out.print("\n");
+        }
     }
 
     static void printColor(ConsolerizerColor consolerizerColor) {
-        currentColor = consolerizerColor;
-        if (Objects.nonNull(consolerizerColor)) {
-            System.out.print(currentColor.getConsoleColor());
+        if (Configuration.showConsolerizer()) {
+            currentColor = consolerizerColor;
+            if (Objects.nonNull(consolerizerColor)) {
+                System.out.print(currentColor.getConsoleColor());
+            }
         }
     }
 

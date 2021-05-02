@@ -4,7 +4,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import org.jesperancinha.console.consolerizer.console.ConsolerizerGraphs;
 
 import java.io.File;
@@ -218,12 +217,14 @@ public abstract class Composer<T> implements Cloneable {
     }
 
     private void processText(Object... args) {
-        if (args.length == 1 && "".equals(args[0])) {
-            out(args[0]);
-        } else {
-            Object text = args[0];
-            final Object[] objects = Arrays.copyOfRange(args, 1, args.length);
-            out(String.format(("" + text).concat(appender), objects));
+        if(Configuration.showConsolerizer()) {
+            if (args.length == 1 && "".equals(args[0])) {
+                out(args[0]);
+            } else {
+                Object text = args[0];
+                final Object[] objects = Arrays.copyOfRange(args, 1, args.length);
+                out(String.format(("" + text).concat(appender), objects));
+            }
         }
     }
 

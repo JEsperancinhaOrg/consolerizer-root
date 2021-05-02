@@ -1,5 +1,6 @@
 package org.jesperancinha.console.consolerizer.console;
 
+import org.jesperancinha.console.consolerizer.common.Configuration;
 import org.jesperancinha.console.consolerizer.common.ConsolerizerColor;
 import org.jesperancinha.console.consolerizer.common.ConsolerizerEmoji;
 import org.jesperancinha.console.consolerizer.common.ConsolerizerWriter;
@@ -26,37 +27,41 @@ public class ConsolerizerGraphs {
     }
 
     public static void printRainbowFlag(String flagText, ConsolerizerWriter consolerizerWriter) {
-        int heightPerColorBar = (int) ((double) (titleSpread) * 10d / 19d) / 6 / 4;
-        heightPerColorBar = heightPerColorBar <= 0 ?
-                1 :
-                heightPerColorBar;
-        final List<ConsolerizerColor> consoleRainbow = ConsolerizerColor.getConsoleRainbowEnumList();
-        final int rainbowColorSize = consoleRainbow.size();
-        final int height = rainbowColorSize * heightPerColorBar;
-        int iMiddle = height / 2;
-        iMiddle = height % 2 == 0 ?
-                iMiddle - 1 :
-                iMiddle;
-        for (int i = 0, k = 0; i < rainbowColorSize; i++) {
-            consolerizerWriter.printColor(consoleRainbow.get(i));
-            for (int j = 0; j < heightPerColorBar; j++, k++) {
-                if (k == iMiddle || k == iMiddle + 1) {
-                    consolerizerWriter.printPrivateText(Consolerizer.createTitleLine(flagText, '*'));
-                } else {
-                    consolerizerWriter.printPrivateText("*".repeat(titleSpread));
+        if (Configuration.showConsolerizer()) {
+            int heightPerColorBar = (int) ((double) (titleSpread) * 10d / 19d) / 6 / 4;
+            heightPerColorBar = heightPerColorBar <= 0 ?
+                    1 :
+                    heightPerColorBar;
+            final List<ConsolerizerColor> consoleRainbow = ConsolerizerColor.getConsoleRainbowEnumList();
+            final int rainbowColorSize = consoleRainbow.size();
+            final int height = rainbowColorSize * heightPerColorBar;
+            int iMiddle = height / 2;
+            iMiddle = height % 2 == 0 ?
+                    iMiddle - 1 :
+                    iMiddle;
+            for (int i = 0, k = 0; i < rainbowColorSize; i++) {
+                consolerizerWriter.printColor(consoleRainbow.get(i));
+                for (int j = 0; j < heightPerColorBar; j++, k++) {
+                    if (k == iMiddle || k == iMiddle + 1) {
+                        consolerizerWriter.printPrivateText(Consolerizer.createTitleLine(flagText, '*'));
+                    } else {
+                        consolerizerWriter.printPrivateText("*".repeat(titleSpread));
+                    }
+                    consolerizerWriter.printNewLine();
                 }
-                consolerizerWriter.printNewLine();
             }
         }
     }
 
     public static void printUnicornsLn(final int nUnicorns) {
-        Consolerizer.printRainbowLn('-', nUnicorns / 4);
-        for (int i = 0; i < nUnicorns; i++) {
-            System.out.print(UNICORN);
+        if (Configuration.showConsolerizer()) {
+            Consolerizer.printRainbowLn('-', nUnicorns / 4);
+            for (int i = 0; i < nUnicorns; i++) {
+                System.out.print(UNICORN);
+            }
+            Consolerizer.printNewLine();
+            Consolerizer.printRainbowLn('-', nUnicorns / 4);
         }
-        Consolerizer.printNewLine();
-        Consolerizer.printRainbowLn('-', nUnicorns / 4);
     }
 
     public static String getUnicorns(int i) {
