@@ -18,9 +18,13 @@
 
 This project offers way to seamlessly add coloured log messages in academic, study or research projects. This is not a production ready module and shouldn't be used in a production setting. It is designed also for use in tutorials, classes, teaching and knowledge sharing.
 
-## Release notes for version 2.0.11/12 - 2021/05/02
+## Release notes for version 2.0.12 - 2021/05/02
 
-1. Console logs
+1. Optional Console log configuration
+
+## Release notes for version 2.0.11 - 2021/05/02
+
+1. Mandatory Console log configuration
 
 ## Release notes for version 2.0.10 - 2021/04/23
 
