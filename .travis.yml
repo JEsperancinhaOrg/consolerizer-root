@@ -12,7 +12,7 @@ jobs:
     - language: java
       stage: Consolerizer Java 8 Test (Maintenance)
       jdk:
-        - openjdk8
+        - oraclejdk8
       install: mvn dependency:resolve
       script:
         - cd consolerizer8
