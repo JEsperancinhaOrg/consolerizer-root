@@ -8,6 +8,9 @@ jobs:
       script:
         - mvn clean install coveralls:report -Dconsolerizer.show=false -DrepoToken=${COVERALLS_TOKEN}
         - bash <(curl -s https://codecov.io/bash)
+        - cd consolerizer-spring-boot-tester
+        - mvn clean install coveralls:report -Dconsolerizer.show=false -DrepoToken=${COVERALLS_TOKEN}
+        - bash <(curl -s https://codecov.io/bash)
 
   include:
     - language: java
@@ -19,15 +22,3 @@ jobs:
         - cd consolerizer8
         - mvn clean install coveralls:report -Dconsolerizer.show=false -DrepoToken=${COVERALLS_TOKEN}
         - bash <(curl -s https://codecov.io/bash)
-
-  include:
-    - language: java
-      stage: Consolerizer Spring Application Tester
-      jdk:
-        - openjdk11
-      install: mvn dependency:resolve
-      script:
-        - cd consolerizer-spring-boot-tester
-        - mvn clean install coveralls:report -Dconsolerizer.show=false -DrepoToken=${COVERALLS_TOKEN}
-        - bash <(curl -s https://codecov.io/bash)
-

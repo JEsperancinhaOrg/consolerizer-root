@@ -29,3 +29,9 @@ hs_err_pid*
 
 ## MAC-OS
 .DS_Store
+
+# Coveralls
+.coveralls.yml
+
+# Codecov
+codecov.yml
