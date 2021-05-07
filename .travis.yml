@@ -10,9 +10,9 @@ jobs:
         - bash <(curl -s https://codecov.io/bash)
 
     - language: java
-      stage: Consolerizer Java 8 Test (Maintenance)
+      stage: Consolerizer Java 8 Test (Maintenance) (Under Java 11...)
       jdk:
-        - openjdk8
+        - openjdk11
       install: mvn dependency:resolve
       script:
         - cd consolerizer8
