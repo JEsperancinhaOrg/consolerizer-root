@@ -1,7 +1,6 @@
 jobs:
   include:
     - language: java
-      stage: Consolerizer Test
       jdk:
         - openjdk11
       install: mvn dependency:resolve
@@ -14,7 +13,6 @@ jobs:
 
   include:
     - language: java
-      stage: Consolerizer Java 8 Test (Maintenance)
       jdk:
         - openjdk8
       install: mvn dependency:resolve
