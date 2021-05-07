@@ -25,5 +25,6 @@ jobs:
         - openjdk11
       install: mvn dependency:resolve
       script:
+        - cd consolerizer-spring-boot-tester
         - mvn clean install coveralls:report -Dconsolerizer.show=false -DrepoToken=${COVERALLS_TOKEN}
         - bash <(curl -s https://codecov.io/bash)
