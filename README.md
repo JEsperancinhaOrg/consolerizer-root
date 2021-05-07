@@ -11,12 +11,20 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/JEsperancinhaOrg/consolerizer-root?branch=main)](https://bettercodehub.com/)
 [![Build status](https://ci.appveyor.com/api/projects/status/w8bav23989g3nhh7?svg=true)](https://ci.appveyor.com/project/jesperancinha/consolerizer-root)
 [![Known Vulnerabilities](https://snyk.io/test/github/JEsperancinhaOrg/consolerizer-root/badge.svg)](https://snyk.io/test/github/JEsperancinhaOrg/consolerizer-root)
+[![Coverage Status](https://coveralls.io/repos/github/JEsperancinhaOrg/consolerizer-root/badge.svg?branch=main)](https://coveralls.io/github/JEsperancinhaOrg/consolerizer-root?branch=main)
+[![codecov](https://codecov.io/gh/JEsperancinhaOrg/consolerizer-root/branch/main/graph/badge.svg?token=LQytJ90vR1)](https://codecov.io/gh/JEsperancinhaOrg/consolerizer-root)
 
 [![GitHub language count](https://img.shields.io/github/languages/count/JEsperancinhaOrg/consolerizer-root.svg)](#)
 [![GitHub top language](https://img.shields.io/github/languages/top/JEsperancinhaOrg/consolerizer-root.svg)](#)
 [![GitHub top language](https://img.shields.io/github/languages/code-size/JEsperancinhaOrg/consolerizer-root.svg)](#)
 
 This project offers way to seamlessly add coloured log messages in academic, study or research projects. This is not a production ready module and shouldn't be used in a production setting. It is designed also for use in tutorials, classes, teaching and knowledge sharing.
+
+## Release notes for version 3.0.0 - Coming soon
+
+1. LogBack support
+2. Log4J2 support
+3. SLF4J support
 
 ## Release notes for version 2.0.12 - 2021/05/02
 
@@ -114,7 +122,7 @@ Consolerizer for Java 11 and above:
 <dependency>
   <groupId>org.jesperancinha.console</groupId>
   <artifactId>consolerizer</artifactId>
-  <version>2.0.12</version>
+  <version>2.0.12-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -133,9 +141,9 @@ Consolerizer for Java 8 (Discontinued):
 ### Tools
 
 ```bash
-git push --delete origin 2.0.12
-git tag --delete 2.0.12
-git tag 2.0.12
+git push --delete origin 2.0.12-SNAPSHOT
+git tag --delete 2.0.12-SNAPSHOT
+git tag 2.0.12-SNAPSHOT
 git push --tags
 ```
 
