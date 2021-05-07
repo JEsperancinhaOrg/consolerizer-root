@@ -20,7 +20,7 @@ import static org.jesperancinha.console.consolerizer.common.ConsolerizerVars.cre
 import static org.jesperancinha.console.consolerizer.console.ConsolerizerComposer.quote;
 import static org.jesperancinha.console.consolerizer.console.ConsolerizerComposer.title;
 
-class ConsolerizerComposerTest {
+public class ConsolerizerComposerTest {
 
     @BeforeAll
     public static void setUp() {
@@ -31,7 +31,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testConsolerizerComposer_whenNoSplitter_thenNiceLog() {
+    public void testConsolerizerComposer_whenNoSplitter_thenNiceLog() {
         ConsolerizerComposer.out().none().white("The").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
                 .blue("the").green("lazy").red("dog").toConsole();
         ConsolerizerComposer.out().none().white("The").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
@@ -39,7 +39,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testConsolerizerComposer_whenSplitter_thenNiceLog() {
+    public void testConsolerizerComposer_whenSplitter_thenNiceLog() {
         ConsolerizerComposer.out(" ").none().white("The").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
                 .blue("the").green("lazy").red("dog").toConsole();
         ConsolerizerComposer.out(" ").none().white("The").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
@@ -47,7 +47,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testConsolerizerComposer_whenNoSplitterLn_thenNiceLog() {
+    public void testConsolerizerComposer_whenNoSplitterLn_thenNiceLog() {
         ConsolerizerComposer.out().white("The").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
                 .blue("the").green("lazy").red("dog").toConsoleLn();
         ConsolerizerComposer.out().white("The").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
@@ -55,7 +55,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testConsolerizerComposerWithVarags_whenNoSplitter_thenNiceLog() {
+    public void testConsolerizerComposerWithVarags_whenNoSplitter_thenNiceLog() {
         ConsolerizerComposer.out().white("The%s", "One").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
                 .blue("the").green("lazy").red("dog").toConsole();
         ConsolerizerComposer.out().white("The").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
@@ -63,7 +63,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testConsolerizerComposer_whenSplitterLn_thenNiceLog() {
+    public void testConsolerizerComposer_whenSplitterLn_thenNiceLog() {
         ConsolerizerComposer.out(" ").none().white("The").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
                 .blue("the").green("lazy").bgOrange("dog").build().toConsoleLn();
         ConsolerizerComposer.out(" ").none().brown("The").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
@@ -71,7 +71,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testConsolerizerComposer2_whenSplitterLn_thenNiceLog() {
+    public void testConsolerizerComposer2_whenSplitterLn_thenNiceLog() {
         ConsolerizerComposer.out(" ").none().brightCyan("The").brightWhite("quick").brightMagenta("brown").white("fox").brightRed("jumps").yellow("over")
                 .blue("the").green("lazy").bgOrange("dog").toConsoleLn();
         ConsolerizerComposer.out(" ").cyan("The").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
@@ -79,7 +79,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testConsolerizerComposer3_whenSplitterLn_thenNiceLog() {
+    public void testConsolerizerComposer3_whenSplitterLn_thenNiceLog() {
         ConsolerizerComposer.out(" ").none().brightCyan("The").black("quick").lightGrey("brown").white("fox").brightRed("jumps").yellow("over")
                 .blue("the").green("lazy").darkGrey("dog").toConsoleLn();
         ConsolerizerComposer.out(" ").brightBlue("The").blue("quick").red("brown").white("fox").orange("jumps").yellow("over")
@@ -87,7 +87,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testConsolerizerComposer4_whenTitlePhenomenon_thenNiceLog() {
+    public void testConsolerizerComposer4_whenTitlePhenomenon_thenNiceLog() {
         BLUE.printGenericTitleLn("This shouldn't influence the next log");
         RED.printGenericLn("This shouldn't influence the next log");
         BLUE.printGenericTitleLn("This shouldn't influence the next log");
@@ -106,7 +106,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testConsolerizerComposer_whenNewLineAndObject_thenNiceLog() {
+    public void testConsolerizerComposer_whenNewLineAndObject_thenNiceLog() {
         final var leafyGreen = new LeafyGreen("Cabbage");
         ConsolerizerComposer
                 .out(" ")
@@ -120,7 +120,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testConsolerizerComposerSpace_whenNewLineAndObject_thenNiceLog() {
+    public void testConsolerizerComposerSpace_whenNewLineAndObject_thenNiceLog() {
         final var leafyGreen = new LeafyGreen("Cabbage");
         ConsolerizerComposer
                 .outSpace()
@@ -134,7 +134,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testConsolerizerComposerSpaceTitle_whenNewLineAndObject_thenNiceLog() {
+    public void testConsolerizerComposerSpaceTitle_whenNewLineAndObject_thenNiceLog() {
         final LeafyGreen leafyGreen = new LeafyGreen("Cabbage");
         ConsolerizerComposer
                 .outSpace()
@@ -149,7 +149,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testConsolerizerComposerSpaceTitleLn_whenNewLineAndObject_thenNiceLog() {
+    public void testConsolerizerComposerSpaceTitleLn_whenNewLineAndObject_thenNiceLog() {
         final LeafyGreen leafyGreen = new LeafyGreen("Cabbage");
         ConsolerizerComposer
                 .outSpace()
@@ -177,7 +177,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testConsolerizerComposerTitleArguments_whenNewLineAndString_thenNiceLog() {
+    public void testConsolerizerComposerTitleArguments_whenNewLineAndString_thenNiceLog() {
         ConsolerizerComposer
                 .outSpace()
                 .ln()
@@ -186,7 +186,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testConsolerizerComposerAutoWrite_whenNewLineAndString_thenNiceLog() {
+    public void testConsolerizerComposerAutoWrite_whenNewLineAndString_thenNiceLog() {
         ConsolerizerComposer
                 .outSpace()
                 .ln()
@@ -206,7 +206,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testConsolerizerComposerAutoWriteTitle_whenNewLineAndString_thenNiceLog() {
+    public void testConsolerizerComposerAutoWriteTitle_whenNewLineAndString_thenNiceLog() {
         ConsolerizerComposer.outSpace()
                 .ln()
                 .black()
@@ -218,7 +218,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testConsolerizerComposerAutoWriteFile_whenNewLineAndString_thenNiceLog() {
+    public void testConsolerizerComposerAutoWriteFile_whenNewLineAndString_thenNiceLog() {
         ConsolerizerComposer.outSpace()
                 .file("/tmp/out.txt")
                 .ln()
@@ -231,7 +231,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testConsolerizerComposerAllBGw_whenNewLineAndString_thenNiceLog() {
+    public void testConsolerizerComposerAllBGw_whenNewLineAndString_thenNiceLog() {
         ConsolerizerComposer.outSpace()
                 .black()
                 .bgOrange("Hah")
@@ -245,7 +245,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testConsolerizerComposerReset_whenNewLineAndString_thenNiceLog() {
+    public void testConsolerizerComposerReset_whenNewLineAndString_thenNiceLog() {
         ConsolerizerComposer.outSpace()
                 .endWrite()
                 .black()
@@ -275,7 +275,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testConsolerizerComposerForEach_whenStream_thenNiceLog() {
+    public void testConsolerizerComposerForEach_whenStream_thenNiceLog() {
         final var variables = List.of("a", "b", "c", "d", "e");
         ConsolerizerComposer.outSpace()
                 .orange()
@@ -298,7 +298,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testConsolerizerComposerForEachComplex_whenStream_thenNiceLog() {
+    public void testConsolerizerComposerForEachComplex_whenStream_thenNiceLog() {
         final var variables = List.of(new Object[]{"a", "b"}, new Object[]{"c", "d"});
         ConsolerizerComposer.outSpace()
                 .magenta()
@@ -308,7 +308,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testConsolerizerComposerQuote_whenText_thenNiceLog() {
+    public void testConsolerizerComposerQuote_whenText_thenNiceLog() {
         ConsolerizerComposer.outSpace()
                 .magenta()
                 .magenta(quote("The Color out of space"))
@@ -316,7 +316,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testConsolerizerCom_whenText_thenNiceLog() {
+    public void testConsolerizerCom_whenText_thenNiceLog() {
         ConsolerizerComposer.outSpace()
                 .random("This is a random color out of space")
                 .random("This is a random color out of space")
@@ -340,7 +340,7 @@ class ConsolerizerComposerTest {
 
 
     @Test
-    void testConsolerizerComposerUnicorns_whenUnicorns_thenNiceLog() {
+    public void testConsolerizerComposerUnicorns_whenUnicorns_thenNiceLog() {
         ConsolerizerComposer.outSpace()
                 .bgOrange()
                 .unicorns(10)
@@ -358,7 +358,7 @@ class ConsolerizerComposerTest {
     }
 
     @Test
-    void testJsonPrettyPrint_whenObject_thenPrintNiceJSON() {
+    public void testJsonPrettyPrint_whenObject_thenPrintNiceJSON() {
         final var leafyGreen = new LeafyGreen("Cabbage");
         ConsolerizerComposer.outSpace()
                 .random()
@@ -367,8 +367,9 @@ class ConsolerizerComposerTest {
                 .jsonPrettyPrint(leafyGreen)
                 .reset();
     }
+
     @Test
-    void testJsonPrettyPrint_whenString_thenPrintNiceJSON() {
+    public void testJsonPrettyPrint_whenString_thenPrintNiceJSON() {
         ConsolerizerComposer.outSpace()
                 .random()
                 .jsonPrettyPrint("{\"name\":\"artichoke\"}")

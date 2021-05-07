@@ -7,30 +7,30 @@ import org.junit.jupiter.api.Test;
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.GREEN;
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.RED;
 
-class ConsolerizerTest {
+public class ConsolerizerTest {
 
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         Consolerizer.setupFastDefault();
     }
 
     @Test
-    void testPrintRainbowFlag_whenText_thenTextInMiddle() {
+    public void testPrintRainbowFlag_whenText_thenTextInMiddle() {
         ConsolerizerGraphs.printRainbowFlag("Happy PRIDE Everyone!");
     }
 
     @Test
-    void testPrintDifferentColorPerSentence() {
+    public void testPrintDifferentColorPerSentence() {
         Consolerizer.currentColor=null;
         Consolerizer.printRawGenericLn("%sThis is green %sand this is red %sand this is green again", true, GREEN, RED, GREEN);
     }
 
     @Test
-    void testPrintRainbowLn_whenDefault_then10Chars() {
+    public void testPrintRainbowLn_whenDefault_then10Chars() {
         Consolerizer.printRainbowLn('@');
     }
 
     @AfterEach
-    void tearDown() {
+    public void tearDown() {
     }
 }

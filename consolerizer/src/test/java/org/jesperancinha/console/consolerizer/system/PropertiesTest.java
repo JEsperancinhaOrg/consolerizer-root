@@ -8,7 +8,7 @@ import java.util.Properties;
 public class PropertiesTest {
 
     @Test
-    void testSystemProperties(){
+    public void testSystemProperties(){
         Properties p = System.getProperties();
         p.setProperty("test","tested");
         testExtracted(p);
