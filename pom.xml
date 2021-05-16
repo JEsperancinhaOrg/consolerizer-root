@@ -32,7 +32,7 @@
         <connection>scm:git:git://github.com/JEsperancinhaOrg/consolerizer-root.git</connection>
         <developerConnection>scm:git:git://github.com/JEsperancinhaOrg/consolerizer-root.git</developerConnection>
         <url>https://github.com/JEsperancinhaOrg/consolerizer-root</url>
-        <tag>2.0.12-SNAPSHOT<</tag>
+        <tag>2.0.12-SNAPSHOT</tag>
     </scm>
     <distributionManagement>
         <snapshotRepository>
