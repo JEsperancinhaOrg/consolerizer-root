@@ -1,22 +1,37 @@
 # consolerizer-root
 
+---
+
 [![Twitter URL](https://img.shields.io/twitter/url?logoColor=blue&style=social&url=https%3A%2F%2Fimg.shields.io%2Ftwitter%2Furl%3Fstyle%3Dsocial)](https://twitter.com/intent/tweet?text=%20Checkout%20this%20%40github%20repo%20by%20%40joaofse%20%F0%9F%91%A8%F0%9F%8F%BD%E2%80%8D%F0%9F%92%BB%3A%20https%3A//github.com/JEsperancinhaOrg/consolerizer-root)
 [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Consolerizer&color=informational)](https://github.com/JEsperancinhaOrg/consolerizer-root)
 [![GitHub release](https://img.shields.io/github/release-pre/JEsperancinhaOrg/consolerizer-root.svg)](#)
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/4d5fcd800ef941309dd767ad384eeb0c)](https://www.codacy.com/gh/JEsperancinhaOrg/consolerizer-root/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=JEsperancinhaOrg/consolerizer-root&amp;utm_campaign=Badge_Grade)
-[![codebeat badge](https://codebeat.co/badges/176e694d-4bc1-4771-9a6c-4cd94bc8f5f8)](https://codebeat.co/projects/github-com-jesperancinhaorg-consolerizer-root-main)
 [![CircleCI](https://circleci.com/gh/JEsperancinhaOrg/consolerizer-root.svg?style=svg)](https://circleci.com/gh/JEsperancinhaOrg/consolerizer-root)
 [![Build Status](https://travis-ci.com/JEsperancinhaOrg/consolerizer-root.svg?branch=main)](https://travis-ci.com/JEsperancinhaOrg/consolerizer-root)
-[![BCH compliance](https://bettercodehub.com/edge/badge/JEsperancinhaOrg/consolerizer-root?branch=main)](https://bettercodehub.com/)
 [![Build status](https://ci.appveyor.com/api/projects/status/w8bav23989g3nhh7?svg=true)](https://ci.appveyor.com/project/jesperancinha/consolerizer-root)
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/4d5fcd800ef941309dd767ad384eeb0c)](https://www.codacy.com/gh/JEsperancinhaOrg/consolerizer-root/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=JEsperancinhaOrg/consolerizer-root&amp;utm_campaign=Badge_Grade)
+[![codebeat badge](https://codebeat.co/badges/176e694d-4bc1-4771-9a6c-4cd94bc8f5f8)](https://codebeat.co/projects/github-com-jesperancinhaorg-consolerizer-root-main)
+[![BCH compliance](https://bettercodehub.com/edge/badge/JEsperancinhaOrg/consolerizer-root?branch=main)](https://bettercodehub.com/)
 [![Known Vulnerabilities](https://snyk.io/test/github/JEsperancinhaOrg/consolerizer-root/badge.svg)](https://snyk.io/test/github/JEsperancinhaOrg/consolerizer-root)
+
 [![Coverage Status](https://coveralls.io/repos/github/JEsperancinhaOrg/consolerizer-root/badge.svg?branch=main)](https://coveralls.io/github/JEsperancinhaOrg/consolerizer-root?branch=main)
 [![codecov](https://codecov.io/gh/JEsperancinhaOrg/consolerizer-root/branch/main/graph/badge.svg?token=LQytJ90vR1)](https://codecov.io/gh/JEsperancinhaOrg/consolerizer-root)
 
 [![GitHub language count](https://img.shields.io/github/languages/count/JEsperancinhaOrg/consolerizer-root.svg)](#)
 [![GitHub top language](https://img.shields.io/github/languages/top/JEsperancinhaOrg/consolerizer-root.svg)](#)
 [![GitHub top language](https://img.shields.io/github/languages/code-size/JEsperancinhaOrg/consolerizer-root.svg)](#)
+
+---
+
+## Technologies used
+
+---
+
+[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/java-50.png "Java")](https://www.oracle.com/nl/java/)
+[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/lombok-50.png "Lombok")](https://projectlombok.org/)
+[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/mockito-50.png "Mockito")](https://site.mockito.org/)
+[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/assertj-50.png "AssertJ")](https://assertj.github.io/doc/)
 
 This project offers way to seamlessly add coloured log messages in academic, study or research projects. This is not a production ready module and shouldn't be used in a production setting. It is designed also for use in tutorials, classes, teaching and knowledge sharing.
 
