@@ -1,5 +1,8 @@
 # consolerizer
 
+[![javadoc](https://javadoc.io/badge2/org.jesperancinha.console/consolerizer8/javadoc.svg)](https://javadoc.io/doc/org.jesperancinha.console/consolerizer8)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jesperancinha.console/consolerizer8)](https://search.maven.org/search?q=consolerizer8)
+
 ## Examples
 
 With this module, you can play with the console output and give it color!
