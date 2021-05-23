@@ -174,6 +174,11 @@ export GPG_TTY=$(tty)
 mvn clean deploy -Prelease
 mvn nexus-staging:release -Prelease
 ```
+
+```bash
+mvn -f coverage.xml clean install coveralls:report -Dconsolerizer.show=false -DrepoToken=${COVERALLS_TOKEN}
+```
+
 ### Repository settings.xml
 
 ```xml
