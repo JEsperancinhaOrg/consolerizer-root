@@ -15,6 +15,7 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/JEsperancinhaOrg/consolerizer-root?branch=main)](https://bettercodehub.com/)
 [![Known Vulnerabilities](https://snyk.io/test/github/JEsperancinhaOrg/consolerizer-root/badge.svg)](https://snyk.io/test/github/JEsperancinhaOrg/consolerizer-root)
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/4d5fcd800ef941309dd767ad384eeb0c)](https://www.codacy.com/gh/JEsperancinhaOrg/consolerizer-root/dashboard?utm_source=github.com&utm_medium=referral&utm_content=JEsperancinhaOrg/consolerizer-root&utm_campaign=Badge_Coverage)
 [![Coverage Status](https://coveralls.io/repos/github/JEsperancinhaOrg/consolerizer-root/badge.svg?branch=main)](https://coveralls.io/github/JEsperancinhaOrg/consolerizer-root?branch=main)
 [![codecov](https://codecov.io/gh/JEsperancinhaOrg/consolerizer-root/branch/main/graph/badge.svg?token=LQytJ90vR1)](https://codecov.io/gh/JEsperancinhaOrg/consolerizer-root)
 
