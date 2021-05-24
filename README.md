@@ -7,6 +7,7 @@
 [![GitHub release](https://img.shields.io/github/release-pre/JEsperancinhaOrg/consolerizer-root.svg)](#)
 [![Maven Central](https://img.shields.io/maven-central/v/org.jesperancinha.console/consolerizer-root)](https://search.maven.org/search?q=consolerizer-root)
 [![javadoc](https://javadoc.io/badge2/org.jesperancinha.console/consolerizer-root/javadoc.svg)](https://javadoc.io/doc/org.jesperancinha.console/consolerizer-root)
+[![GitHub License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 
 [![CircleCI](https://circleci.com/gh/JEsperancinhaOrg/consolerizer-root.svg?style=svg)](https://circleci.com/gh/JEsperancinhaOrg/consolerizer-root)
 [![Build Status](https://travis-ci.com/JEsperancinhaOrg/consolerizer-root.svg?branch=main)](https://travis-ci.com/JEsperancinhaOrg/consolerizer-root)
