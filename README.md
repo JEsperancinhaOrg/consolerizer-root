@@ -55,84 +55,84 @@ This project offers way to seamlessly add coloured log messages in academic, stu
 
 ## Release notes for version 3.0.0 - Coming soon
 
-1. LogBack support
-2. Log4J2 support
-3. SLF4J support
+1.  LogBack support
+2.  Log4J2 support
+3.  SLF4J support
 
 ## Release notes for version 2.0.12 - 2021/05/02
 
-1. Optional Console log configuration
+1.  Optional Console log configuration
 
 ## Release notes for version 2.0.11 - 2021/05/02
 
-1. Mandatory Console log configuration
+1.  Mandatory Console log configuration
 
 ## Release notes for version 2.0.10 - 2021/04/23
 
-1. Emoji handling
-2. Emoji functions
-3. Random color
-4. JSON pretty print
+1.  Emoji handling
+2.  Emoji functions
+3.  Random color
+4.  JSON pretty print
 
 ## Release notes for version 2.0.9 - 2021/03/19
 
-1. Unicorns on console
-2. outForLists
-3. Refactoring code
+1.  Unicorns on console
+2.  outForLists
+3.  Refactoring code
 
 ## Release notes for version 2.0.8 - 2021/03/15
 
-1. Reset color after writing
-2. Quote
+1.  Reset color after writing
+2.  Quote
 
 ## Release notes for version 2.0.7 - 2021/03/14
 
-1. Reset console color
-2. Work in ln mode
-3. Auto-write to save in cache
-4. More background colors
-5. Colors revisited
+1.  Reset console color
+2.  Work in ln mode
+3.  Auto-write to save in cache
+4.  More background colors
+5.  Colors revisited
 
 ## Release notes for version 2.0.6 - 2021/03/13
 
-1. File output
-2. Last line fix
+1.  File output
+2.  Last line fix
 
 ## Release notes for version 2.0.5 - 2021/03/13
 
-1. Long Title fix
-2. AutoWrite to Console -> No need to call `toConsole` methods
-3. Keep everything cached until `toConsole` -> You need to call `toConsole`
+1.  Long Title fix
+2.  AutoWrite to Console -> No need to call `toConsole` methods
+3.  Keep everything cached until `toConsole` -> You need to call `toConsole`
 
 ## Release notes for version 2.0.4 - 2021/03/12
 
-1. Space initializer
-2. Title as a text option
-3. Width clipping includes color (Bug Fix)
-4. Color revision (Bug Fix)
-5. ln included in color
-6. none to deactivate
+1.  Space initializer
+2.  Title as a text option
+3.  Width clipping includes color (Bug Fix)
+4.  Color revision (Bug Fix)
+5.  ln included in color
+6.  none to deactivate
 
 NOTE: Due to all issues regarding support to Java 8 it has become clear that further development of module consolerizer8 for Java 8 is not a necessity anymore.
 
 ## Release notes for version 2.0.3 - 2021/03/07
 
-1. Colored Anchors
+1.  Colored Anchors
 
 ## Release notes for version 2.0.2 - 2021/03/07
 
-1. Objects and new line
+1.  Objects and new line
 
 ## Release notes for version 2.0.1 - 2021/03/06
 
-1. Allows for String format
+1.  Allows for String format
 
 ## Release notes for version 2.0.0 - 2021/03/06
 
-1. Title color independent
-2. Color is changeable
-3. Default setup is now 150 fast
-4. Update to fast settings
+1.  Title color independent
+2.  Color is changeable
+3.  Default setup is now 150 fast
+4.  Update to fast settings
 
 ** Breaking changes **
 
@@ -140,13 +140,13 @@ Packages have changed location. Please update your references
 
 ## Release notes for version 1.1.0 and before - 2021/03/06
 
-1. Rainbow Flag on HTML and Console
-2. YouTube link creation
-3. Console output in different colors
-4. Unicorn line
-5. Title line
-6. Multicolored text lines for console
-7. Multicolored text lines for HTML
+1.  Rainbow Flag on HTML and Console
+2.  YouTube link creation
+3.  Console output in different colors
+4.  Unicorn line
+5.  Title line
+6.  Multicolored text lines for console
+7.  Multicolored text lines for HTML
 
 ## Maven
 
@@ -232,21 +232,21 @@ mvn -f coverage.xml clean install coveralls:report -Dconsolerizer.show=false -Dr
 
 ### Online
 
-- [Definitive Guide To Java 12](https://blog.codefx.org/java/java-12-guide/)
-- [Publish AAR to jCenter and Maven Central](https://gist.github.com/lopspower/6f62fe1492726d848d6d)
-- [Publishing Android Library to Bintray with Gradle + Buddy.Works](https://medium.com/camerakit/publishing-android-library-to-bintray-with-gradle-buddy-works-dd50cbd03df5)
-- [How to distribute your own Android library through jCenter and Maven Central from Android Studio](https://inthecheesefactory.com/blog/how-to-upload-library-to-jcenter-maven-central-as-dependency/en)
-- [Creating .asc signature files with GPG](http://www.benmccann.com/creating-asc-signature-files-with-gpg/)
-- [Publish java library to JFrog Bintray and OSS Sonatype with Gradle](https://medium.com/@rosolko/publish-java-library-to-jfrog-bintray-and-sonatype-with-gradle-1a3ebd5b8be8)
-- [Enjoy Bintray and use it as pain-free gateway to Maven Central](https://blog.bintray.com/2014/02/11/bintray-as-pain-free-gateway-to-maven-central/)
-- [Android Library Publishing Maven Artifacts via gradle](https://gist.github.com/danielesegato/3ea6f99c968ce0b795c5390844ad4ff7)
-- [Gradle generate javadoc for Android](https://gist.github.com/kibotu/994c9cc65fe623b76b76fedfac74b34b)
-- [A Complete Guide to Create and Publish an Android Library to Maven Central](https://medium.com/@zubairehman.work/a-complete-guide-to-create-and-publish-an-android-library-to-maven-central-6eef186a42f5)
-- [Publish a Java Project to Maven Central with Gradle](http://weibeld.net/java/publish-to-maven-central.html)
-- [Sign and publish on Maven Central a Project with the new maven-publish Gradle plugin](https://medium.com/@nmauti/sign-and-publish-on-maven-central-a-project-with-the-new-maven-publish-gradle-plugin-22a72a4bfd4b)
-- [How to Upload an Open-Source Java Library to Maven Central](https://www.freecodecamp.org/news/how-to-upload-an-open-source-java-library-to-maven-central-cac7ce2f57c/)
-- [Nexus Sonatype](https://oss.sonatype.org/#welcome)
-- [Working with PGP Signatures](https://central.sonatype.org/pages/working-with-pgp-signatures.html)
+-   [Definitive Guide To Java 12](https://blog.codefx.org/java/java-12-guide/)
+-   [Publish AAR to jCenter and Maven Central](https://gist.github.com/lopspower/6f62fe1492726d848d6d)
+-   [Publishing Android Library to Bintray with Gradle + Buddy.Works](https://medium.com/camerakit/publishing-android-library-to-bintray-with-gradle-buddy-works-dd50cbd03df5)
+-   [How to distribute your own Android library through jCenter and Maven Central from Android Studio](https://inthecheesefactory.com/blog/how-to-upload-library-to-jcenter-maven-central-as-dependency/en)
+-   [Creating .asc signature files with GPG](http://www.benmccann.com/creating-asc-signature-files-with-gpg/)
+-   [Publish java library to JFrog Bintray and OSS Sonatype with Gradle](https://medium.com/@rosolko/publish-java-library-to-jfrog-bintray-and-sonatype-with-gradle-1a3ebd5b8be8)
+-   [Enjoy Bintray and use it as pain-free gateway to Maven Central](https://blog.bintray.com/2014/02/11/bintray-as-pain-free-gateway-to-maven-central/)
+-   [Android Library Publishing Maven Artifacts via gradle](https://gist.github.com/danielesegato/3ea6f99c968ce0b795c5390844ad4ff7)
+-   [Gradle generate javadoc for Android](https://gist.github.com/kibotu/994c9cc65fe623b76b76fedfac74b34b)
+-   [A Complete Guide to Create and Publish an Android Library to Maven Central](https://medium.com/@zubairehman.work/a-complete-guide-to-create-and-publish-an-android-library-to-maven-central-6eef186a42f5)
+-   [Publish a Java Project to Maven Central with Gradle](http://weibeld.net/java/publish-to-maven-central.html)
+-   [Sign and publish on Maven Central a Project with the new maven-publish Gradle plugin](https://medium.com/@nmauti/sign-and-publish-on-maven-central-a-project-with-the-new-maven-publish-gradle-plugin-22a72a4bfd4b)
+-   [How to Upload an Open-Source Java Library to Maven Central](https://www.freecodecamp.org/news/how-to-upload-an-open-source-java-library-to-maven-central-cac7ce2f57c/)
+-   [Nexus Sonatype](https://oss.sonatype.org/#welcome)
+-   [Working with PGP Signatures](https://central.sonatype.org/pages/working-with-pgp-signatures.html)
 
 ## About me 👨🏽‍💻🚀🏳️‍🌈
 
@@ -290,6 +290,7 @@ mvn -f coverage.xml clean install coveralls:report -Dconsolerizer.show=false -Dr
 
 ## Achievements
 
+[![VMware Spring Professional 2021](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/badges/vmware-spring-professional-2021.png "VMware Spring Professional 2021")](https://www.credly.com/badges/762fa7a4-9cf4-417d-bd29-7e072d74cdb7)
 [![Oracle Certified Professional, JEE 7 Developer](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/badges/oracle-certified-professional-java-ee-7-application-developer-100.png "Oracle Certified Professional, JEE7 Developer")](https://www.credly.com/badges/27a14e06-f591-4105-91ca-8c3215ef39a2)
 [![Oracle Certified Professional, Java SE 11 Programmer](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/badges/oracle-certified-professional-java-se-11-developer-100.png "Oracle Certified Professional, Java SE 11 Programmer")](https://www.credly.com/badges/87609d8e-27c5-45c9-9e42-60a5e9283280)
 [![Oracle Certified Professional, Java SE 8 Programmer](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/badges/oracle-certified-professional-java-se-8-programmer-100.png "Oracle Certified Professional, Java SE 8 Programmer")](https://www.credly.com/badges/92e036f5-4e11-4cff-9935-3e62266d2074)
