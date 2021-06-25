@@ -10,7 +10,6 @@
 [![GitHub License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 
 [![CircleCI](https://circleci.com/gh/JEsperancinhaOrg/consolerizer-root.svg?style=svg)](https://circleci.com/gh/JEsperancinhaOrg/consolerizer-root)
-[![Build Status](https://travis-ci.com/JEsperancinhaOrg/consolerizer-root.svg?branch=main)](https://travis-ci.com/JEsperancinhaOrg/consolerizer-root)
 [![Build status](https://ci.appveyor.com/api/projects/status/w8bav23989g3nhh7?svg=true)](https://ci.appveyor.com/project/jesperancinha/consolerizer-root)
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4d5fcd800ef941309dd767ad384eeb0c)](https://www.codacy.com/gh/JEsperancinhaOrg/consolerizer-root/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=JEsperancinhaOrg/consolerizer-root&amp;utm_campaign=Badge_Grade)
