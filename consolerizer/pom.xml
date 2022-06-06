@@ -74,7 +74,7 @@
     </profiles>
 
     <build>
-        <sourceDirectory>src/main/consolerizer</sourceDirectory>
+        <sourceDirectory>src/main/java</sourceDirectory>
         <defaultGoal>install</defaultGoal>
         <plugins>
             <plugin>
