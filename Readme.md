@@ -15,7 +15,6 @@
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4d5fcd800ef941309dd767ad384eeb0c)](https://www.codacy.com/gh/JEsperancinhaOrg/consolerizer-root/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=JEsperancinhaOrg/consolerizer-root&amp;utm_campaign=Badge_Grade)
 [![codebeat badge](https://codebeat.co/badges/176e694d-4bc1-4771-9a6c-4cd94bc8f5f8)](https://codebeat.co/projects/github-com-jesperancinhaorg-consolerizer-root-main)
-[![BCH compliance](https://bettercodehub.com/edge/badge/JEsperancinhaOrg/consolerizer-root?branch=main)](https://bettercodehub.com/)
 [![Known Vulnerabilities](https://snyk.io/test/github/JEsperancinhaOrg/consolerizer-root/badge.svg)](https://snyk.io/test/github/JEsperancinhaOrg/consolerizer-root)
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/4d5fcd800ef941309dd767ad384eeb0c)](https://www.codacy.com/gh/JEsperancinhaOrg/consolerizer-root/dashboard?utm_source=github.com&utm_medium=referral&utm_content=JEsperancinhaOrg/consolerizer-root&utm_campaign=Badge_Coverage)
