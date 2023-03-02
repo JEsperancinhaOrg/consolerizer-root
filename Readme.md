@@ -156,7 +156,7 @@ Consolerizer for Java 11 and above:
 <dependency>
     <groupId>org.jesperancinha.console</groupId>
     <artifactId>consolerizer</artifactId>
-    <version>2.0.12-SNAPSHOT</version>
+    <version>2.1.0</version>
 </dependency>
 ```
 
@@ -176,9 +176,9 @@ Consolerizer for Java 8 (Discontinued):
 ### Tools
 
 ```bash
-git push --delete origin 2.0.12-SNAPSHOT
-git tag --delete 2.0.12-SNAPSHOT
-git tag 2.0.12-SNAPSHOT
+git push --delete origin 2.1.0
+git tag --delete 2.1.0
+git tag 2.1.0
 git push --tags
 ```
 
