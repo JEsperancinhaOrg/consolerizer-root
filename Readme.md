@@ -42,6 +42,11 @@
 
 This project offers way to seamlessly add coloured log messages in academic, study or research projects. This is not a production ready module and shouldn't be used in a production setting. It is designed also for use in tutorials, classes, teaching and knowledge sharing.
 
+#### Stable releases
+
+-   [2.1.0](https://github.com/JEsperancinhaOrg/consolerizer-root/tree/2.1.0) - [1ad22801591b0ff05451d81a9ea4371b514c2fc4](https://github.com/JEsperancinhaOrg/consolerizer-root/tree/2.1.0) - JDK11 - Java
+
+
 ## Inner Modules Java Docs
 
 ### Consolerizer
