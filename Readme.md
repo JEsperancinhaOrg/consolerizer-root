@@ -146,6 +146,7 @@ mvn -f coverage.xml clean install coveralls:report -Dconsolerizer.show=false -Dr
 
 ### Online
 
+-   [Extended ASCII Table from the BBC - Data representation](https://www.bbc.co.uk/bitesize/guides/zscvxfr/revision/4)
 -   [Definitive Guide To Java 12](https://blog.codefx.org/java/java-12-guide/)
 -   [Publish AAR to jCenter and Maven Central](https://gist.github.com/lopspower/6f62fe1492726d848d6d)
 -   [Publishing Android Library to Bintray with Gradle + Buddy.Works](https://medium.com/camerakit/publishing-android-library-to-bintray-with-gradle-buddy-works-dd50cbd03df5)

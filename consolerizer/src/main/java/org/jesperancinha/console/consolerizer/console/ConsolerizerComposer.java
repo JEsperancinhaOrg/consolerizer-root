@@ -11,9 +11,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.RESET;
-import static org.jesperancinha.console.consolerizer.console.Consolerizer.COLOR_REGEX;
+import static org.jesperancinha.console.consolerizer.console.Consolerizer.*;
 import static org.jesperancinha.console.consolerizer.console.Consolerizer.printRawGeneric;
-import static org.jesperancinha.console.consolerizer.console.Consolerizer.printRawGenericLn;
 
 public class ConsolerizerComposer extends Composer<ConsolerizerComposer> {
 
@@ -109,14 +108,17 @@ public class ConsolerizerComposer extends Composer<ConsolerizerComposer> {
         return sb.toString();
     }
 
-    public void toConsole() {
+    @Override
+    public ConsolerizerComposer toConsole() {
         Consolerizer.currentColor = null;
         printRawGeneric(toString(), false);
+        return this;
     }
 
-    public void toConsoleLn() {
+    public ConsolerizerComposer toConsoleLn() {
         Consolerizer.currentColor = null;
         final String text = toString();
         printRawGenericLn(text, false);
+        return this;
     }
 }

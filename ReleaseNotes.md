@@ -6,6 +6,10 @@
 2.  Log4J2 support
 3.  SLF4J support
 
+## Release notes for version 2.2.0 - Coming soon
+
+1. Double and simple Frame
+
 ## Release notes for version 2.1.0 - 2023/03/02
 
 1. Libraries update and code cleanup

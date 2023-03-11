@@ -4,12 +4,14 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer;
 import org.jesperancinha.console.consolerizer.console.ConsolerizerGraphs;
 
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 import static java.util.Arrays.stream;
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.RED;
@@ -18,7 +20,7 @@ import static org.jesperancinha.console.consolerizer.common.ConsolerizerEmoji.RA
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerEmoji.UNICORN;
 import static org.jesperancinha.console.consolerizer.console.ConsolerizerGraphs.getEmoji;
 
-public abstract class Composer<T> implements Cloneable {
+public abstract class Composer<T> {
 
     private static ObjectMapper objectMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
 
@@ -42,166 +44,166 @@ public abstract class Composer<T> implements Cloneable {
         this.appender = "";
     }
 
-    public abstract T out(ConsolerizerColor consolerizerColor, Object text);
+    public abstract Composer<T> out(ConsolerizerColor consolerizerColor, Object text);
 
-    public T out(Object text) {
+    public Composer<T> out(Object text) {
         sb.append(text);
-        return (T) this;
+        return this;
     }
 
-    public T file(final String fileName) {
+    public Composer<T> file(final String fileName) {
         this.file = new File(fileName);
-        return (T) this;
+        return this;
     }
 
-    public T file() {
+    public Composer<T> file() {
         this.file = null;
-        return (T) this;
+        return this;
     }
 
-    public T autoWrite() {
+    public Composer<T> autoWrite() {
         this.autoWrite = true;
-        return (T) this;
+        return this;
     }
 
-    public T endWrite() {
+    public Composer<T> endWrite() {
         this.autoWrite = false;
-        return (T) this;
+        return this;
     }
 
-    public T reset() {
+    public Composer<T> reset() {
         processText(RESET, new String[]{""});
-        return (T) this;
+        return this;
     }
 
-    public T white(Object... args) {
+    public Composer<T> white(Object... args) {
         processText(ConsolerizerColor.WHITE, args);
-        return (T) this;
+        return this;
     }
 
-    public T black(Object... args) {
+    public Composer<T> black(Object... args) {
         processText(ConsolerizerColor.BLACK, args);
-        return (T) this;
+        return this;
     }
 
-    public T blue(Object... args) {
+    public Composer<T> blue(Object... args) {
         processText(ConsolerizerColor.BLUE, args);
-        return (T) this;
+        return this;
     }
 
-    public T green(Object... args) {
+    public Composer<T> green(Object... args) {
         processText(ConsolerizerColor.GREEN, args);
-        return (T) this;
+        return this;
     }
 
-    public T cyan(Object... args) {
+    public Composer<T> cyan(Object... args) {
         processText(ConsolerizerColor.CYAN, args);
-        return (T) this;
+        return this;
     }
 
-    public T red(Object... args) {
+    public Composer<T> red(Object... args) {
         processText(ConsolerizerColor.RED, args);
-        return (T) this;
+        return this;
     }
 
-    public T orange(Object... args) {
+    public Composer<T> orange(Object... args) {
         processText(ConsolerizerColor.ORANGE, args);
-        return (T) this;
+        return this;
     }
 
-    public T magenta(Object... args) {
+    public Composer<T> magenta(Object... args) {
         processText(ConsolerizerColor.MAGENTA, args);
-        return (T) this;
+        return this;
     }
 
-    public T brown(Object... args) {
+    public Composer<T> brown(Object... args) {
         processText(ConsolerizerColor.BROWN, args);
-        return (T) this;
+        return this;
     }
 
-    public T yellow(Object... args) {
+    public Composer<T> yellow(Object... args) {
         processText(ConsolerizerColor.YELLOW, args);
-        return (T) this;
+        return this;
     }
 
-    public T lightGrey(Object... args) {
+    public Composer<T> lightGrey(Object... args) {
         processText(ConsolerizerColor.LIGHT_GREY, args);
-        return (T) this;
+        return this;
     }
 
-    public T darkGrey(Object... args) {
+    public Composer<T> darkGrey(Object... args) {
         processText(ConsolerizerColor.DARK_GREY, args);
-        return (T) this;
+        return this;
     }
 
-    public T brightBlue(Object... args) {
+    public Composer<T> brightBlue(Object... args) {
         processText(ConsolerizerColor.BRIGHT_BLUE, args);
-        return (T) this;
+        return this;
     }
 
-    public T brightGreen(Object... args) {
+    public Composer<T> brightGreen(Object... args) {
         processText(ConsolerizerColor.BRIGHT_GREEN, args);
-        return (T) this;
+        return this;
     }
 
-    public T brightCyan(Object... args) {
+    public Composer<T> brightCyan(Object... args) {
         processText(ConsolerizerColor.BRIGHT_CYAN, args);
-        return (T) this;
+        return this;
     }
 
-    public T brightRed(Object... args) {
+    public Composer<T> brightRed(Object... args) {
         processText(ConsolerizerColor.BRIGHT_RED, args);
-        return (T) this;
+        return this;
     }
 
-    public T brightMagenta(Object... args) {
+    public Composer<T> brightMagenta(Object... args) {
         processText(ConsolerizerColor.BRIGHT_MAGENTA, args);
-        return (T) this;
+        return this;
     }
 
-    public T brightWhite(Object... args) {
+    public Composer<T> brightWhite(Object... args) {
         processText(ConsolerizerColor.BRIGHT_WHITE, args);
-        return (T) this;
+        return this;
     }
 
-    public T bgOrange(Object... args) {
+    public Composer<T> bgOrange(Object... args) {
         processText(ConsolerizerColor.BG_ORANGE, args);
-        return (T) this;
+        return this;
     }
 
-    public T bgYellow(Object... args) {
+    public Composer<T> bgYellow(Object... args) {
         processText(ConsolerizerColor.BG_YELLOW, args);
-        return (T) this;
+        return this;
     }
 
-    public T bgMagenta(Object... args) {
+    public Composer<T> bgMagenta(Object... args) {
         processText(ConsolerizerColor.BG_MAGENTA, args);
-        return (T) this;
+        return this;
     }
 
-    public T bgGreen(Object... args) {
+    public Composer<T> bgGreen(Object... args) {
         processText(ConsolerizerColor.BG_GREEN, args);
-        return (T) this;
+        return this;
     }
 
-    public T bgRed(Object... args) {
+    public Composer<T> bgRed(Object... args) {
         processText(ConsolerizerColor.BG_RED, args);
-        return (T) this;
+        return this;
     }
 
-    public T bgBlue(Object... args) {
+    public Composer<T> bgBlue(Object... args) {
         processText(ConsolerizerColor.BG_BLUE, args);
-        return (T) this;
+        return this;
     }
 
-    public T bgCyan(Object... args) {
+    public Composer<T> bgCyan(Object... args) {
         processText(ConsolerizerColor.BG_CYAN, args);
-        return (T) this;
+        return this;
     }
 
-    public T random(Object... args) {
+    public Composer<T> random(Object... args) {
         processText(ConsolerizerColor.getRandomColor(), args);
-        return (T) this;
+        return this;
     }
 
     private void processText(ConsolerizerColor consolerizerColor, Object... args) {
@@ -217,7 +219,7 @@ public abstract class Composer<T> implements Cloneable {
     }
 
     private void processText(Object... args) {
-        if(Configuration.showConsolerizer()) {
+        if (Configuration.showConsolerizer()) {
             if (args.length == 1 && "".equals(args[0])) {
                 out(args[0]);
             } else {
@@ -228,55 +230,55 @@ public abstract class Composer<T> implements Cloneable {
         }
     }
 
-    public T newLine() {
+    public Composer<T> newLine() {
         out("\n");
-        return (T) this;
+        return this;
     }
 
-    public T unicorns(int n) {
+    public Composer<T> unicorns(int n) {
         processText(ConsolerizerGraphs.getUnicorns(n));
-        return (T) this;
+        return this;
     }
 
-    public T unicorn() {
+    public Composer<T> unicorn() {
         processText(UNICORN);
-        return (T) this;
+        return this;
     }
 
-    public T rainbow(int n) {
+    public Composer<T> rainbow(int n) {
         processText(getEmoji(RAINBOW, n));
-        return (T) this;
+        return this;
     }
 
-    public T rainbow() {
+    public Composer<T> rainbow() {
         processText(RAINBOW);
-        return (T) this;
+        return this;
     }
 
-    public T emoji(ConsolerizerEmoji emoji) {
+    public Composer<T> emoji(ConsolerizerEmoji emoji) {
         processText(emoji);
-        return (T) this;
+        return this;
     }
 
-    public T emoji(ConsolerizerEmoji emoji, int n) {
+    public Composer<T> emoji(ConsolerizerEmoji emoji, int n) {
         processText(getEmoji(emoji, n));
-        return (T) this;
+        return this;
     }
 
-    public T build() {
-        return (T) this;
+    public Composer<T> build() {
+        return this;
     }
 
-    public T outList(String sentence, ConsolerizerVars... consolerizerVars) {
+    public Composer<T> outList(String sentence, ConsolerizerVars... consolerizerVars) {
         stream(consolerizerVars).forEach
                 (getConsolerizerVarsConsumer(sentence));
-        return (T) this;
+        return this;
     }
 
-    public T outList(String sentence, List<ConsolerizerVars> consolerizerVars) {
+    public Composer<T> outList(String sentence, List<ConsolerizerVars> consolerizerVars) {
         consolerizerVars.forEach
                 (getConsolerizerVarsConsumer(sentence));
-        return (T) this;
+        return this;
     }
 
     private Consumer<ConsolerizerVars> getConsolerizerVarsConsumer(String sentence) {
@@ -289,28 +291,58 @@ public abstract class Composer<T> implements Cloneable {
      * @param jsonText A raw json text
      * @return The pretty print formatted text
      */
-    public T jsonPrettyPrint(Object jsonText) {
+    public Composer<T> jsonPrettyPrint(Object jsonText) {
         try {
             processText(objectMapper.writeValueAsString(jsonText));
         } catch (JsonProcessingException e) {
             RED.printGenericLn("%s cannot be converted to JSON -> %s", jsonText, e);
         }
-        return (T) this;
+        return this;
     }
+
     /**
      * Create JSON Text with pretty print format
      *
      * @param jsonText A raw json text
      * @return The pretty print formatted text
      */
-    public T jsonPrettyPrint(String jsonText) {
+    public Composer<T> jsonPrettyPrint(String jsonText) {
         try {
             final var jsonNode = objectMapper.readValue(jsonText, JsonNode.class);
             processText(objectMapper.writeValueAsString(jsonNode));
         } catch (JsonProcessingException e) {
             RED.printGenericLn("%s cannot be converted to JSON -> %s", jsonText, e);
         }
-        return (T) this;
+        return this;
     }
 
+    public Composer<T> simpleFrame(String text) {
+        var charCount = stream(text.split("\n")).map(String::length).mapToInt(i->i).max().orElse(0) + 2;
+        var middle = "─".repeat(charCount);
+        processText("┌".concat(middle.concat("┐")));
+        processText(stream(text.split("\n"))
+                .map(t -> "│ ".concat(String.format("%-" + (charCount - 2) + "s", t)).concat(" │"))
+                .collect(Collectors.joining("\n")));
+        processText("└".concat(middle).concat("┘"));
+        return this;
+    }
+
+    public Composer<T> doubleFrame(String text) {
+        var charCount = stream(text.split("\n")).map(String::length).mapToInt(i->i).max().orElse(0) + 2;
+        var middle = "═".repeat(charCount);
+        processText("╔".concat(middle.concat("╗")));
+        processText(stream(text.split("\n"))
+                .map(t -> "║ ".concat(String.format("%-" + (charCount - 2) + "s", t)).concat(" ║"))
+                .collect(Collectors.joining("\n")));
+        processText("╚".concat(middle).concat("╝"));
+        return this;
+    }
+
+    public abstract Composer<T> ln();
+
+    public abstract Composer<T> none();
+
+    public abstract Composer<T> toConsoleLn();
+
+    public abstract Composer<T> toConsole();
 }

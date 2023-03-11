@@ -186,6 +186,26 @@ public class ConsolerizerComposerTest {
     }
 
     @Test
+    public void testConsolerizerComposerSimpleFrame_whenSimpleFrame_thenNiceLog() {
+        ConsolerizerComposer
+                .outSpace()
+                .black()
+                .bgMagenta()
+                .ln()
+                .simpleFrame("Eating leafy greens\nis awesome!")
+                .toConsoleLn();
+    }
+    @Test
+    public void testConsolerizerComposerDoubleFrame_whenDoubleFrame_thenNiceLog() {
+        ConsolerizerComposer
+                .outSpace()
+                .red()
+                .ln()
+                .doubleFrame("Eating leafy greens\nis awesome!")
+                .toConsoleLn();
+    }
+
+    @Test
     public void testConsolerizerComposerAutoWrite_whenNewLineAndString_thenNiceLog() {
         ConsolerizerComposer
                 .outSpace()

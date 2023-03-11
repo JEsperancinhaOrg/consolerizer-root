@@ -29,6 +29,26 @@ public class HtmlComposer extends Composer<HtmlComposer> {
     }
 
     @Override
+    public HtmlComposer ln() {
+        return this;
+    }
+
+    @Override
+    public HtmlComposer none() {
+        return this;
+    }
+
+    @Override
+    public HtmlComposer toConsoleLn() {
+        return this;
+    }
+
+    @Override
+    public HtmlComposer toConsole() {
+        return this;
+    }
+
+    @Override
     public String toString() {
         return sb.toString();
     }
