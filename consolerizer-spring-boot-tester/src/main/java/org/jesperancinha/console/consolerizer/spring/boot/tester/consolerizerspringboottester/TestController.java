@@ -1,12 +1,12 @@
 package org.jesperancinha.console.consolerizer.spring.boot.tester.consolerizerspringboottester;
 
+import jakarta.servlet.http.HttpServletResponse;
 import org.jesperancinha.console.consolerizer.html.HtmlComposer;
 import org.jesperancinha.console.consolerizer.html.HtmlPWriter;
 import org.jesperancinha.console.consolerizer8.common.ConsolerizerColor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
