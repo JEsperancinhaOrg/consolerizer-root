@@ -6,6 +6,11 @@
 2.  Log4J2 support
 3.  SLF4J support
 
+## Release notes for version 2.2.2 - 2023/03/12
+
+1. Patch improvement for HtmlComposer
+2. SpringBoot tester project in dependabot loop
+
 ## Release notes for version 2.2.1 - 2023/03/12
 
 1. Patch improvement for generics

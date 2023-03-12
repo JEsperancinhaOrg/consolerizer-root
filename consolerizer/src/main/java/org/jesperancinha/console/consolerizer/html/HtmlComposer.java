@@ -60,7 +60,7 @@ public class HtmlComposer extends Composer {
     }
 
     @Override
-    public void writeLineToHtml(ConsolerizerWriter htmlPWriter) {
-        htmlPWriter.printRawPrivateText("<p>".concat(toString()).concat("</p>"));
+    public void writeLineToHtml(ConsolerizerWriter consolerizerWriter) {
+        consolerizerWriter.printRawPrivateText("<p>".concat(toString()).concat("</p>"));
     }
 }

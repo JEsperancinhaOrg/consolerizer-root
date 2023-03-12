@@ -347,7 +347,7 @@ public abstract class Composer {
 
     public abstract Composer toConsole();
 
-    public abstract void writeToHtml(ConsolerizerWriter htmlPWriter);
+    public abstract void writeToHtml(ConsolerizerWriter consolerizerWriter);
 
-    public abstract void writeLineToHtml(ConsolerizerWriter htmlPWriter);
+    public abstract void writeLineToHtml(ConsolerizerWriter consolerizerWriter);
 }

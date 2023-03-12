@@ -122,7 +122,7 @@ public class ConsolerizerComposer extends Composer {
     }
 
     @Override
-    public void writeLineToHtml(ConsolerizerWriter htmlPWriter) {
+    public void writeLineToHtml(ConsolerizerWriter consolerizerWriter) {
 
     }
 
