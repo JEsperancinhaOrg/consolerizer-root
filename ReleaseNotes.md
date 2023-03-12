@@ -6,7 +6,11 @@
 2.  Log4J2 support
 3.  SLF4J support
 
-## Release notes for version 2.2.0 - Coming soon
+## Release notes for version 2.2.1 - 2023/03/12
+
+1. Patch improvement for generics
+
+## Release notes for version 2.2.0 - 2023/03/11
 
 1. Double and simple Frame
 

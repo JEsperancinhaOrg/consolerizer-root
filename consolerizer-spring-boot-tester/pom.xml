@@ -10,7 +10,7 @@
     </parent>
     <groupId>org.jesperancinha.console.consolerizer.spring.boot.tester</groupId>
     <artifactId>consolerizer-spring-boot-tester</artifactId>
-    <version>2.2.0</version>
+    <version>2.2.1</version>
     <name>consolerizer-spring-boot-tester</name>
     <description>Consolerizer Spring Boot Tester</description>
     <properties>
@@ -32,7 +32,7 @@
         <dependency>
             <groupId>org.jesperancinha.console</groupId>
             <artifactId>consolerizer</artifactId>
-            <version>2.2.0</version>
+            <version>2.2.1</version>
         </dependency>
         <dependency>
             <groupId>org.jesperancinha.console</groupId>

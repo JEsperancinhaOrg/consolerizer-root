@@ -46,6 +46,7 @@ This project offers way to seamlessly add coloured log messages in academic, stu
 
 -   [2.1.0](https://github.com/JEsperancinhaOrg/consolerizer-root/tree/2.1.0) - [1ad22801591b0ff05451d81a9ea4371b514c2fc4](https://github.com/JEsperancinhaOrg/consolerizer-root/tree/2.1.0) - JDK11 - Java
 -   [2.2.0](https://github.com/JEsperancinhaOrg/consolerizer-root/tree/2.2.0) - [99d0e9753289a1ea2b69b1297813b29beabb11fe](https://github.com/JEsperancinhaOrg/consolerizer-root/tree/2.2.0) - JDK11 - Java
+-   [2.2.1](https://github.com/JEsperancinhaOrg/consolerizer-root/tree/2.2.0) - [99d0e9753289a1ea2b69b1297813b29beabb11fe](https://github.com/JEsperancinhaOrg/consolerizer-root/tree/2.2.1) - JDK11 - Java
 
 
 ## Inner Modules Java Docs
@@ -70,7 +71,7 @@ Consolerizer for Java 11 and above:
 <dependency>
     <groupId>org.jesperancinha.console</groupId>
     <artifactId>consolerizer</artifactId>
-    <version>2.2.0</version>
+    <version>2.2.1</version>
 </dependency>
 ```
 
@@ -90,9 +91,9 @@ Consolerizer for Java 8 (Discontinued):
 ### Tools
 
 ```bash
-git push --delete origin 2.2.0
-git tag --delete 2.2.0
-git tag 2.2.0
+git push --delete origin 2.2.1
+git tag --delete 2.2.1
+git tag 2.2.1
 git push --tags
 ```
 

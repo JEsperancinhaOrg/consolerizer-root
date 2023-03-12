@@ -35,6 +35,7 @@ hs_err_pid*
 
 # Codecov
 codecov.yml
+coverage.xml
 
 # PID
 .attach_pid*
