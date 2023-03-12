@@ -20,7 +20,7 @@ import static org.jesperancinha.console.consolerizer.common.ConsolerizerEmoji.RA
 import static org.jesperancinha.console.consolerizer.common.ConsolerizerEmoji.UNICORN;
 import static org.jesperancinha.console.consolerizer.console.ConsolerizerGraphs.getEmoji;
 
-public abstract class Composer<T> {
+public abstract class Composer {
 
     private static ObjectMapper objectMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
 
@@ -44,164 +44,164 @@ public abstract class Composer<T> {
         this.appender = "";
     }
 
-    public abstract Composer<T> out(ConsolerizerColor consolerizerColor, Object text);
+    public abstract Composer out(ConsolerizerColor consolerizerColor, Object text);
 
-    public Composer<T> out(Object text) {
+    public Composer out(Object text) {
         sb.append(text);
         return this;
     }
 
-    public Composer<T> file(final String fileName) {
+    public Composer file(final String fileName) {
         this.file = new File(fileName);
         return this;
     }
 
-    public Composer<T> file() {
+    public Composer file() {
         this.file = null;
         return this;
     }
 
-    public Composer<T> autoWrite() {
+    public Composer autoWrite() {
         this.autoWrite = true;
         return this;
     }
 
-    public Composer<T> endWrite() {
+    public Composer endWrite() {
         this.autoWrite = false;
         return this;
     }
 
-    public Composer<T> reset() {
+    public Composer reset() {
         processText(RESET, new String[]{""});
         return this;
     }
 
-    public Composer<T> white(Object... args) {
+    public Composer white(Object... args) {
         processText(ConsolerizerColor.WHITE, args);
         return this;
     }
 
-    public Composer<T> black(Object... args) {
+    public Composer black(Object... args) {
         processText(ConsolerizerColor.BLACK, args);
         return this;
     }
 
-    public Composer<T> blue(Object... args) {
+    public Composer blue(Object... args) {
         processText(ConsolerizerColor.BLUE, args);
         return this;
     }
 
-    public Composer<T> green(Object... args) {
+    public Composer green(Object... args) {
         processText(ConsolerizerColor.GREEN, args);
         return this;
     }
 
-    public Composer<T> cyan(Object... args) {
+    public Composer cyan(Object... args) {
         processText(ConsolerizerColor.CYAN, args);
         return this;
     }
 
-    public Composer<T> red(Object... args) {
+    public Composer red(Object... args) {
         processText(ConsolerizerColor.RED, args);
         return this;
     }
 
-    public Composer<T> orange(Object... args) {
+    public Composer orange(Object... args) {
         processText(ConsolerizerColor.ORANGE, args);
         return this;
     }
 
-    public Composer<T> magenta(Object... args) {
+    public Composer magenta(Object... args) {
         processText(ConsolerizerColor.MAGENTA, args);
         return this;
     }
 
-    public Composer<T> brown(Object... args) {
+    public Composer brown(Object... args) {
         processText(ConsolerizerColor.BROWN, args);
         return this;
     }
 
-    public Composer<T> yellow(Object... args) {
+    public Composer yellow(Object... args) {
         processText(ConsolerizerColor.YELLOW, args);
         return this;
     }
 
-    public Composer<T> lightGrey(Object... args) {
+    public Composer lightGrey(Object... args) {
         processText(ConsolerizerColor.LIGHT_GREY, args);
         return this;
     }
 
-    public Composer<T> darkGrey(Object... args) {
+    public Composer darkGrey(Object... args) {
         processText(ConsolerizerColor.DARK_GREY, args);
         return this;
     }
 
-    public Composer<T> brightBlue(Object... args) {
+    public Composer brightBlue(Object... args) {
         processText(ConsolerizerColor.BRIGHT_BLUE, args);
         return this;
     }
 
-    public Composer<T> brightGreen(Object... args) {
+    public Composer brightGreen(Object... args) {
         processText(ConsolerizerColor.BRIGHT_GREEN, args);
         return this;
     }
 
-    public Composer<T> brightCyan(Object... args) {
+    public Composer brightCyan(Object... args) {
         processText(ConsolerizerColor.BRIGHT_CYAN, args);
         return this;
     }
 
-    public Composer<T> brightRed(Object... args) {
+    public Composer brightRed(Object... args) {
         processText(ConsolerizerColor.BRIGHT_RED, args);
         return this;
     }
 
-    public Composer<T> brightMagenta(Object... args) {
+    public Composer brightMagenta(Object... args) {
         processText(ConsolerizerColor.BRIGHT_MAGENTA, args);
         return this;
     }
 
-    public Composer<T> brightWhite(Object... args) {
+    public Composer brightWhite(Object... args) {
         processText(ConsolerizerColor.BRIGHT_WHITE, args);
         return this;
     }
 
-    public Composer<T> bgOrange(Object... args) {
+    public Composer bgOrange(Object... args) {
         processText(ConsolerizerColor.BG_ORANGE, args);
         return this;
     }
 
-    public Composer<T> bgYellow(Object... args) {
+    public Composer bgYellow(Object... args) {
         processText(ConsolerizerColor.BG_YELLOW, args);
         return this;
     }
 
-    public Composer<T> bgMagenta(Object... args) {
+    public Composer bgMagenta(Object... args) {
         processText(ConsolerizerColor.BG_MAGENTA, args);
         return this;
     }
 
-    public Composer<T> bgGreen(Object... args) {
+    public Composer bgGreen(Object... args) {
         processText(ConsolerizerColor.BG_GREEN, args);
         return this;
     }
 
-    public Composer<T> bgRed(Object... args) {
+    public Composer bgRed(Object... args) {
         processText(ConsolerizerColor.BG_RED, args);
         return this;
     }
 
-    public Composer<T> bgBlue(Object... args) {
+    public Composer bgBlue(Object... args) {
         processText(ConsolerizerColor.BG_BLUE, args);
         return this;
     }
 
-    public Composer<T> bgCyan(Object... args) {
+    public Composer bgCyan(Object... args) {
         processText(ConsolerizerColor.BG_CYAN, args);
         return this;
     }
 
-    public Composer<T> random(Object... args) {
+    public Composer random(Object... args) {
         processText(ConsolerizerColor.getRandomColor(), args);
         return this;
     }
@@ -230,52 +230,52 @@ public abstract class Composer<T> {
         }
     }
 
-    public Composer<T> newLine() {
+    public Composer newLine() {
         out("\n");
         return this;
     }
 
-    public Composer<T> unicorns(int n) {
+    public Composer unicorns(int n) {
         processText(ConsolerizerGraphs.getUnicorns(n));
         return this;
     }
 
-    public Composer<T> unicorn() {
+    public Composer unicorn() {
         processText(UNICORN);
         return this;
     }
 
-    public Composer<T> rainbow(int n) {
+    public Composer rainbow(int n) {
         processText(getEmoji(RAINBOW, n));
         return this;
     }
 
-    public Composer<T> rainbow() {
+    public Composer rainbow() {
         processText(RAINBOW);
         return this;
     }
 
-    public Composer<T> emoji(ConsolerizerEmoji emoji) {
+    public Composer emoji(ConsolerizerEmoji emoji) {
         processText(emoji);
         return this;
     }
 
-    public Composer<T> emoji(ConsolerizerEmoji emoji, int n) {
+    public Composer emoji(ConsolerizerEmoji emoji, int n) {
         processText(getEmoji(emoji, n));
         return this;
     }
 
-    public Composer<T> build() {
+    public Composer build() {
         return this;
     }
 
-    public Composer<T> outList(String sentence, ConsolerizerVars... consolerizerVars) {
+    public Composer outList(String sentence, ConsolerizerVars... consolerizerVars) {
         stream(consolerizerVars).forEach
                 (getConsolerizerVarsConsumer(sentence));
         return this;
     }
 
-    public Composer<T> outList(String sentence, List<ConsolerizerVars> consolerizerVars) {
+    public Composer outList(String sentence, List<ConsolerizerVars> consolerizerVars) {
         consolerizerVars.forEach
                 (getConsolerizerVarsConsumer(sentence));
         return this;
@@ -291,7 +291,7 @@ public abstract class Composer<T> {
      * @param jsonText A raw json text
      * @return The pretty print formatted text
      */
-    public Composer<T> jsonPrettyPrint(Object jsonText) {
+    public Composer jsonPrettyPrint(Object jsonText) {
         try {
             processText(objectMapper.writeValueAsString(jsonText));
         } catch (JsonProcessingException e) {
@@ -306,7 +306,7 @@ public abstract class Composer<T> {
      * @param jsonText A raw json text
      * @return The pretty print formatted text
      */
-    public Composer<T> jsonPrettyPrint(String jsonText) {
+    public Composer jsonPrettyPrint(String jsonText) {
         try {
             final var jsonNode = objectMapper.readValue(jsonText, JsonNode.class);
             processText(objectMapper.writeValueAsString(jsonNode));
@@ -316,7 +316,7 @@ public abstract class Composer<T> {
         return this;
     }
 
-    public Composer<T> simpleFrame(String text) {
+    public Composer simpleFrame(String text) {
         var charCount = stream(text.split("\n")).map(String::length).mapToInt(i->i).max().orElse(0) + 2;
         var middle = "─".repeat(charCount);
         processText("┌".concat(middle.concat("┐")));
@@ -327,7 +327,7 @@ public abstract class Composer<T> {
         return this;
     }
 
-    public Composer<T> doubleFrame(String text) {
+    public Composer doubleFrame(String text) {
         var charCount = stream(text.split("\n")).map(String::length).mapToInt(i->i).max().orElse(0) + 2;
         var middle = "═".repeat(charCount);
         processText("╔".concat(middle.concat("╗")));
@@ -338,11 +338,11 @@ public abstract class Composer<T> {
         return this;
     }
 
-    public abstract Composer<T> ln();
+    public abstract Composer ln();
 
-    public abstract Composer<T> none();
+    public abstract Composer none();
 
-    public abstract Composer<T> toConsoleLn();
+    public abstract Composer toConsoleLn();
 
-    public abstract Composer<T> toConsole();
+    public abstract Composer toConsole();
 }

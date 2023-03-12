@@ -14,7 +14,7 @@ import static org.jesperancinha.console.consolerizer.common.ConsolerizerColor.RE
 import static org.jesperancinha.console.consolerizer.console.Consolerizer.*;
 import static org.jesperancinha.console.consolerizer.console.Consolerizer.printRawGeneric;
 
-public class ConsolerizerComposer extends Composer<ConsolerizerComposer> {
+public class ConsolerizerComposer extends Composer {
 
     ConsolerizerComposer() {
         super();

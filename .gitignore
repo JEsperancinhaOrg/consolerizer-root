@@ -35,3 +35,6 @@ hs_err_pid*
 
 # Codecov
 codecov.yml
+
+# PID
+.attach_pid*
