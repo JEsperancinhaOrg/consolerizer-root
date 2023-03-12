@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer;
 import org.jesperancinha.console.consolerizer.console.ConsolerizerGraphs;
+import org.jesperancinha.console.consolerizer.html.HtmlPWriter;
 
 import java.io.File;
 import java.util.Arrays;
@@ -345,4 +346,8 @@ public abstract class Composer {
     public abstract Composer toConsoleLn();
 
     public abstract Composer toConsole();
+
+    public abstract void writeToHtml(ConsolerizerWriter htmlPWriter);
+
+    public abstract void writeLineToHtml(ConsolerizerWriter htmlPWriter);
 }

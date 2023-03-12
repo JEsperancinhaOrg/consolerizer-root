@@ -2,6 +2,7 @@ package org.jesperancinha.console.consolerizer.html;
 
 import org.jesperancinha.console.consolerizer.common.Composer;
 import org.jesperancinha.console.consolerizer.common.ConsolerizerColor;
+import org.jesperancinha.console.consolerizer.common.ConsolerizerWriter;
 
 public class HtmlComposer extends Composer {
 
@@ -53,11 +54,13 @@ public class HtmlComposer extends Composer {
         return sb.toString();
     }
 
-    public void writeToHtml(HtmlPWriter htmlPWriter) {
+    @Override
+    public void writeToHtml(ConsolerizerWriter htmlPWriter) {
         htmlPWriter.printRawPrivateText(toString());
     }
 
-    public void writeLineToHtml(HtmlPWriter htmlPWriter) {
+    @Override
+    public void writeLineToHtml(ConsolerizerWriter htmlPWriter) {
         htmlPWriter.printRawPrivateText("<p>".concat(toString()).concat("</p>"));
     }
 }

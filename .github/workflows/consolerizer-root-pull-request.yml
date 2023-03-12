@@ -18,3 +18,6 @@ jobs:
 
         - name: Build and Test
           run:  mvn clean install jacoco:prepare-agent package jacoco:report
+
+        - name: Build and Test Spring Boot Tester
+          run:  make build-maven-spring-boot

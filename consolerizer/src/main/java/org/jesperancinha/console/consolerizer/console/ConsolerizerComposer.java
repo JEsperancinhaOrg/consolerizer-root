@@ -2,6 +2,8 @@ package org.jesperancinha.console.consolerizer.console;
 
 import org.jesperancinha.console.consolerizer.common.Composer;
 import org.jesperancinha.console.consolerizer.common.ConsolerizerColor;
+import org.jesperancinha.console.consolerizer.common.ConsolerizerWriter;
+import org.jesperancinha.console.consolerizer.html.HtmlPWriter;
 
 import java.io.BufferedOutputStream;
 import java.io.FileNotFoundException;
@@ -113,6 +115,15 @@ public class ConsolerizerComposer extends Composer {
         Consolerizer.currentColor = null;
         printRawGeneric(toString(), false);
         return this;
+    }
+
+    @Override
+    public void writeToHtml(ConsolerizerWriter htmlPWriter) {
+    }
+
+    @Override
+    public void writeLineToHtml(ConsolerizerWriter htmlPWriter) {
+
     }
 
     public ConsolerizerComposer toConsoleLn() {

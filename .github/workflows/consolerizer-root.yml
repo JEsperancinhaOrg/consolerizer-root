@@ -25,5 +25,8 @@ jobs:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
 
+    - name: Build and Test Spring Boot Tester
+      run:  make build-maven-spring-boot
+
     - name: Maven OWASP Security Check
       run: mvn clean install -Powasp

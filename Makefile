@@ -1,6 +1,9 @@
 b: build
-build:
+build: build-maven build-maven-spring-boot
+build-maven:
 	mvn clean install
+build-maven-spring-boot:
+	cd consolerizer-spring-boot-tester && mvn clean install
 test:
 	mvn test
 local:
