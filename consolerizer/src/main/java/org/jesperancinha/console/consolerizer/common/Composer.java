@@ -73,7 +73,7 @@ public abstract class Composer {
     }
 
     public Composer reset() {
-        processText(RESET, new String[]{""});
+        processText(RESET, (Object) new String[]{""});
         return this;
     }
 
