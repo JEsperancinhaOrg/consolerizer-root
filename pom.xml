@@ -215,7 +215,7 @@
         <coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
         <jaxb-api.version>2.3.1</jaxb-api.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <omni-coveragereporter-maven-plugin.version>0.4.2</omni-coveragereporter-maven-plugin.version>
+        <omni-coveragereporter-maven-plugin.version>0.4.3</omni-coveragereporter-maven-plugin.version>
         <dependency-check-maven.version>8.2.1</dependency-check-maven.version>
         <junit-jupiter.version>5.9.3</junit-jupiter.version>
         <commons-text.version>1.10.0</commons-text.version>
