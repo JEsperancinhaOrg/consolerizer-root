@@ -1,4 +1,4 @@
-# consolerizer-root
+# Consolerizer - A small DSL to give color to your console.
 
 ---
 
@@ -49,34 +49,15 @@ This project offers way to seamlessly add coloured log messages in academic, stu
 
 [![javadoc](https://javadoc.io/badge2/org.jesperancinha.console/consolerizer/javadoc.svg)](https://javadoc.io/doc/org.jesperancinha.console/consolerizer)
 
-### Consolerizer for Java 8
-
-[![javadoc](https://javadoc.io/badge2/org.jesperancinha.console/consolerizer8/javadoc.svg)](https://javadoc.io/doc/org.jesperancinha.console/consolerizer8)
-
 ## Release Notes
 
 More details on the [Release Notes](ReleaseNotes.md) document
-## Maven
-
-Consolerizer for Java 11 and above:
 
 ```xml
-
 <dependency>
     <groupId>org.jesperancinha.console</groupId>
     <artifactId>consolerizer</artifactId>
     <version>2.2.2</version>
-</dependency>
-```
-
-Consolerizer for Java 8 (Discontinued):
-
-```xml
-
-<dependency>
-    <groupId>org.jesperancinha.console</groupId>
-    <artifactId>consolerizer8</artifactId>
-    <version>2.0.3</version>
 </dependency>
 ```
 
