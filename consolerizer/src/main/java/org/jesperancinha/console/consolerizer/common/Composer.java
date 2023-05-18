@@ -23,7 +23,7 @@ import static org.jesperancinha.console.consolerizer.console.ConsolerizerGraphs.
 
 public abstract class Composer {
 
-    private static ObjectMapper objectMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
+    private static final ObjectMapper objectMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
 
     protected final String splitter;
 
