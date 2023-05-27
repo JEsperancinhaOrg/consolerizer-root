@@ -9,15 +9,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-        - uses: actions/checkout@v3
-        - name: Set up JDK 17
-          uses: actions/setup-java@v3
-          with:
-            java-version: '17'
-            distribution: 'adopt'
+      - uses: actions/checkout@v3
+      - name: Set up JDK 19
+        uses: actions/setup-java@v3
+        with:
+          java-version: '19'
+          distribution: 'adopt'
+          cache: maven
 
-        - name: Build and Test
-          run:  mvn clean install jacoco:prepare-agent package jacoco:report
+      - name: Build with Maven
+        run: make b
 
-        - name: Build and Test Spring Boot Tester
-          run:  make build-maven-spring-boot
+      - name: Coverage
+        run: make coverage
+
+      - name: Build and Test Spring Boot Tester
+        run:  make build-maven-spring-boot
