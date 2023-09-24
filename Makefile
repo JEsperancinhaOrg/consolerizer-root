@@ -1,3 +1,6 @@
+SHELL := /bin/bash
+CONSOLERIZER_VERSION := 2.2.2
+
 b: build
 build: build-maven build-maven-spring-boot
 build-maven:
@@ -25,3 +28,5 @@ release:
 	export GPG_TTY=$(tty); \
 	mvn clean deploy -Prelease; \
 	mvn nexus-staging:release -Prelease;
+update_version:
+	bash update_version.sh
