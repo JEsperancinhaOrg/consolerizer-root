@@ -28,5 +28,7 @@ release:
 	export GPG_TTY=$(tty); \
 	mvn clean deploy -Prelease; \
 	mvn nexus-staging:release -Prelease;
-update_version:
+update-version:
 	bash update_version.sh
+install-xmlstarlet:
+	sudo apt-get install xmlstarlet

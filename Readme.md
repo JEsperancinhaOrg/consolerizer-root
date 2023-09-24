@@ -57,7 +57,7 @@ More details on the [Release Notes](ReleaseNotes.md) document
 <dependency>
     <groupId>org.jesperancinha.console</groupId>
     <artifactId>consolerizer</artifactId>
-    <version>2.2.2</version>
+    <version>2.2.3</version>
 </dependency>
 ```
 
@@ -66,9 +66,9 @@ More details on the [Release Notes](ReleaseNotes.md) document
 ### Tools
 
 ```bash
-git push --delete origin 2.2.2
-git tag --delete 2.2.2
-git tag 2.2.2
+git push --delete origin 2.2.3
+git tag --delete 2.2.3
+git tag 2.2.3
 git push --tags
 ```
 
