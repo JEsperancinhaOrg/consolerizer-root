@@ -1,5 +1,6 @@
 SHELL := /bin/bash
-CONSOLERIZER_VERSION := 2.2.2
+CONSOLERIZER_PRE_VERSION := 2.2.2
+CONSOLERIZER_VERSION := 2.2.3
 
 b: build
 build: build-maven build-maven-spring-boot
@@ -29,6 +30,8 @@ release:
 	mvn clean deploy -Prelease; \
 	mvn nexus-staging:release -Prelease;
 update-version:
-	bash update_version.sh
+	bash update_version.sh $(CONSOLERIZER_PRE_VERSION) $(CONSOLERIZER_VERSION)
 install-xmlstarlet:
 	sudo apt-get install xmlstarlet
+get-consolerizer-first-version-spring:
+	xmlstarlet select -N w=http://maven.apache.org/POM/4.0.0 --template --match '//w:project/w:dependencies/w:dependency' --value-of '*[last()]' --nl consolerizer-spring-boot-tester/pom.xml

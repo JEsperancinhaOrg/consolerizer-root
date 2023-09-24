@@ -28,7 +28,7 @@
     <connection>scm:git:git://github.com/JEsperancinhaOrg/consolerizer-root.git</connection>
     <developerConnection>scm:git:git://github.com/JEsperancinhaOrg/consolerizer-root.git</developerConnection>
     <url>https://github.com/JEsperancinhaOrg/consolerizer-root</url>
-    <tag>2.2.2</tag>
+    <tag>2.2.3</tag>
   </scm>
   <distributionManagement>
     <snapshotRepository>
