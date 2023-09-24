@@ -23,7 +23,9 @@ import static org.jesperancinha.console.consolerizer.console.ConsolerizerGraphs.
 
 public abstract class Composer {
 
-    private static final ObjectMapper objectMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
+    private static final ObjectMapper objectMapper = new ObjectMapper()
+            .enable(SerializationFeature.INDENT_OUTPUT)
+            .findAndRegisterModules();
 
     protected final String splitter;
 
