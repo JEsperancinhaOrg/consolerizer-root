@@ -209,7 +209,7 @@
     <jaxb-api.version>2.3.1</jaxb-api.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <omni-coveragereporter-maven-plugin.version>0.4.3</omni-coveragereporter-maven-plugin.version>
-    <dependency-check-maven.version>9.0.4</dependency-check-maven.version>
+    <dependency-check-maven.version>9.0.5</dependency-check-maven.version>
     <junit-jupiter.version>5.10.1</junit-jupiter.version>
     <commons-text.version>1.11.0</commons-text.version>
     <jackson.version>2.16.0</jackson.version>
