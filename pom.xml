@@ -211,7 +211,7 @@
     <omni-coveragereporter-maven-plugin.version>0.4.3</omni-coveragereporter-maven-plugin.version>
     <dependency-check-maven.version>9.1.0</dependency-check-maven.version>
     <junit-jupiter.version>5.10.2</junit-jupiter.version>
-    <commons-text.version>1.11.0</commons-text.version>
+    <commons-text.version>1.12.0</commons-text.version>
     <jackson.version>2.17.0</jackson.version>
   </properties>
   <dependencyManagement>
