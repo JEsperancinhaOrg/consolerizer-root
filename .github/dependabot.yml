@@ -4,8 +4,34 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    groups:
+      postgresql:
+        patterns:
+          - "*postgresql*"
+      maven:
+        patterns:
+          - "*maven*"
+      kotlin:
+        patterns:
+          - "*kotlin*"
+      spring:
+        patterns:
+          - "*spring*"
 
   - package-ecosystem: "maven"
     directory: "/consolerizer-spring-boot-tester/"
     schedule:
       interval: "daily"
+    groups:
+      postgresql:
+        patterns:
+          - "*postgresql*"
+      maven:
+        patterns:
+          - "*maven*"
+      kotlin:
+        patterns:
+          - "*kotlin*"
+      spring:
+        patterns:
+          - "*spring*"

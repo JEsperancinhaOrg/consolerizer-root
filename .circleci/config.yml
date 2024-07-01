@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: jesperancinha/je-all-build-jdk-15:0.0.1
+      - image: eclipse-temurin:21-alpine
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -30,5 +30,7 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
+      - run: apk add maven
+      - run: apk add make
       - run: mvn clean install
 
