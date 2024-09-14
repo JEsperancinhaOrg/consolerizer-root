@@ -2,7 +2,7 @@
 
 ---
 
-[![Twitter URL](https://img.shields.io/twitter/url?logoColor=blue&style=social&url=https%3A%2F%2Fimg.shields.io%2Ftwitter%2Furl%3Fstyle%3Dsocial)](https://twitter.com/intent/tweet?text=%20Checkout%20this%20%40github%20repo%20by%20%40joaofse%20%F0%9F%91%A8%F0%9F%8F%BD%E2%80%8D%F0%9F%92%BB%3A%20https%3A//github.com/JEsperancinhaOrg/consolerizer-root)
+
 [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Consolerizer&color=informational)](https://github.com/JEsperancinhaOrg/consolerizer-root)
 [![GitHub release](https://img.shields.io/github/release-pre/JEsperancinhaOrg/consolerizer-root.svg)](#)
 [![Maven Central](https://img.shields.io/maven-central/v/org.jesperancinha.console/consolerizer-root)](https://search.maven.org/search?q=consolerizer-root)
