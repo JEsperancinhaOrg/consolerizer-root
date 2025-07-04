@@ -211,7 +211,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <omni-coveragereporter-maven-plugin.version>0.4.5</omni-coveragereporter-maven-plugin.version>
     <dependency-check-maven.version>12.1.3</dependency-check-maven.version>
-    <junit-jupiter.version>5.13.2</junit-jupiter.version>
+    <junit-jupiter.version>5.13.3</junit-jupiter.version>
     <commons-text.version>1.13.1</commons-text.version>
     <jackson.version>2.19.1</jackson.version>
   </properties>
