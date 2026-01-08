@@ -3,7 +3,7 @@ updates:
   - package-ecosystem: "maven"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "yearly"
     groups:
       postgresql:
         patterns:
@@ -21,7 +21,7 @@ updates:
   - package-ecosystem: "maven"
     directory: "/consolerizer-spring-boot-tester/"
     schedule:
-      interval: "daily"
+      interval: "yearly"
     groups:
       postgresql:
         patterns:
