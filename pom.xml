@@ -213,7 +213,7 @@
     <dependency-check-maven.version>12.1.9</dependency-check-maven.version>
     <junit-jupiter.version>6.0.2</junit-jupiter.version>
     <commons-text.version>1.15.0</commons-text.version>
-    <jackson.version>2.20.1</jackson.version>
+    <jackson.version>2.21.0</jackson.version>
   </properties>
   <dependencyManagement>
     <dependencies>
