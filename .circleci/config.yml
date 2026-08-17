@@ -18,17 +18,6 @@ jobs:
             - m2-deps-{{ checksum "pom.xml" }}
             - m2-deps-
 
-      # If Testcontainers or Docker builds are required, uncomment the setup_remote_docker step below
-      # - setup_remote_docker:
-      #     version: default
-      #     docker_layer_caching: true
-
-      # Install build tools if the image doesn't include them (cimg images are Debian-based)
-      - run:
-          name: Install build tools
-          command: |
-            sudo apt-get update && sudo apt-get install -y maven make
-
       - run:
           name: Build (skip tests)
           command: mvn -B -DskipTests clean install
