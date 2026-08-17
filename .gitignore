@@ -39,3 +39,6 @@ coverage.xml
 
 # PID
 .attach_pid*
+
+# Automation
+dependabot.yml.bak
